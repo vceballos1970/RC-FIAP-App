@@ -34,15 +34,93 @@
        <layout class="QVBoxLayout" name="lay_principal">
         <item>
          <widget class="QTabWidget" name="twd_principal">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
             <string>Frame Data</string>
            </attribute>
+           <layout class="QGridLayout" name="gridLayout_4">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="lay_frame_data">
+              <item>
+               <layout class="QHBoxLayout" name="lay_form_data_fila_1">
+                <item>
+                 <widget class="QGroupBox" name="gbx_form_data_fila_1_column_sections">
+                  <property name="font">
+                   <font>
+                    <pointsize>10</pointsize>
+                    <weight>50</weight>
+                    <bold>false</bold>
+                   </font>
+                  </property>
+                  <property name="title">
+                   <string>Columns sections</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_5">
+                   <item row="0" column="0">
+                    <layout class="QHBoxLayout" name="horizontalLayout">
+                     <item>
+                      <widget class="QGroupBox" name="groupBox">
+                       <property name="title">
+                        <string>Exterior</string>
+                       </property>
+                       <layout class="QGridLayout" name="gridLayout_6">
+                        <item row="0" column="0">
+                         <layout class="QFormLayout" name="formLayout">
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label">
+                            <property name="text">
+                             <string>Width (m):</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+                          </item>
+                          <item row="1" column="0">
+                           <widget class="QLabel" name="label_2">
+                            <property name="text">
+                             <string>Depth (m)</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QGroupBox" name="groupBox_2">
+                       <property name="title">
+                        <string>Interior</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
           <widget class="QWidget" name="tab_design_results">
            <attribute name="title">
             <string>Design Results</string>
            </attribute>
+           <layout class="QGridLayout" name="gridLayout_3">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout"/>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
