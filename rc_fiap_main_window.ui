@@ -48,13 +48,6 @@
                <layout class="QHBoxLayout" name="lay_form_data_fila_1">
                 <item>
                  <widget class="QGroupBox" name="gbx_form_data_fila_1_column_sections">
-                  <property name="font">
-                   <font>
-                    <pointsize>10</pointsize>
-                    <weight>50</weight>
-                    <bold>false</bold>
-                   </font>
-                  </property>
                   <property name="title">
                    <string>Columns sections</string>
                   </property>
@@ -175,8 +168,15 @@
                   </property>
                   <layout class="QGridLayout" name="gridLayout_8">
                    <item row="0" column="0">
-                    <layout class="QHBoxLayout" name="horizontalLayout_2">
-                     <item>
+                    <layout class="QFormLayout" name="formLayout_4">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_7">
+                       <property name="text">
+                        <string>R:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
                       <layout class="QHBoxLayout" name="horizontalLayout_3">
                        <property name="spacing">
                         <number>6</number>
@@ -185,44 +185,32 @@
                         <enum>QLayout::SetDefaultConstraint</enum>
                        </property>
                        <item>
-                        <widget class="QLabel" name="label_7">
-                         <property name="text">
-                          <string>R=</string>
-                         </property>
-                         <property name="alignment">
-                          <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
-                         </property>
-                        </widget>
-                       </item>
-                       <item>
                         <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
                          <property name="alignment">
                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                          </property>
                         </widget>
                        </item>
-                      </layout>
-                     </item>
-                     <item>
-                      <layout class="QHBoxLayout" name="horizontalLayout_5">
                        <item>
                         <widget class="QLabel" name="label_8">
                          <property name="text">
-                          <string>Cd=</string>
+                          <string>Cd:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                          </property>
                         </widget>
                        </item>
                        <item>
                         <widget class="QDoubleSpinBox" name="doubleSpinBox_8"/>
                        </item>
-                      </layout>
-                     </item>
-                     <item>
-                      <layout class="QHBoxLayout" name="horizontalLayout_7">
                        <item>
                         <widget class="QLabel" name="label_9">
                          <property name="text">
-                          <string>Ω=</string>
+                          <string>Ω:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
                          </property>
                         </widget>
                        </item>
@@ -276,7 +264,7 @@
      <x>0</x>
      <y>0</y>
      <width>2550</width>
-     <height>22</height>
+     <height>26</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
