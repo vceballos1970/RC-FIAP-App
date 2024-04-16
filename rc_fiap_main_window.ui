@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2550</width>
-    <height>926</height>
+    <height>1005</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -275,6 +275,9 @@
                          <verstretch>0</verstretch>
                         </sizepolicy>
                        </property>
+                       <property name="styleSheet">
+                        <string notr="true"/>
+                       </property>
                        <property name="title">
                         <string>ASCE 7-16 Seismic load parameters</string>
                        </property>
@@ -382,6 +385,49 @@
                        </layout>
                       </widget>
                      </item>
+                     <item row="4" column="1">
+                      <widget class="QGroupBox" name="groupBox_8">
+                       <property name="title">
+                        <string>CCCSR-84 Seismic load parameters</string>
+                       </property>
+                       <layout class="QGridLayout" name="gridLayout_15">
+                        <item row="1" column="0">
+                         <layout class="QFormLayout" name="formLayout_10">
+                          <item row="1" column="0">
+                           <widget class="QLabel" name="label_20">
+                            <property name="text">
+                             <string>Aa:</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_18"/>
+                          </item>
+                          <item row="2" column="0">
+                           <widget class="QLabel" name="label_21">
+                            <property name="text">
+                             <string>Av:</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_19"/>
+                          </item>
+                          <item row="3" column="0">
+                           <widget class="QLabel" name="label_22">
+                            <property name="text">
+                             <string>S:</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_20"/>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
                     </layout>
                    </item>
                   </layout>
@@ -428,18 +474,36 @@
                   </property>
                   <layout class="QGridLayout" name="gridLayout_11">
                    <item row="0" column="0">
-                    <layout class="QHBoxLayout" name="horizontalLayout_2">
-                     <item>
+                    <layout class="QFormLayout" name="formLayout_11">
+                     <property name="sizeConstraint">
+                      <enum>QLayout::SetDefaultConstraint</enum>
+                     </property>
+                     <property name="fieldGrowthPolicy">
+                      <enum>QFormLayout::AllNonFixedFieldsGrow</enum>
+                     </property>
+                     <property name="rowWrapPolicy">
+                      <enum>QFormLayout::DontWrapRows</enum>
+                     </property>
+                     <property name="labelAlignment">
+                      <set>Qt::AlignJustify|Qt::AlignVCenter</set>
+                     </property>
+                     <property name="formAlignment">
+                      <set>Qt::AlignJustify|Qt::AlignTop</set>
+                     </property>
+                     <property name="verticalSpacing">
+                      <number>7</number>
+                     </property>
+                     <item row="0" column="0">
                       <widget class="QRadioButton" name="radioButton">
                        <property name="text">
-                        <string>Spatial</string>
+                        <string>RadioButton</string>
                        </property>
                       </widget>
                      </item>
-                     <item>
+                     <item row="0" column="1">
                       <widget class="QRadioButton" name="radioButton_2">
                        <property name="text">
-                        <string>Perimetral</string>
+                        <string>RadioButton</string>
                        </property>
                       </widget>
                      </item>
