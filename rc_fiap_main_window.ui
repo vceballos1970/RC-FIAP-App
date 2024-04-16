@@ -99,6 +99,32 @@
                        <property name="title">
                         <string>Interior</string>
                        </property>
+                       <layout class="QGridLayout" name="gridLayout_2">
+                        <item row="0" column="0">
+                         <layout class="QFormLayout" name="formLayout_2">
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_3">
+                            <property name="text">
+                             <string>Width (m):</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
+                          </item>
+                          <item row="1" column="0">
+                           <widget class="QLabel" name="label_4">
+                            <property name="text">
+                             <string>Depth (m):</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_4"/>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
@@ -146,7 +172,7 @@
      <x>0</x>
      <y>0</y>
      <width>2550</width>
-     <height>26</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuFile">
