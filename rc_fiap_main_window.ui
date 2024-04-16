@@ -264,6 +264,88 @@
                      <item row="0" column="1">
                       <widget class="QComboBox" name="comboBox"/>
                      </item>
+                     <item row="1" column="1">
+                      <widget class="QGroupBox" name="groupBox_5">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                       <property name="title">
+                        <string>ASCE 7-16 Seismic load parameters</string>
+                       </property>
+                       <layout class="QGridLayout" name="gridLayout_12">
+                        <item row="0" column="0">
+                         <layout class="QFormLayout" name="formLayout_6">
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_12">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S&lt;span style=&quot; vertical-align:sub;&quot;&gt;DS &lt;/span&gt;(g):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_11"/>
+                          </item>
+                          <item row="1" column="0">
+                           <widget class="QLabel" name="label_13">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S&lt;span style=&quot; vertical-align:sub;&quot;&gt;D1 &lt;/span&gt;(g):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_12"/>
+                          </item>
+                          <item row="2" column="0">
+                           <widget class="QLabel" name="label_14">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;T&lt;span style=&quot; vertical-align:sub;&quot;&gt;L &lt;/span&gt;(sec):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_13"/>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QGroupBox" name="groupBox_6">
+                       <property name="title">
+                        <string> NSR-10 Seismic load parameters</string>
+                       </property>
+                       <layout class="QGridLayout" name="gridLayout_13">
+                        <item row="0" column="0">
+                         <layout class="QFormLayout" name="formLayout_8">
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_16">
+                            <property name="text">
+                             <string>Aa:</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_14"/>
+                          </item>
+                          <item row="1" column="0">
+                           <widget class="QLabel" name="label_17">
+                            <property name="text">
+                             <string>Av:</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_15"/>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
                     </layout>
                    </item>
                   </layout>
@@ -278,7 +360,29 @@
                   <property name="title">
                    <string>Frame geometry</string>
                   </property>
-                  <layout class="QGridLayout" name="gridLayout_10"/>
+                  <layout class="QGridLayout" name="gridLayout_10">
+                   <item row="0" column="1">
+                    <layout class="QFormLayout" name="formLayout_7">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_15">
+                       <property name="text">
+                        <string> Vector of story heigths (m):</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QLineEdit" name="lineEdit">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
@@ -302,49 +406,6 @@
                         <string>Perimetral</string>
                        </property>
                       </widget>
-                     </item>
-                    </layout>
-                   </item>
-                  </layout>
-                 </widget>
-                </item>
-                <item>
-                 <widget class="QGroupBox" name="groupBox_5">
-                  <property name="title">
-                   <string>ASCE 7-16 Seismic load parameters</string>
-                  </property>
-                  <layout class="QGridLayout" name="gridLayout_12">
-                   <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_6">
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_12">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S&lt;span style=&quot; vertical-align:sub;&quot;&gt;DS &lt;/span&gt;(g):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="0" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_11"/>
-                     </item>
-                     <item row="1" column="0">
-                      <widget class="QLabel" name="label_13">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S&lt;span style=&quot; vertical-align:sub;&quot;&gt;D1 &lt;/span&gt;(g):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="1" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_12"/>
-                     </item>
-                     <item row="2" column="0">
-                      <widget class="QLabel" name="label_14">
-                       <property name="text">
-                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;T&lt;span style=&quot; vertical-align:sub;&quot;&gt;L &lt;/span&gt;(sec):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="2" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_13"/>
                      </item>
                     </layout>
                    </item>
