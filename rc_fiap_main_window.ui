@@ -45,7 +45,7 @@
             <item row="0" column="0">
              <layout class="QVBoxLayout" name="lay_frame_data">
               <item>
-               <layout class="QHBoxLayout" name="lay_form_data_fila_1">
+               <layout class="QHBoxLayout" name="lay_form_data_row_1">
                 <item>
                  <widget class="QGroupBox" name="gbx_form_data_fila_1_column_sections">
                   <property name="title">
@@ -169,6 +169,9 @@
                   <layout class="QGridLayout" name="gridLayout_8">
                    <item row="0" column="0">
                     <layout class="QFormLayout" name="formLayout_4">
+                     <property name="topMargin">
+                      <number>29</number>
+                     </property>
                      <item row="0" column="0">
                       <widget class="QLabel" name="label_7">
                        <property name="text">
@@ -217,11 +220,64 @@
                        <item>
                         <widget class="QDoubleSpinBox" name="doubleSpinBox_9"/>
                        </item>
+                       <item>
+                        <widget class="QLabel" name="label_10">
+                         <property name="text">
+                          <string>I:</string>
+                         </property>
+                         <property name="alignment">
+                          <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QDoubleSpinBox" name="doubleSpinBox_10"/>
+                       </item>
                       </layout>
                      </item>
                     </layout>
                    </item>
                   </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="groupBox_3">
+                  <property name="title">
+                   <string>Type load</string>
+                  </property>
+                  <property name="alignment">
+                   <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_9">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="formLayout_5">
+                     <property name="topMargin">
+                      <number>29</number>
+                     </property>
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_11">
+                       <property name="text">
+                        <string>Seismic type load:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QComboBox" name="comboBox"/>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="lay_form_data_row_2">
+                <item>
+                 <widget class="QGroupBox" name="gbx_frame_geometry">
+                  <property name="title">
+                   <string>Frame geometry</string>
+                  </property>
                  </widget>
                 </item>
                </layout>
