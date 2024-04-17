@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2550</width>
-    <height>1005</height>
+    <height>1064</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -534,7 +534,83 @@
                   </property>
                   <layout class="QGridLayout" name="gridLayout_18">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_12"/>
+                    <layout class="QFormLayout" name="formLayout_12">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="lbl_dead_load">
+                       <property name="text">
+                        <string>Dead load (kN/M2)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QDoubleSpinBox" name="spx_dead_load"/>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="lbl_live_load">
+                       <property name="text">
+                        <string>Live load (kN/M2)</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QDoubleSpinBox" name="spx_live_load"/>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="lbl_tributary_length_gravity">
+                       <property name="text">
+                        <string>Tributary length for gravity</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QSpinBox" name="spx_tributary_length_gravity"/>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="lbl_tributary_length_seismic">
+                       <property name="text">
+                        <string>Tributary length for seismic</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QDoubleSpinBox" name="spx_tributary_length_seismic"/>
+                     </item>
+                     <item row="4" column="0">
+                      <widget class="QLabel" name="lbl_pdelta_leaning_column">
+                       <property name="text">
+                        <string>PDelta leaning column</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1">
+                      <layout class="QGridLayout" name="gridLayout_19">
+                       <item row="0" column="0">
+                        <widget class="QRadioButton" name="radioButton_3">
+                         <property name="text">
+                          <string>Yes</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="1">
+                        <widget class="QRadioButton" name="radioButton_4">
+                         <property name="text">
+                          <string>No</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="5" column="0">
+                      <widget class="QLabel" name="lbl_inertia">
+                       <property name="text">
+                        <string>Inertia</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1">
+                      <widget class="QSpinBox" name="spx_inertia"/>
+                     </item>
+                    </layout>
                    </item>
                   </layout>
                  </widget>
