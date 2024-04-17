@@ -262,7 +262,14 @@
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QComboBox" name="comboBox"/>
+                      <widget class="QComboBox" name="comboBox">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                      </widget>
                      </item>
                      <item row="1" column="1">
                       <widget class="QGroupBox" name="groupBox_5">
@@ -270,7 +277,7 @@
                         <bool>true</bool>
                        </property>
                        <property name="sizePolicy">
-                        <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                          <horstretch>0</horstretch>
                          <verstretch>0</verstretch>
                         </sizepolicy>
@@ -292,7 +299,14 @@
                            </widget>
                           </item>
                           <item row="0" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_11"/>
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                           </widget>
                           </item>
                           <item row="1" column="0">
                            <widget class="QLabel" name="label_13">
@@ -302,7 +316,14 @@
                            </widget>
                           </item>
                           <item row="1" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_12"/>
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                           </widget>
                           </item>
                           <item row="2" column="0">
                            <widget class="QLabel" name="label_14">
@@ -312,7 +333,14 @@
                            </widget>
                           </item>
                           <item row="2" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_13"/>
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                           </widget>
                           </item>
                          </layout>
                         </item>
@@ -321,6 +349,12 @@
                      </item>
                      <item row="2" column="1">
                       <widget class="QGroupBox" name="groupBox_6">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="title">
                         <string> NSR-10 Seismic load parameters</string>
                        </property>
@@ -354,6 +388,12 @@
                      </item>
                      <item row="3" column="1">
                       <widget class="QGroupBox" name="groupBox_7">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="title">
                         <string>NSR-98 Seismic load parameters</string>
                        </property>
@@ -387,6 +427,12 @@
                      </item>
                      <item row="4" column="1">
                       <widget class="QGroupBox" name="groupBox_8">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="title">
                         <string>CCCSR-84 Seismic load parameters</string>
                        </property>
@@ -430,21 +476,34 @@
                      </item>
                      <item row="5" column="1">
                       <widget class="QGroupBox" name="groupBox_9">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="title">
                         <string>Spectra file selector</string>
                        </property>
                        <layout class="QGridLayout" name="gridLayout_17">
                         <item row="0" column="0">
                          <layout class="QFormLayout" name="formLayout_11">
+                          <item row="0" column="1">
+                           <widget class="QLineEdit" name="lineEdit_3">
+                            <property name="sizePolicy">
+                             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                              <horstretch>0</horstretch>
+                              <verstretch>0</verstretch>
+                             </sizepolicy>
+                            </property>
+                           </widget>
+                          </item>
                           <item row="0" column="0">
                            <widget class="QLabel" name="label_24">
                             <property name="text">
                              <string>Spect text file:</string>
                             </property>
                            </widget>
-                          </item>
-                          <item row="0" column="1">
-                           <widget class="QLineEdit" name="lineEdit_3"/>
                           </item>
                          </layout>
                         </item>
@@ -486,7 +545,14 @@
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLineEdit" name="lineEdit_2"/>
+                      <widget class="QLineEdit" name="lineEdit_2">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
+                      </widget>
                      </item>
                      <item row="1" column="0">
                       <widget class="QLabel" name="label_23">
@@ -660,17 +726,17 @@ analysis </string>
                      <item row="1" column="1">
                       <widget class="QSpinBox" name="spinBox"/>
                      </item>
-                     <item row="3" column="0">
-                      <widget class="QLabel" name="label_29">
-                       <property name="text">
-                        <string>Walls</string>
-                       </property>
-                      </widget>
-                     </item>
-                     <item row="3" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_22"/>
-                     </item>
                     </layout>
+                   </item>
+                   <item row="1" column="1">
+                    <widget class="QDoubleSpinBox" name="doubleSpinBox_22"/>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QLabel" name="label_29">
+                     <property name="text">
+                      <string>Walls</string>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>
