@@ -740,6 +740,87 @@
                 </item>
                </layout>
               </item>
+              <item>
+               <layout class="QHBoxLayout" name="lay_form_data_row_3">
+                <item>
+                 <widget class="QGroupBox" name="gbx_materials">
+                  <property name="title">
+                   <string>GroupBox</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_20">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="frm_materials">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_30">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;span style=&quot; vertical-align:sub;&quot;&gt;y&lt;/span&gt; long. (MPa):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_23"/>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label_31">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;span style=&quot; vertical-align:sub;&quot;&gt;y&lt;/span&gt; transv. (MPa):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_24"/>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="label_32">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f´&lt;span style=&quot; vertical-align:sub;&quot;&gt;c&lt;/span&gt; beams (MPa):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_25"/>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="label_33">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f´&lt;span style=&quot; vertical-align:sub;&quot;&gt;c&lt;/span&gt; columns (MPa):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_26"/>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="groupBox_12">
+                  <property name="title">
+                   <string>Column-to-beam</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_22">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="formLayout_14">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label_34">
+                       <property name="text">
+                        <string>Minimum column-to-beam
+moment strength ratio:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_27"/>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
              </layout>
             </item>
            </layout>
