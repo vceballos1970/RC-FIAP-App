@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2550</width>
-    <height>1237</height>
+    <height>1290</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -895,6 +895,45 @@ moment strength ratio:</string>
                        <property name="text">
                         <string>lw (m):</string>
                        </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QWidget" name="widget_3" native="true">
+                       <layout class="QGridLayout" name="gridLayout_26">
+                        <item row="0" column="0">
+                         <layout class="QHBoxLayout" name="horizontalLayout_6">
+                          <item>
+                           <widget class="QSpinBox" name="spinBox_3"/>
+                          </item>
+                          <item>
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_30"/>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item row="4" column="0">
+                      <widget class="QLabel" name="lbl_af">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Af (m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1">
+                      <widget class="QWidget" name="widget_4" native="true">
+                       <layout class="QGridLayout" name="gridLayout_27">
+                        <item row="0" column="0">
+                         <layout class="QHBoxLayout" name="horizontalLayout_7">
+                          <item>
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_31"/>
+                          </item>
+                          <item>
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_32"/>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
                       </widget>
                      </item>
                     </layout>
