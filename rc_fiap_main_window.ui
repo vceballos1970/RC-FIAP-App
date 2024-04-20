@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2550</width>
-    <height>1290</height>
+    <height>1338</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -745,7 +745,7 @@
                 <item>
                  <widget class="QGroupBox" name="gbx_materials">
                   <property name="title">
-                   <string>GroupBox</string>
+                   <string>Materials</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_20">
                    <item row="0" column="0">
@@ -932,6 +932,62 @@ moment strength ratio:</string>
                            <widget class="QDoubleSpinBox" name="doubleSpinBox_32"/>
                           </item>
                          </layout>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="groupBox_14">
+                  <property name="title">
+                   <string>Design</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_28">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="formLayout_16">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="lbl_design_code">
+                       <property name="text">
+                        <string>Design code</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QComboBox" name="comboBox_2"/>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label_38">
+                       <property name="text">
+                        <string>Frame seismic detailing:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QComboBox" name="comboBox_3"/>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="label_39">
+                       <property name="text">
+                        <string>Wall seismic detailing:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QWidget" name="widget_5" native="true">
+                       <layout class="QGridLayout" name="gridLayout_29">
+                        <item row="0" column="0">
+                         <layout class="QHBoxLayout" name="horizontalLayout_2">
+                          <item>
+                           <widget class="QComboBox" name="comboBox_4"/>
+                          </item>
+                         </layout>
+                        </item>
+                        <item row="0" column="1">
+                         <widget class="QDoubleSpinBox" name="doubleSpinBox_33"/>
                         </item>
                        </layout>
                       </widget>
