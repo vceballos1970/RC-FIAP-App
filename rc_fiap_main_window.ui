@@ -526,16 +526,16 @@
                   </property>
                   <layout class="QGridLayout" name="gridLayout_10">
                    <item row="0" column="1">
-                    <layout class="QFormLayout" name="formLayout_7">
+                    <layout class="QFormLayout" name="frm_frame_geometry">
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label_15">
+                      <widget class="QLabel" name="lbl_frame_geometry_vector_story">
                        <property name="text">
                         <string>Vector of story heigths (m):</string>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLineEdit" name="lineEdit">
+                      <widget class="QLineEdit" name="txt_frame_geometry_vector_story">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                          <horstretch>0</horstretch>
@@ -545,7 +545,7 @@
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLineEdit" name="lineEdit_2">
+                      <widget class="QLineEdit" name="txt_frame_geometry_vector_spans">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
                          <horstretch>0</horstretch>
@@ -555,7 +555,7 @@
                       </widget>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QLabel" name="label_23">
+                      <widget class="QLabel" name="lbl_frame_geometry_vector_spans">
                        <property name="text">
                         <string>Vector of spans (m):</string>
                        </property>
