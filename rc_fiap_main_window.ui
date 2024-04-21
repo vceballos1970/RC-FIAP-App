@@ -53,34 +53,34 @@
                   </property>
                   <layout class="QGridLayout" name="gridLayout_5">
                    <item row="0" column="0">
-                    <layout class="QHBoxLayout" name="horizontalLayout">
+                    <layout class="QHBoxLayout" name="lay_columns_sections">
                      <item>
-                      <widget class="QGroupBox" name="groupBox">
+                      <widget class="QGroupBox" name="gbx_columns_sections_exterior">
                        <property name="title">
                         <string>Exterior</string>
                        </property>
                        <layout class="QGridLayout" name="gridLayout_6">
                         <item row="0" column="0">
-                         <layout class="QFormLayout" name="formLayout">
+                         <layout class="QFormLayout" name="frm_columns_sections_exterior">
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label">
+                           <widget class="QLabel" name="lbl_columns_sections_width">
                             <property name="text">
                              <string>Width (m):</string>
                             </property>
                            </widget>
                           </item>
                           <item row="0" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+                           <widget class="QDoubleSpinBox" name="spx_columns_sections_width"/>
                           </item>
                           <item row="1" column="0">
-                           <widget class="QLabel" name="label_2">
+                           <widget class="QLabel" name="lbl_columns_sections_depth">
                             <property name="text">
                              <string>Depth (m)</string>
                             </property>
                            </widget>
                           </item>
                           <item row="1" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+                           <widget class="QDoubleSpinBox" name="spx_columns_sections_depth"/>
                           </item>
                          </layout>
                         </item>
@@ -88,32 +88,32 @@
                       </widget>
                      </item>
                      <item>
-                      <widget class="QGroupBox" name="groupBox_2">
+                      <widget class="QGroupBox" name="gbx_columns_sections_interior">
                        <property name="title">
                         <string>Interior</string>
                        </property>
                        <layout class="QGridLayout" name="gridLayout_2">
                         <item row="0" column="0">
-                         <layout class="QFormLayout" name="formLayout_2">
+                         <layout class="QFormLayout" name="frm_columns_sections_interior">
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_3">
+                           <widget class="QLabel" name="lbl_columns_sections_interior_width">
                             <property name="text">
                              <string>Width (m):</string>
                             </property>
                            </widget>
                           </item>
                           <item row="0" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
+                           <widget class="QDoubleSpinBox" name="spx_columns_sections_interior_width"/>
                           </item>
                           <item row="1" column="0">
-                           <widget class="QLabel" name="label_4">
+                           <widget class="QLabel" name="lbl_columns_sections_interior_depth">
                             <property name="text">
                              <string>Depth (m):</string>
                             </property>
                            </widget>
                           </item>
                           <item row="1" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_4"/>
+                           <widget class="QDoubleSpinBox" name="spx_columns_sections_interior_depth"/>
                           </item>
                          </layout>
                         </item>
@@ -132,29 +132,29 @@
                   </property>
                   <layout class="QGridLayout" name="gridLayout_7">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_3">
+                    <layout class="QFormLayout" name="frm_beams_sections">
                      <property name="topMargin">
                       <number>29</number>
                      </property>
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label_5">
+                      <widget class="QLabel" name="lbl_beam_sections_width">
                        <property name="text">
                         <string>Width (m):</string>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_5"/>
+                      <widget class="QDoubleSpinBox" name="spx_beam_sections_width"/>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QLabel" name="label_6">
+                      <widget class="QLabel" name="lbl_beam_sections_depth">
                        <property name="text">
-                        <string>TextLabel</string>
+                        <string>Depth:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_6"/>
+                      <widget class="QDoubleSpinBox" name="spx_beam_sections_depth"/>
                      </item>
                     </layout>
                    </item>
@@ -168,25 +168,25 @@
                   </property>
                   <layout class="QGridLayout" name="gridLayout_8">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_4">
+                    <layout class="QFormLayout" name="frm_seismic_load">
                      <property name="topMargin">
                       <number>29</number>
                      </property>
-                     <item row="0" column="0">
-                      <widget class="QLabel" name="label_7">
-                       <property name="text">
-                        <string>R:</string>
-                       </property>
-                      </widget>
-                     </item>
                      <item row="0" column="1">
-                      <layout class="QHBoxLayout" name="horizontalLayout_3">
+                      <layout class="QHBoxLayout" name="lay_seismic_load">
                        <property name="spacing">
                         <number>6</number>
                        </property>
                        <property name="sizeConstraint">
                         <enum>QLayout::SetDefaultConstraint</enum>
                        </property>
+                       <item>
+                        <widget class="QLabel" name="lbl_seismic_load_r">
+                         <property name="text">
+                          <string>R:</string>
+                         </property>
+                        </widget>
+                       </item>
                        <item>
                         <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
                          <property name="alignment">
@@ -195,7 +195,7 @@
                         </widget>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_8">
+                        <widget class="QLabel" name="lbl_seismic_load_cd">
                          <property name="text">
                           <string>Cd:</string>
                          </property>
@@ -208,7 +208,7 @@
                         <widget class="QDoubleSpinBox" name="doubleSpinBox_8"/>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_9">
+                        <widget class="QLabel" name="lbl__seismic_load_omega">
                          <property name="text">
                           <string>Ω:</string>
                          </property>
@@ -221,7 +221,7 @@
                         <widget class="QDoubleSpinBox" name="doubleSpinBox_9"/>
                        </item>
                        <item>
-                        <widget class="QLabel" name="label_10">
+                        <widget class="QLabel" name="_seismic_load_i">
                          <property name="text">
                           <string>I:</string>
                          </property>
