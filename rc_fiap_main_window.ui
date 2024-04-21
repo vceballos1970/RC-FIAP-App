@@ -348,7 +348,7 @@
                       </widget>
                      </item>
                      <item row="2" column="1">
-                      <widget class="QGroupBox" name="groupBox_6">
+                      <widget class="QGroupBox" name="gbx_type_load_nsr10">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                          <horstretch>0</horstretch>
@@ -360,26 +360,26 @@
                        </property>
                        <layout class="QGridLayout" name="gridLayout_13">
                         <item row="0" column="0">
-                         <layout class="QFormLayout" name="formLayout_8">
+                         <layout class="QFormLayout" name="lay_type_load_nsr10">
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_16">
+                           <widget class="QLabel" name="lbl_type_load_nsr10_aa">
                             <property name="text">
                              <string>Aa:</string>
                             </property>
                            </widget>
                           </item>
                           <item row="0" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_14"/>
+                           <widget class="QDoubleSpinBox" name="spx_type_load_nsr10_aa"/>
                           </item>
                           <item row="1" column="0">
-                           <widget class="QLabel" name="label_17">
+                           <widget class="QLabel" name="lbl_type_load_nsr10_av">
                             <property name="text">
                              <string>Av:</string>
                             </property>
                            </widget>
                           </item>
                           <item row="1" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_15"/>
+                           <widget class="QDoubleSpinBox" name="spx__type_load_nsr10_av"/>
                           </item>
                          </layout>
                         </item>
@@ -387,7 +387,7 @@
                       </widget>
                      </item>
                      <item row="3" column="1">
-                      <widget class="QGroupBox" name="groupBox_7">
+                      <widget class="QGroupBox" name="gbx_type_load_nsr98_">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                          <horstretch>0</horstretch>
@@ -399,26 +399,26 @@
                        </property>
                        <layout class="QGridLayout" name="gridLayout_14">
                         <item row="0" column="0">
-                         <layout class="QFormLayout" name="formLayout_9">
+                         <layout class="QFormLayout" name="frm_type_load_nsr98">
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_18">
+                           <widget class="QLabel" name="lbl_type_load_nsr98_aa">
                             <property name="text">
                              <string>Aa:</string>
                             </property>
                            </widget>
                           </item>
                           <item row="0" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_16"/>
+                           <widget class="QDoubleSpinBox" name="gbx_type_load_nsr98_aa"/>
                           </item>
                           <item row="1" column="0">
-                           <widget class="QLabel" name="label_19">
+                           <widget class="QLabel" name="lbl_type_load_nsr98_s">
                             <property name="text">
                              <string>S:</string>
                             </property>
                            </widget>
                           </item>
                           <item row="1" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_17"/>
+                           <widget class="QDoubleSpinBox" name="gbx_type_load_nsr98_s"/>
                           </item>
                          </layout>
                         </item>
