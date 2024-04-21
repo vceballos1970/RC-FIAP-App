@@ -426,7 +426,7 @@
                       </widget>
                      </item>
                      <item row="4" column="1">
-                      <widget class="QGroupBox" name="groupBox_8">
+                      <widget class="QGroupBox" name="gbx_type_load_cccsr84_">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                          <horstretch>0</horstretch>
@@ -438,36 +438,36 @@
                        </property>
                        <layout class="QGridLayout" name="gridLayout_15">
                         <item row="1" column="0">
-                         <layout class="QFormLayout" name="formLayout_10">
+                         <layout class="QFormLayout" name="frm_type_load_cccsr84">
                           <item row="1" column="0">
-                           <widget class="QLabel" name="label_20">
+                           <widget class="QLabel" name="lbl_type_load_cccsr84_aa">
                             <property name="text">
                              <string>Aa:</string>
                             </property>
                            </widget>
                           </item>
                           <item row="1" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_18"/>
+                           <widget class="QDoubleSpinBox" name="spx_type_load_cccsr84_aa"/>
                           </item>
                           <item row="2" column="0">
-                           <widget class="QLabel" name="label_21">
+                           <widget class="QLabel" name="lbl_type_load_cccsr84_av">
                             <property name="text">
                              <string>Av:</string>
                             </property>
                            </widget>
                           </item>
                           <item row="2" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_19"/>
+                           <widget class="QDoubleSpinBox" name="spx_type_load_cccsr84_av"/>
                           </item>
                           <item row="3" column="0">
-                           <widget class="QLabel" name="label_22">
+                           <widget class="QLabel" name="lbl_type_load_cccsr84_s">
                             <property name="text">
                              <string>S:</string>
                             </property>
                            </widget>
                           </item>
                           <item row="3" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_20"/>
+                           <widget class="QDoubleSpinBox" name="spx_type_load_cccsr84_s"/>
                           </item>
                          </layout>
                         </item>
