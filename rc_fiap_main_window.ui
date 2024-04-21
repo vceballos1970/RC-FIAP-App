@@ -241,7 +241,7 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="groupBox_3">
+                 <widget class="QGroupBox" name="gbx_type_load">
                   <property name="title">
                    <string>Type load</string>
                   </property>
@@ -250,19 +250,19 @@
                   </property>
                   <layout class="QGridLayout" name="gridLayout_9">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_5">
+                    <layout class="QFormLayout" name="frm_type_load">
                      <property name="topMargin">
                       <number>29</number>
                      </property>
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label_11">
+                      <widget class="QLabel" name="lbl_type_load_seismic_type_load">
                        <property name="text">
                         <string>Seismic type load:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QComboBox" name="comboBox">
+                      <widget class="QComboBox" name="cbx_type_load_seismic_type_load">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Minimum" vsizetype="Preferred">
                          <horstretch>0</horstretch>
@@ -272,7 +272,7 @@
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QGroupBox" name="groupBox_5">
+                      <widget class="QGroupBox" name="gbx_type_load_asce_7">
                        <property name="enabled">
                         <bool>true</bool>
                        </property>
@@ -290,16 +290,16 @@
                        </property>
                        <layout class="QGridLayout" name="gridLayout_12">
                         <item row="0" column="0">
-                         <layout class="QFormLayout" name="formLayout_6">
+                         <layout class="QFormLayout" name="lay_type_load_asce_7">
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_12">
+                           <widget class="QLabel" name="lbl_type_load_asce_7_sds">
                             <property name="text">
                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S&lt;span style=&quot; vertical-align:sub;&quot;&gt;DS &lt;/span&gt;(g):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
                           <item row="0" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_11">
+                           <widget class="QDoubleSpinBox" name="spx_type_load_asce_7_sds">
                             <property name="sizePolicy">
                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                               <horstretch>0</horstretch>
@@ -309,14 +309,14 @@
                            </widget>
                           </item>
                           <item row="1" column="0">
-                           <widget class="QLabel" name="label_13">
+                           <widget class="QLabel" name="lbl_type_load_asce_7_sd1">
                             <property name="text">
                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;S&lt;span style=&quot; vertical-align:sub;&quot;&gt;D1 &lt;/span&gt;(g):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
                           <item row="1" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_12">
+                           <widget class="QDoubleSpinBox" name="spx_type_load_asce_7_sd1">
                             <property name="sizePolicy">
                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                               <horstretch>0</horstretch>
@@ -326,14 +326,14 @@
                            </widget>
                           </item>
                           <item row="2" column="0">
-                           <widget class="QLabel" name="label_14">
+                           <widget class="QLabel" name="lbl_type_load_asce_7_tl">
                             <property name="text">
                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;T&lt;span style=&quot; vertical-align:sub;&quot;&gt;L &lt;/span&gt;(sec):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
                           <item row="2" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_13">
+                           <widget class="QDoubleSpinBox" name="spx_type_load_asce_7_tl">
                             <property name="sizePolicy">
                              <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
                               <horstretch>0</horstretch>
