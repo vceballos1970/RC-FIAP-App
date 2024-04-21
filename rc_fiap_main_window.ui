@@ -594,71 +594,71 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="groupBox_10">
+                 <widget class="QGroupBox" name="gbx_frame_tributary">
                   <property name="title">
                    <string>Frame tributary gravity loading</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_18">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_12">
+                    <layout class="QFormLayout" name="lay_frame_tributary">
                      <item row="0" column="0">
-                      <widget class="QLabel" name="lbl_dead_load">
+                      <widget class="QLabel" name="lbl__frame_tributary_dead_load">
                        <property name="text">
                         <string>Dead load (kN/M2)</string>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QDoubleSpinBox" name="spx_dead_load"/>
+                      <widget class="QDoubleSpinBox" name="spx_frame_tributary_dead_load"/>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QLabel" name="lbl_live_load">
+                      <widget class="QLabel" name="lbl__frame_tributary_live_load">
                        <property name="text">
                         <string>Live load (kN/M2)</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QDoubleSpinBox" name="spx_live_load"/>
+                      <widget class="QDoubleSpinBox" name="spx_frame_tributary_live_load"/>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QLabel" name="lbl_tributary_length_gravity">
+                      <widget class="QLabel" name="lbl__frame_tributary_tributary_length_gravity">
                        <property name="text">
                         <string>Tributary length for gravity</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="1">
-                      <widget class="QSpinBox" name="spx_tributary_length_gravity"/>
+                      <widget class="QSpinBox" name="spx_frame_tributary_tributary_length_gravity"/>
                      </item>
                      <item row="3" column="0">
-                      <widget class="QLabel" name="lbl_tributary_length_seismic">
+                      <widget class="QLabel" name="lbl_frame_tributary_tributary_length_seismic">
                        <property name="text">
                         <string>Tributary length for seismic</string>
                        </property>
                       </widget>
                      </item>
                      <item row="3" column="1">
-                      <widget class="QDoubleSpinBox" name="spx_tributary_length_seismic"/>
+                      <widget class="QDoubleSpinBox" name="spx_frame_tributary_tributary_length_seismic"/>
                      </item>
                      <item row="4" column="0">
-                      <widget class="QLabel" name="lbl_pdelta_leaning_column">
+                      <widget class="QLabel" name="lbl__frame_tributary_pdelta_leaning_column">
                        <property name="text">
                         <string>PDelta leaning column</string>
                        </property>
                       </widget>
                      </item>
                      <item row="4" column="1">
-                      <layout class="QGridLayout" name="gridLayout_19">
+                      <layout class="QGridLayout" name="lay__frame_tributary_pdelta">
                        <item row="0" column="0">
-                        <widget class="QRadioButton" name="radioButton_3">
+                        <widget class="QRadioButton" name="rbn_frame_tributary_yes">
                          <property name="text">
                           <string>Yes</string>
                          </property>
                         </widget>
                        </item>
                        <item row="0" column="1">
-                        <widget class="QRadioButton" name="radioButton_4">
+                        <widget class="QRadioButton" name="rbn_frame_tributary_no">
                          <property name="text">
                           <string>No</string>
                          </property>
@@ -667,14 +667,14 @@
                       </layout>
                      </item>
                      <item row="5" column="0">
-                      <widget class="QLabel" name="lbl_inertia">
+                      <widget class="QLabel" name="lbl__frame_tributary_inertia">
                        <property name="text">
                         <string>Inertia</string>
                        </property>
                       </widget>
                      </item>
                      <item row="5" column="1">
-                      <widget class="QSpinBox" name="spx_inertia"/>
+                      <widget class="QSpinBox" name="spx_frame_tributary_inertia"/>
                      </item>
                     </layout>
                    </item>
