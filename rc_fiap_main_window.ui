@@ -188,7 +188,7 @@
                         </widget>
                        </item>
                        <item>
-                        <widget class="QDoubleSpinBox" name="doubleSpinBox_7">
+                        <widget class="QDoubleSpinBox" name="spx_seismic_load_r">
                          <property name="alignment">
                           <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                          </property>
@@ -205,7 +205,7 @@
                         </widget>
                        </item>
                        <item>
-                        <widget class="QDoubleSpinBox" name="doubleSpinBox_8"/>
+                        <widget class="QDoubleSpinBox" name="spx_seismic_load_cd"/>
                        </item>
                        <item>
                         <widget class="QLabel" name="lbl__seismic_load_omega">
@@ -218,10 +218,10 @@
                         </widget>
                        </item>
                        <item>
-                        <widget class="QDoubleSpinBox" name="doubleSpinBox_9"/>
+                        <widget class="QDoubleSpinBox" name="spx_seismic_load_omega"/>
                        </item>
                        <item>
-                        <widget class="QLabel" name="_seismic_load_i">
+                        <widget class="QLabel" name="lbl_seismic_load_i">
                          <property name="text">
                           <string>I:</string>
                          </property>
@@ -231,7 +231,7 @@
                         </widget>
                        </item>
                        <item>
-                        <widget class="QDoubleSpinBox" name="doubleSpinBox_10"/>
+                        <widget class="QDoubleSpinBox" name="spx__seismic_load_i"/>
                        </item>
                       </layout>
                      </item>
