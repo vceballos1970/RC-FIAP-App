@@ -567,22 +567,22 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="groupBox_4">
+                 <widget class="QGroupBox" name="gbx_frame_type">
                   <property name="title">
                    <string>Frame type:</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_11">
                    <item row="0" column="0">
-                    <layout class="QGridLayout" name="gridLayout_16">
+                    <layout class="QGridLayout" name="lay_frame_type">
                      <item row="0" column="0">
-                      <widget class="QRadioButton" name="radioButton">
+                      <widget class="QRadioButton" name="rbn_frame_type_spatial">
                        <property name="text">
                         <string>Spatial</string>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QRadioButton" name="radioButton_2">
+                      <widget class="QRadioButton" name="rbn_frame_type_perimetral">
                        <property name="text">
                         <string>Perimetral</string>
                        </property>
@@ -682,29 +682,29 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="groupBox_11">
+                 <widget class="QGroupBox" name="gbx_member">
                   <property name="title">
                    <string>Member</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_21">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_13">
+                    <layout class="QFormLayout" name="lay_member">
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label_25">
+                      <widget class="QLabel" name="lbl_member_member">
                        <property name="text">
                         <string>Member</string>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLabel" name="label_26">
+                      <widget class="QLabel" name="lbl_member_moment_for_intertia">
                        <property name="text">
                         <string>Moment of inertia for elastic analysis</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QLabel" name="label_27">
+                      <widget class="QLabel" name="lbl_member_columns">
                        <property name="text">
                         <string>Columns:</string>
                        </property>
@@ -714,24 +714,24 @@
                       <widget class="QSpinBox" name="spinBox"/>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QLabel" name="label_28">
+                      <widget class="QLabel" name="lbl_member_beam">
                        <property name="text">
                         <string>Beam:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_21"/>
+                      <widget class="QDoubleSpinBox" name="spx_member_beam"/>
                      </item>
                      <item row="3" column="0">
-                      <widget class="QLabel" name="label_29">
+                      <widget class="QLabel" name="lbl_member_walls">
                        <property name="text">
                         <string>Walls:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="3" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_22"/>
+                      <widget class="QDoubleSpinBox" name="spx_member_walls"/>
                      </item>
                     </layout>
                    </item>
@@ -751,44 +751,44 @@
                    <item row="0" column="0">
                     <layout class="QFormLayout" name="frm_materials">
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label_30">
+                      <widget class="QLabel" name="lbl_materials_f_long">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;span style=&quot; vertical-align:sub;&quot;&gt;y&lt;/span&gt; long. (MPa):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_23"/>
+                      <widget class="QDoubleSpinBox" name="spx_materials_f_long"/>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QLabel" name="label_31">
+                      <widget class="QLabel" name="lbl_materials_f_trans">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f&lt;span style=&quot; vertical-align:sub;&quot;&gt;y&lt;/span&gt; transv. (MPa):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_24"/>
+                      <widget class="QDoubleSpinBox" name="spx_materials_f_transv"/>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QLabel" name="label_32">
+                      <widget class="QLabel" name="lbl_materials_f_beams">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f´&lt;span style=&quot; vertical-align:sub;&quot;&gt;c&lt;/span&gt; beams (MPa):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_25"/>
+                      <widget class="QDoubleSpinBox" name="spx_materials_f_beams"/>
                      </item>
                      <item row="3" column="0">
-                      <widget class="QLabel" name="label_33">
+                      <widget class="QLabel" name="spx_materials_f_columns_2">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;f´&lt;span style=&quot; vertical-align:sub;&quot;&gt;c&lt;/span&gt; columns (MPa):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item row="3" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_26"/>
+                      <widget class="QDoubleSpinBox" name="spx_materials_f_columns"/>
                      </item>
                     </layout>
                    </item>
