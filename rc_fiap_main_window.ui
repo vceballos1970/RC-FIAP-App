@@ -942,13 +942,13 @@ moment strength ratio:</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="groupBox_14">
+                 <widget class="QGroupBox" name="gbx_design">
                   <property name="title">
                    <string>Design</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_28">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_16">
+                    <layout class="QFormLayout" name="frm_design">
                      <item row="0" column="0">
                       <widget class="QLabel" name="lbl_design_code">
                        <property name="text">
@@ -957,37 +957,37 @@ moment strength ratio:</string>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QComboBox" name="comboBox_2"/>
+                      <widget class="QComboBox" name="cbx_design_design_code"/>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QLabel" name="label_38">
+                      <widget class="QLabel" name="lbl_design_frame_seismic">
                        <property name="text">
                         <string>Frame seismic detailing:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QComboBox" name="comboBox_3"/>
+                      <widget class="QComboBox" name="cbx_design_frame_seismic"/>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QLabel" name="label_39">
+                      <widget class="QLabel" name="lbl_design_walls_seismic">
                        <property name="text">
                         <string>Wall seismic detailing:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="1">
-                      <widget class="QWidget" name="widget_5" native="true">
+                      <widget class="QWidget" name="wgt_design_wall_seismic_detailing" native="true">
                        <layout class="QGridLayout" name="gridLayout_29">
                         <item row="0" column="0">
-                         <layout class="QHBoxLayout" name="horizontalLayout_2">
+                         <layout class="QHBoxLayout" name="lay_design_wall_seismic_detailing">
                           <item>
-                           <widget class="QComboBox" name="comboBox_4"/>
+                           <widget class="QComboBox" name="cbx_design_wall_seismic_detailing"/>
+                          </item>
+                          <item>
+                           <widget class="QDoubleSpinBox" name="spx_design_wall_seismic_detailing"/>
                           </item>
                          </layout>
-                        </item>
-                        <item row="0" column="1">
-                         <widget class="QDoubleSpinBox" name="doubleSpinBox_33"/>
                         </item>
                        </layout>
                       </widget>
