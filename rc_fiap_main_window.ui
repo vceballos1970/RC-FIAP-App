@@ -820,30 +820,30 @@ moment strength ratio:</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="groupBox_13">
+                 <widget class="QGroupBox" name="gbx_frame_wall_system">
                   <property name="title">
                    <string>Frame-wall system input data:</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_23">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_15">
+                    <layout class="QFormLayout" name="frm_frame_wall_system">
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label_35">
+                      <widget class="QLabel" name="lbl_frame_wall_system_number_frames">
                        <property name="text">
                         <string>Number of frames:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QSpinBox" name="spinBox_2"/>
+                      <widget class="QSpinBox" name="spx_frame_wall_system_number_frames"/>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QWidget" name="widget" native="true">
+                      <widget class="QWidget" name="wgt_frame_wall_system_walls" native="true">
                        <layout class="QGridLayout" name="gridLayout_24">
                         <item row="0" column="0">
-                         <layout class="QHBoxLayout" name="horizontalLayout_4">
+                         <layout class="QHBoxLayout" name="lay__frame_wall_system_walls">
                           <item>
-                           <widget class="QLabel" name="label_36">
+                           <widget class="QLabel" name="lbl_frame_wall_system_walls_wall1">
                             <property name="text">
                              <string>Wall 1</string>
                             </property>
@@ -853,7 +853,7 @@ moment strength ratio:</string>
                            </widget>
                           </item>
                           <item>
-                           <widget class="QLabel" name="label_37">
+                           <widget class="QLabel" name="lbl_frame_wall_system_walls_wall2">
                             <property name="text">
                              <string>Wall 2</string>
                             </property>
@@ -868,22 +868,22 @@ moment strength ratio:</string>
                       </widget>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QLabel" name="lbl_tw">
+                      <widget class="QLabel" name="lbl_frame_wall_system_tw">
                        <property name="text">
                         <string>tw (m):</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="1">
-                      <widget class="QWidget" name="widget_2" native="true">
+                      <widget class="QWidget" name="wgt_frame_wall_system_tw" native="true">
                        <layout class="QGridLayout" name="gridLayout_25">
                         <item row="0" column="0">
-                         <layout class="QHBoxLayout" name="horizontalLayout_5">
+                         <layout class="QHBoxLayout" name="lay_frame_wall_system_tw">
                           <item>
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_28"/>
+                           <widget class="QDoubleSpinBox" name="spx_frame_wall_system_tw_wall1"/>
                           </item>
                           <item>
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_29"/>
+                           <widget class="QDoubleSpinBox" name="spx_frame_wall_system_tw_wall2"/>
                           </item>
                          </layout>
                         </item>
@@ -891,22 +891,22 @@ moment strength ratio:</string>
                       </widget>
                      </item>
                      <item row="3" column="0">
-                      <widget class="QLabel" name="lbl_lw">
+                      <widget class="QLabel" name="lbl__frame_wall_system_lw">
                        <property name="text">
                         <string>lw (m):</string>
                        </property>
                       </widget>
                      </item>
                      <item row="3" column="1">
-                      <widget class="QWidget" name="widget_3" native="true">
+                      <widget class="QWidget" name="wgt_frame_wall_system_lw" native="true">
                        <layout class="QGridLayout" name="gridLayout_26">
                         <item row="0" column="0">
-                         <layout class="QHBoxLayout" name="horizontalLayout_6">
+                         <layout class="QHBoxLayout" name="lay_frame_wall_system_lw">
                           <item>
-                           <widget class="QSpinBox" name="spinBox_3"/>
+                           <widget class="QSpinBox" name="spx_frame_wall_system_lw_wall2"/>
                           </item>
                           <item>
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_30"/>
+                           <widget class="QDoubleSpinBox" name="spx_frame_wall_system_lw_wall1"/>
                           </item>
                          </layout>
                         </item>
@@ -914,22 +914,22 @@ moment strength ratio:</string>
                       </widget>
                      </item>
                      <item row="4" column="0">
-                      <widget class="QLabel" name="lbl_af">
+                      <widget class="QLabel" name="lbl__frame_wall_system_af">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Af (m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item row="4" column="1">
-                      <widget class="QWidget" name="widget_4" native="true">
+                      <widget class="QWidget" name="wgt_frame_wall_system_af" native="true">
                        <layout class="QGridLayout" name="gridLayout_27">
                         <item row="0" column="0">
-                         <layout class="QHBoxLayout" name="horizontalLayout_7">
+                         <layout class="QHBoxLayout" name="lay_frame_wall_system_af">
                           <item>
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_31"/>
+                           <widget class="QDoubleSpinBox" name="spx_frame_wall_system_af_wall1"/>
                           </item>
                           <item>
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_32"/>
+                           <widget class="QDoubleSpinBox" name="spx_frame_wall_system__af_wall2"/>
                           </item>
                          </layout>
                         </item>
