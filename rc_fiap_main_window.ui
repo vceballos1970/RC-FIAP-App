@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -1031,7 +1031,7 @@ moment strength ratio:</string>
     </item>
    </layout>
   </widget>
-  <widget class="QMenuBar" name="menubar">
+  <widget class="QMenuBar" name="mbr_principal">
    <property name="geometry">
     <rect>
      <x>0</x>
@@ -1040,39 +1040,37 @@ moment strength ratio:</string>
      <height>21</height>
     </rect>
    </property>
-   <widget class="QMenu" name="menuFile">
+   <widget class="QMenu" name="mnu_file">
     <property name="title">
-     <string>File</string>
+     <string>Archivo</string>
     </property>
+    <addaction name="mni_load_file"/>
     <addaction name="separator"/>
-    <addaction name="separator"/>
-    <addaction name="actionLoad_file"/>
-    <addaction name="separator"/>
-    <addaction name="actionExit"/>
+    <addaction name="mni_exit"/>
    </widget>
-   <widget class="QMenu" name="menuHelp">
+   <widget class="QMenu" name="mnu_ayuda">
     <property name="title">
-     <string>Help</string>
+     <string>Ayuda</string>
     </property>
-    <addaction name="actionAbout"/>
+    <addaction name="mni_acerca_de"/>
    </widget>
-   <addaction name="menuFile"/>
-   <addaction name="menuHelp"/>
+   <addaction name="mnu_file"/>
+   <addaction name="mnu_ayuda"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionLoad_file">
+  <action name="mni_load_file">
    <property name="text">
     <string>Load file...</string>
    </property>
   </action>
-  <action name="actionExit">
+  <action name="mni_exit">
    <property name="text">
     <string>Exit</string>
    </property>
   </action>
-  <action name="actionAbout">
+  <action name="mni_acerca_de">
    <property name="text">
-    <string>About...</string>
+    <string>Acerca de...</string>
    </property>
   </action>
  </widget>
