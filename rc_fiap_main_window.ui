@@ -796,15 +796,15 @@
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="groupBox_12">
+                 <widget class="QGroupBox" name="gbx_column_beam">
                   <property name="title">
                    <string>Column-to-beam</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_22">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_14">
+                    <layout class="QFormLayout" name="frm_column_beam">
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label_34">
+                      <widget class="QLabel" name="lbl__column_beam_minimum_column">
                        <property name="text">
                         <string>Minimum column-to-beam
 moment strength ratio:</string>
@@ -812,7 +812,7 @@ moment strength ratio:</string>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_27"/>
+                      <widget class="QDoubleSpinBox" name="spx_column_beam_minimum_column"/>
                      </item>
                     </layout>
                    </item>
