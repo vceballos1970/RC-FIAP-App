@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2550</width>
-    <height>1338</height>
+    <height>1330</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1078,7 +1078,241 @@ moment strength ratio:</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_3">
             <item row="0" column="0">
-             <layout class="QVBoxLayout" name="verticalLayout"/>
+             <widget class="MplWidget" name="mpl_design_results" native="true">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="MinimumExpanding" vsizetype="MinimumExpanding">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2" rowspan="3">
+             <layout class="QVBoxLayout" name="verticalLayout">
+              <item>
+               <widget class="QTableWidget" name="tbl_data_design_columns">
+                <attribute name="horizontalHeaderDefaultSectionSize">
+                 <number>70</number>
+                </attribute>
+                <column>
+                 <property name="text">
+                  <string>ID</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>b
+[cm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>h
+[cm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>ρ</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>db
+[mm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>dst
+[mm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>nbH</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>nbB</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Leg # H</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Leg # B</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Sstirrup
+[cm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Vu/Vn</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tbl_data_design_beams">
+                <property name="styleSheet">
+                 <string notr="true">font: 8pt &quot;MS Shell Dlg 2&quot;;</string>
+                </property>
+                <column>
+                 <property name="text">
+                  <string>ID</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>b
+[cm]</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <weight>50</weight>
+                   <bold>false</bold>
+                  </font>
+                 </property>
+                 <property name="background">
+                  <color>
+                   <red>0</red>
+                   <green>0</green>
+                   <blue>0</blue>
+                  </color>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>h
+[cm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>L-end
+ρ_top</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>L-end
+ρ_bot</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>L-end
+Leg #</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>L-end
+Sstirrup
+[cm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>R-end
+ρ_top</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>R-end
+ρ_bot</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>R-end
+Leg #</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>R-end
+Sstirrup
+[cm]</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+              <item>
+               <widget class="QTableWidget" name="tbl_data_design_walls">
+                <column>
+                 <property name="text">
+                  <string>ID</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>tw
+[cm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>lw
+[cm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>ρl</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>ρt</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>db
+[mm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>dst
+[mm]</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>c/lw</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>σc/f'c</string>
+                 </property>
+                 <property name="font">
+                  <font>
+                   <pointsize>9</pointsize>
+                  </font>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Boundary
+Elements</string>
+                 </property>
+                </column>
+               </widget>
+              </item>
+             </layout>
             </item>
            </layout>
           </widget>
@@ -1203,6 +1437,14 @@ moment strength ratio:</string>
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>MplWidget</class>
+   <extends>QWidget</extends>
+   <header>mplwidget.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
