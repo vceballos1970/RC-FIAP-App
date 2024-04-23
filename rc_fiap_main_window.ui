@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>0</number>
+           <number>1</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -1127,9 +1127,30 @@ moment strength ratio:</string>
     <property name="title">
      <string>Design Results</string>
     </property>
-    <addaction name="mni_load_beam_data"/>
-    <addaction name="mni_load_column_data"/>
-    <addaction name="mni_load_row_data"/>
+    <widget class="QMenu" name="mnu_beam_data">
+     <property name="title">
+      <string>Beam data</string>
+     </property>
+     <addaction name="mni_beam_data_import"/>
+     <addaction name="mni_beam_data_export"/>
+    </widget>
+    <widget class="QMenu" name="mnu_column_data">
+     <property name="title">
+      <string>Column data</string>
+     </property>
+     <addaction name="mni_column_data_import"/>
+     <addaction name="mni_column_data_export"/>
+    </widget>
+    <widget class="QMenu" name="mnu_wall_data">
+     <property name="title">
+      <string>Wall data from Excel...</string>
+     </property>
+     <addaction name="mni_wall_data_import"/>
+     <addaction name="mni_wall_data_export"/>
+    </widget>
+    <addaction name="mnu_beam_data"/>
+    <addaction name="mnu_column_data"/>
+    <addaction name="mnu_wall_data"/>
    </widget>
    <addaction name="mnu_file"/>
    <addaction name="mnu_design_results"/>
@@ -1151,19 +1172,34 @@ moment strength ratio:</string>
     <string>Acerca de...</string>
    </property>
   </action>
-  <action name="mni_load_beam_data">
+  <action name="mni_beam_data_import">
    <property name="text">
-    <string>Load beam data from Excel...</string>
+    <string>Import from Excel...</string>
    </property>
   </action>
-  <action name="mni_load_column_data">
+  <action name="mni_beam_data_export">
    <property name="text">
-    <string>Load column data from Excel...</string>
+    <string>Export to Excel...</string>
    </property>
   </action>
-  <action name="mni_load_row_data">
+  <action name="mni_column_data_export">
    <property name="text">
-    <string>Load wall data from Excel...</string>
+    <string>Export to Excel...</string>
+   </property>
+  </action>
+  <action name="mni_column_data_import">
+   <property name="text">
+    <string>Import from Excel...</string>
+   </property>
+  </action>
+  <action name="mni_wall_data_import">
+   <property name="text">
+    <string>Import from Excel...</string>
+   </property>
+  </action>
+  <action name="mni_wall_data_export">
+   <property name="text">
+    <string>Export to Excel...</string>
    </property>
   </action>
  </widget>
