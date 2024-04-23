@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>1</number>
+           <number>0</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -840,6 +840,18 @@ moment strength ratio:</string>
                      <item row="1" column="1">
                       <widget class="QWidget" name="wgt_frame_wall_system_walls" native="true">
                        <layout class="QGridLayout" name="gridLayout_24">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
                         <item row="0" column="0">
                          <layout class="QHBoxLayout" name="lay__frame_wall_system_walls">
                           <item>
@@ -869,14 +881,35 @@ moment strength ratio:</string>
                      </item>
                      <item row="2" column="0">
                       <widget class="QLabel" name="lbl_frame_wall_system_tw">
+                       <property name="sizePolicy">
+                        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                         <horstretch>0</horstretch>
+                         <verstretch>0</verstretch>
+                        </sizepolicy>
+                       </property>
                        <property name="text">
                         <string>tw (m):</string>
+                       </property>
+                       <property name="alignment">
+                        <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="1">
                       <widget class="QWidget" name="wgt_frame_wall_system_tw" native="true">
                        <layout class="QGridLayout" name="gridLayout_25">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
                         <item row="0" column="0">
                          <layout class="QHBoxLayout" name="lay_frame_wall_system_tw">
                           <item>
@@ -900,6 +933,18 @@ moment strength ratio:</string>
                      <item row="3" column="1">
                       <widget class="QWidget" name="wgt_frame_wall_system_lw" native="true">
                        <layout class="QGridLayout" name="gridLayout_26">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
                         <item row="0" column="0">
                          <layout class="QHBoxLayout" name="lay_frame_wall_system_lw">
                           <item>
@@ -923,6 +968,18 @@ moment strength ratio:</string>
                      <item row="4" column="1">
                       <widget class="QWidget" name="wgt_frame_wall_system_af" native="true">
                        <layout class="QGridLayout" name="gridLayout_27">
+                        <property name="leftMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="topMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="rightMargin">
+                         <number>0</number>
+                        </property>
+                        <property name="bottomMargin">
+                         <number>0</number>
+                        </property>
                         <item row="0" column="0">
                          <layout class="QHBoxLayout" name="lay_frame_wall_system_af">
                           <item>
