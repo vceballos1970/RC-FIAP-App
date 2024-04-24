@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>1</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -1313,6 +1313,16 @@ Elements</string>
                </widget>
               </item>
              </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_nonlinear_parameters">
+           <attribute name="title">
+            <string>Nonlinear parameters</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_16">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="lay_nonlinear_parameters"/>
             </item>
            </layout>
           </widget>
