@@ -1318,11 +1318,83 @@ Elements</string>
           </widget>
           <widget class="QWidget" name="tab_nonlinear_parameters">
            <attribute name="title">
-            <string>Nonlinear parameters</string>
+            <string>Nonlinear Parameters</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_16">
             <item row="0" column="0">
-             <layout class="QVBoxLayout" name="lay_nonlinear_parameters"/>
+             <layout class="QVBoxLayout" name="lay_nonlinear_parameters">
+              <item>
+               <layout class="QHBoxLayout" name="lay_nonlinear_parameters_row1">
+                <item>
+                 <widget class="QGroupBox" name="gbx_columns_beams_plastic_hinge">
+                  <property name="title">
+                   <string>Columns and beams plastic hinge length lp</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_19">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="formLayout">
+                     <item row="0" column="0">
+                      <widget class="QRadioButton" name="radioButton">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QLabel" name="label">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt; = 0.5H&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QRadioButton" name="radioButton_2">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt; = 0.08l + 0.022d&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;f&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;y &lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;(Priestley and Park)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QRadioButton" name="radioButton_3">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QLabel" name="label_3">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; = 0.05l + 0.1d&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;f&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;y &lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;/ √f'&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;c &lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;(Berry)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="gbx_columns_beams_plastic_hinge_walls_plastic">
+                  <property name="title">
+                   <string>Walls plastic hinge length lp</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_30">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="formLayout_2"/>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
             </item>
            </layout>
           </widget>
