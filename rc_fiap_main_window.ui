@@ -1387,7 +1387,64 @@ Elements</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_30">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout_2"/>
+                    <layout class="QFormLayout" name="frm_walls_plastic_hinge_length">
+                     <item row="0" column="0">
+                      <widget class="QRadioButton" name="radioButton">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QLabel" name="label">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt; = 0.2l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;w&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;+0.044(M/V) (Priestley)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QRadioButton" name="radioButton_2">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; = 0.2l&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;w&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;+0.05(M/V)(1-1.5P/(f'A&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;g&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;))&lt;/span&gt;&lt;span style=&quot; font-family:'arial,sans-serif'; font-size:10pt; color:#202124; background-color:#ffffff;&quot;&gt;≤&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;0.8l&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;w&lt;/span&gt;&lt;span style=&quot; font-family:'arial,sans-serif'; font-size:10pt; color:#202124; background-color:#ffffff; vertical-align:sub;&quot;/&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;(Bohl)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QRadioButton" name="radioButton_3">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QLabel" name="label_3">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt; = 0.27l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;w&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;(1-P/(f&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:super;&quot;&gt;'&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;g&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;))(1-f&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;y&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;ρ&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;sh&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;/f'&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;)(M/V/l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;w&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;)&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:super;&quot;&gt;0.45&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;(Kazaz)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QRadioButton" name="radioButton_4">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QLabel" name="label_4">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt; = average of the above&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
                    </item>
                   </layout>
                  </widget>
