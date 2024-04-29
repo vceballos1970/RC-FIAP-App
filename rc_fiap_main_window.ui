@@ -1334,7 +1334,7 @@ Elements</string>
                    <item row="0" column="0">
                     <layout class="QFormLayout" name="frm_columns_beams_plastic_hinge">
                      <item row="0" column="0">
-                      <widget class="QRadioButton" name="radioButton">
+                      <widget class="QRadioButton" name="rbn_columns_beams_plastic_hinge_lp1">
                        <property name="text">
                         <string/>
                        </property>
@@ -1348,7 +1348,7 @@ Elements</string>
                       </widget>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QRadioButton" name="radioButton_2">
+                      <widget class="QRadioButton" name="rbn_columns_beams_plastic_hinge_lp2">
                        <property name="text">
                         <string/>
                        </property>
@@ -1362,7 +1362,7 @@ Elements</string>
                       </widget>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QRadioButton" name="radioButton_3">
+                      <widget class="QRadioButton" name="rbn_columns_beams_plastic_hinge_lp3">
                        <property name="text">
                         <string/>
                        </property>
