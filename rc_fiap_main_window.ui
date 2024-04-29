@@ -1460,14 +1460,14 @@ Elements</string>
                      <item row="0" column="0">
                       <layout class="QFormLayout" name="frm_rayleigh_damping_model">
                        <item row="1" column="0">
-                        <widget class="QRadioButton" name="radioButton_2">
+                        <widget class="QRadioButton" name="rbn_asce_41_17">
                          <property name="text">
                           <string>ASCE 41-17 (7.4.4.4)</string>
                          </property>
                         </widget>
                        </item>
                        <item row="0" column="0">
-                        <widget class="QRadioButton" name="radioButton">
+                        <widget class="QRadioButton" name="rbn_based_on_t1_t3">
                          <property name="text">
                           <string>Based on T1 and T3</string>
                          </property>
@@ -1476,40 +1476,40 @@ Elements</string>
                       </layout>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QLabel" name="label">
+                      <widget class="QLabel" name="lbl_target_damping_ratio">
                        <property name="text">
                         <string>Target damping ratio (%):</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+                      <widget class="QDoubleSpinBox" name="spx_target_damping_ratio"/>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QLabel" name="label_2">
+                      <widget class="QLabel" name="lbl_stiffness_matrix">
                        <property name="text">
                         <string>Sitffness matrix</string>
                        </property>
                       </widget>
                      </item>
                      <item row="3" column="0">
-                      <layout class="QVBoxLayout" name="verticalLayout_2">
+                      <layout class="QVBoxLayout" name="lay_stiffness_matrix">
                        <item>
-                        <widget class="QRadioButton" name="radioButton_3">
+                        <widget class="QRadioButton" name="rbn_stiffness_matrix_current">
                          <property name="text">
                           <string>Current</string>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QRadioButton" name="radioButton_4">
+                        <widget class="QRadioButton" name="rbn_stiffness_matrix_initial">
                          <property name="text">
                           <string>Initial</string>
                          </property>
                         </widget>
                        </item>
                        <item>
-                        <widget class="QRadioButton" name="radioButton_5">
+                        <widget class="QRadioButton" name="rbn_stiffness_matrix_committed">
                          <property name="text">
                           <string>Committed</string>
                          </property>
