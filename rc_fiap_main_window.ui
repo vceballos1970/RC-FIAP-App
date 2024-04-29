@@ -1449,6 +1449,79 @@ Elements</string>
                   </layout>
                  </widget>
                 </item>
+                <item>
+                 <widget class="QGroupBox" name="gbx_rayleigh_damping_model">
+                  <property name="title">
+                   <string>Rayleigh damping model</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_31">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="frm_reyleigh_damping_model">
+                     <item row="0" column="0">
+                      <layout class="QFormLayout" name="frm_rayleigh_damping_model">
+                       <item row="1" column="0">
+                        <widget class="QRadioButton" name="radioButton_2">
+                         <property name="text">
+                          <string>ASCE 41-17 (7.4.4.4)</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item row="0" column="0">
+                        <widget class="QRadioButton" name="radioButton">
+                         <property name="text">
+                          <string>Based on T1 and T3</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label">
+                       <property name="text">
+                        <string>Target damping ratio (%):</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string>Sitffness matrix</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <layout class="QVBoxLayout" name="verticalLayout_2">
+                       <item>
+                        <widget class="QRadioButton" name="radioButton_3">
+                         <property name="text">
+                          <string>Current</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QRadioButton" name="radioButton_4">
+                         <property name="text">
+                          <string>Initial</string>
+                         </property>
+                        </widget>
+                       </item>
+                       <item>
+                        <widget class="QRadioButton" name="radioButton_5">
+                         <property name="text">
+                          <string>Committed</string>
+                         </property>
+                        </widget>
+                       </item>
+                      </layout>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
                </layout>
               </item>
              </layout>
