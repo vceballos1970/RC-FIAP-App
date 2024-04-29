@@ -1332,7 +1332,7 @@ Elements</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_19">
                    <item row="0" column="0">
-                    <layout class="QFormLayout" name="formLayout">
+                    <layout class="QFormLayout" name="frm_columns_beams_plastic_hinge">
                      <item row="0" column="0">
                       <widget class="QRadioButton" name="radioButton">
                        <property name="text">
@@ -1341,7 +1341,7 @@ Elements</string>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QLabel" name="label">
+                      <widget class="QLabel" name="lbl_columns_beams_plastic_hinge_lp1">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt; = 0.5H&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
@@ -1355,7 +1355,7 @@ Elements</string>
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLabel" name="label_2">
+                      <widget class="QLabel" name="lbl_columns_beams_plastic_hinge_lp2">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt; = 0.08l + 0.022d&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;f&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;y &lt;/span&gt;&lt;span style=&quot; font-style:italic;&quot;&gt;(Priestley and Park)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
@@ -1369,7 +1369,7 @@ Elements</string>
                       </widget>
                      </item>
                      <item row="2" column="1">
-                      <widget class="QLabel" name="label_3">
+                      <widget class="QLabel" name="lbl_columns_beams_plastic_hinge_lp3">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;p&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; = 0.05l + 0.1d&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;b&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;f&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;y &lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;/ √f'&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;c &lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;(Berry)&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
