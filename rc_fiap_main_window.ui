@@ -1798,7 +1798,7 @@ Elements</string>
                       <widget class="QWidget" name="wdg_infill_model_nonlinear_asce_4117" native="true">
                        <layout class="QGridLayout" name="gridLayout_40">
                         <item row="0" column="0">
-                         <widget class="QLabel" name="label_5">
+                         <widget class="QLabel" name="lbl_space_1">
                           <property name="text">
                            <string/>
                           </property>
@@ -1856,24 +1856,24 @@ Elements</string>
                       </widget>
                      </item>
                      <item row="4" column="1">
-                      <widget class="QWidget" name="widget_2" native="true">
+                      <widget class="QWidget" name="wdg_nonlinear_manual" native="true">
                        <layout class="QGridLayout" name="gridLayout_41">
                         <item row="1" column="0">
-                         <layout class="QFormLayout" name="formLayout_4">
+                         <layout class="QFormLayout" name="frm_nonlinear_manual">
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label_8">
+                           <widget class="QLabel" name="lbl_nonlinear_manual_fm">
                             <property name="text">
                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;f´&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;m θ&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; (MPa):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
                           <item row="0" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_7"/>
+                           <widget class="QDoubleSpinBox" name="spx_nonlinear_manual_fm"/>
                           </item>
                          </layout>
                         </item>
                         <item row="0" column="0">
-                         <widget class="QLabel" name="label_9">
+                         <widget class="QLabel" name="lbl_space_2">
                           <property name="text">
                            <string/>
                           </property>
@@ -1888,10 +1888,33 @@ Elements</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="groupBox">
+                 <widget class="QGroupBox" name="gbx_operations">
                   <property name="title">
-                   <string>GroupBox</string>
+                   <string>Operations</string>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_42">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="formLayout_3">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="lbl_number_elements_macro_fibers">
+                       <property name="text">
+                        <string>Number of elements macro-fibers MVLEM:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QSpinBox" name="spx_number_elements_macro_fibers"/>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QPushButton" name="btn_create_nonlinear_model">
+                       <property name="text">
+                        <string>Create Nonlinear Model</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
