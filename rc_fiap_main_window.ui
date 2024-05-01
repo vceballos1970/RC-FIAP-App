@@ -1653,6 +1653,26 @@ Elements</string>
                   <property name="title">
                    <string>Element model wall</string>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_36">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="frm_element_model_wall">
+                     <item row="0" column="0">
+                      <widget class="QRadioButton" name="rbn_element_model_wall_force_beam_column">
+                       <property name="text">
+                        <string>Force Beam Column</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QRadioButton" name="rbn_element_model_wall_nvlem">
+                       <property name="text">
+                        <string>MVLEM</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                </layout>
