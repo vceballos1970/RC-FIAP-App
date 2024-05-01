@@ -1759,43 +1759,43 @@ Elements</string>
                 <item>
                  <widget class="QGroupBox" name="gbx_infill_model_wall_row3">
                   <property name="title">
-                   <string>GroupBox</string>
+                   <string>Infill model wall</string>
                   </property>
                   <layout class="QGridLayout" name="gridLayout_39">
                    <item row="0" column="0">
                     <layout class="QFormLayout" name="frm_infill_model_wall_row3">
                      <item row="0" column="0">
-                      <widget class="QLabel" name="label">
+                      <widget class="QLabel" name="lbl_infill_model_tw">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;t&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;w&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; (mm):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+                      <widget class="QDoubleSpinBox" name="spx_infill_model_tw"/>
                      </item>
                      <item row="1" column="0">
-                      <widget class="QLabel" name="label_2">
+                      <widget class="QLabel" name="lbl_infill_model_central_strut_area">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;Central strut area (%):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+                      <widget class="QDoubleSpinBox" name="spx_infill_model_central_strut_area"/>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QLabel" name="label_3">
+                      <widget class="QLabel" name="lbl_infill_model_numbers_bare_frame">
                        <property name="text">
                         <string>Numbers of bare frame:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="1">
-                      <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
+                      <widget class="QDoubleSpinBox" name="spx_infill_model_numbers_bare_frame"/>
                      </item>
                      <item row="3" column="1">
-                      <widget class="QWidget" name="widget" native="true">
+                      <widget class="QWidget" name="wdg_infill_model_nonlinear_asce_4117" native="true">
                        <layout class="QGridLayout" name="gridLayout_40">
                         <item row="0" column="0">
                          <widget class="QLabel" name="label_5">
@@ -1805,36 +1805,36 @@ Elements</string>
                          </widget>
                         </item>
                         <item row="1" column="0">
-                         <layout class="QFormLayout" name="formLayout_3">
+                         <layout class="QFormLayout" name="frm_infill_model_nonlinear_asce_4117">
                           <item row="1" column="0">
-                           <widget class="QLabel" name="label_4">
+                           <widget class="QLabel" name="lbl_infill_model_nonlinear_4117_fm">
                             <property name="text">
                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;f´&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;m &lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; (MPa):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
                           <item row="1" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_4"/>
+                           <widget class="QDoubleSpinBox" name="spx_infill_model_nonlinear_4117_fm"/>
                           </item>
                           <item row="2" column="0">
-                           <widget class="QLabel" name="label_6">
+                           <widget class="QLabel" name="lbl_infill_model_nonlinear_4117_em">
                             <property name="text">
                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;E&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;m&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; (MPa):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
                           <item row="2" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_5"/>
+                           <widget class="QDoubleSpinBox" name="spx_infill_model_nonlinear_4117_em"/>
                           </item>
                           <item row="3" column="0">
-                           <widget class="QLabel" name="label_7">
+                           <widget class="QLabel" name="lbl_infill_model_nonlinear_4117_c">
                             <property name="text">
                              <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;C (MPa):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                             </property>
                            </widget>
                           </item>
                           <item row="3" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox_6"/>
+                           <widget class="QDoubleSpinBox" name="spx_infill_model_nonlinear_4117_c"/>
                           </item>
                          </layout>
                         </item>
@@ -1842,14 +1842,14 @@ Elements</string>
                       </widget>
                      </item>
                      <item row="3" column="0">
-                      <widget class="QRadioButton" name="radioButton">
+                      <widget class="QRadioButton" name="rbn_infill_model_nonlinear_asce_4117">
                        <property name="text">
                         <string>Nonlinear ASCE 41-17</string>
                        </property>
                       </widget>
                      </item>
                      <item row="4" column="0">
-                      <widget class="QRadioButton" name="radioButton_2">
+                      <widget class="QRadioButton" name="rbn_spx_infill_model_nonlinear_manual">
                        <property name="text">
                         <string>Nonlinear manual</string>
                        </property>
