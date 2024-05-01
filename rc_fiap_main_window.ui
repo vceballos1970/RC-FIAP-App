@@ -1757,10 +1757,134 @@ Elements</string>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QGroupBox" name="groupBox_2">
+                 <widget class="QGroupBox" name="gbx_infill_model_wall_row3">
                   <property name="title">
                    <string>GroupBox</string>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_39">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="frm_infill_model_wall_row3">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;t&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;w&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; (mm):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;Central strut area (%):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="label_3">
+                       <property name="text">
+                        <string>Numbers of bare frame:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QWidget" name="widget" native="true">
+                       <layout class="QGridLayout" name="gridLayout_40">
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_5">
+                          <property name="text">
+                           <string/>
+                          </property>
+                         </widget>
+                        </item>
+                        <item row="1" column="0">
+                         <layout class="QFormLayout" name="formLayout_3">
+                          <item row="1" column="0">
+                           <widget class="QLabel" name="label_4">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;f´&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;m &lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; (MPa):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="1" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_4"/>
+                          </item>
+                          <item row="2" column="0">
+                           <widget class="QLabel" name="label_6">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;E&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;m&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; (MPa):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_5"/>
+                          </item>
+                          <item row="3" column="0">
+                           <widget class="QLabel" name="label_7">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;C (MPa):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="3" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_6"/>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QRadioButton" name="radioButton">
+                       <property name="text">
+                        <string>Nonlinear ASCE 41-17</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="0">
+                      <widget class="QRadioButton" name="radioButton_2">
+                       <property name="text">
+                        <string>Nonlinear manual</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1">
+                      <widget class="QWidget" name="widget_2" native="true">
+                       <layout class="QGridLayout" name="gridLayout_41">
+                        <item row="1" column="0">
+                         <layout class="QFormLayout" name="formLayout_4">
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="label_8">
+                            <property name="text">
+                             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt;f´&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic; vertical-align:sub;&quot;&gt;m θ&lt;/span&gt;&lt;span style=&quot; font-family:'Arial'; font-size:10pt; font-style:italic;&quot;&gt; (MPa):&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="0" column="1">
+                           <widget class="QDoubleSpinBox" name="doubleSpinBox_7"/>
+                          </item>
+                         </layout>
+                        </item>
+                        <item row="0" column="0">
+                         <widget class="QLabel" name="label_9">
+                          <property name="text">
+                           <string/>
+                          </property>
+                         </widget>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
