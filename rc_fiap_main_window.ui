@@ -1522,6 +1522,47 @@ Elements</string>
                   </layout>
                  </widget>
                 </item>
+                <item>
+                 <widget class="QGroupBox" name="gbx_joint_model">
+                  <property name="title">
+                   <string>Joint model</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_32">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="formLayout">
+                     <item row="0" column="0">
+                      <widget class="QRadioButton" name="rbn_joint_model_1">
+                       <property name="text">
+                        <string>RadioButton</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QRadioButton" name="rbn_joint_model_2">
+                       <property name="text">
+                        <string>RadioButton</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QRadioButton" name="rbn_joint_model_3">
+                       <property name="text">
+                        <string>RadioButton</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QRadioButton" name="rbn_joint_model_linear">
+                       <property name="text">
+                        <string>Linear</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
                </layout>
               </item>
              </layout>
