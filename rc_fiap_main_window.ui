@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>2550</width>
+    <width>2551</width>
     <height>1330</height>
    </rect>
   </property>
@@ -1677,6 +1677,11 @@ Elements</string>
                 </item>
                </layout>
               </item>
+              <item>
+                <layout class="QHBoxLayout" name="lay_nonlinear_parameters_row3">
+
+                </layout>
+              </item>
              </layout>
             </item>
            </layout>
@@ -1704,7 +1709,7 @@ Elements</string>
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>2550</width>
+     <width>2551</width>
      <height>21</height>
     </rect>
    </property>
