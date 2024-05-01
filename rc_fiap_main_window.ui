@@ -1626,6 +1626,26 @@ Elements</string>
                   <property name="title">
                    <string>Steel model</string>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_35">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="frm_steel_model">
+                     <item row="0" column="0">
+                      <widget class="QRadioButton" name="rbn_steel_model_hysteretic">
+                       <property name="text">
+                        <string>Hysteretic</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QRadioButton" name="rbn_steel_model_steel_mpf">
+                       <property name="text">
+                        <string>SteelMPF</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
