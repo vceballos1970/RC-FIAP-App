@@ -1678,9 +1678,63 @@ Elements</string>
                </layout>
               </item>
               <item>
-                <layout class="QHBoxLayout" name="lay_nonlinear_parameters_row3">
-
-                </layout>
+               <layout class="QHBoxLayout" name="lay_nonlinear_parameters_row3">
+                <item>
+                 <widget class="QGroupBox" name="gbx_shear_model_frame">
+                  <property name="title">
+                   <string>Shear model frame</string>
+                  </property>
+                  <layout class="QGridLayout" name="gridLayout_37">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="frm_shear_model_frame">
+                     <item row="0" column="0">
+                      <widget class="QRadioButton" name="rbn_shear_model_frame_none">
+                       <property name="text">
+                        <string>None</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QRadioButton" name="rbn_shear_model_frame_linear">
+                       <property name="text">
+                        <string>Linear</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QRadioButton" name="rbn_shear_model_frame_nonlinear">
+                       <property name="text">
+                        <string>Nonlinear</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="groupBox_3">
+                  <property name="title">
+                   <string>GroupBox</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="groupBox_2">
+                  <property name="title">
+                   <string>GroupBox</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="groupBox">
+                  <property name="title">
+                   <string>GroupBox</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </item>
              </layout>
             </item>
