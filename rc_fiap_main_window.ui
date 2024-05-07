@@ -2181,44 +2181,44 @@ Elements</string>
                    <item row="0" column="0">
                     <layout class="QFormLayout" name="formLayout_4">
                      <item row="1" column="0">
-                      <widget class="QLabel" name="label">
+                      <widget class="QLabel" name="lbl_ground_motions_directory">
                        <property name="text">
                         <string>Ground motions directory:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="1" column="1">
-                      <widget class="QLineEdit" name="lineEdit"/>
+                      <widget class="QLineEdit" name="txt_ground_motions_directory"/>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QLabel" name="label_2">
+                      <widget class="QLabel" name="lbl_output_css_file">
                        <property name="text">
                         <string>Ouput CSS file:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="1">
-                      <widget class="QLineEdit" name="lineEdit_2"/>
+                      <widget class="QLineEdit" name="txt_putput_css_file"/>
                      </item>
                      <item row="3" column="0">
-                      <widget class="QLabel" name="label_3">
+                      <widget class="QLabel" name="lbl_intensity_measure">
                        <property name="text">
                         <string>Intensity measure (IM):</string>
                        </property>
                       </widget>
                      </item>
                      <item row="3" column="1">
-                      <widget class="QComboBox" name="comboBox"/>
+                      <widget class="QComboBox" name="cbx_intensity_measure"/>
                      </item>
                      <item row="4" column="0">
-                      <widget class="QLabel" name="label_4">
+                      <widget class="QLabel" name="lbl_save_history_results">
                        <property name="text">
                         <string>Save history results:</string>
                        </property>
                       </widget>
                      </item>
                      <item row="4" column="1">
-                      <widget class="QCheckBox" name="checkBox">
+                      <widget class="QCheckBox" name="chk_save_history_results">
                        <property name="text">
                         <string/>
                        </property>
