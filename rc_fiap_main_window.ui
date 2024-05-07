@@ -1955,13 +1955,6 @@ Elements</string>
                             </property>
                            </widget>
                           </item>
-                          <item row="4" column="0">
-                           <widget class="QLabel" name="lbl_nonlinear_analysis_type_analysis">
-                            <property name="text">
-                             <string>Type of analysis</string>
-                            </property>
-                           </widget>
-                          </item>
                           <item row="2" column="0">
                            <widget class="QWidget" name="wgd_load_pattern" native="true">
                             <layout class="QHBoxLayout" name="horizontalLayout">
@@ -1982,8 +1975,15 @@ Elements</string>
                             </layout>
                            </widget>
                           </item>
+                          <item row="4" column="0">
+                           <widget class="QLabel" name="lbl_nonlinear_analysis_type_analysis">
+                            <property name="text">
+                             <string>Type of analysis</string>
+                            </property>
+                           </widget>
+                          </item>
                           <item row="5" column="0">
-                           <widget class="QWidget" name="horizontalWidget_3" native="true">
+                           <widget class="QWidget" name="wgd_load_pattern_type_analysis" native="true">
                             <layout class="QHBoxLayout" name="horizontalLayout_2">
                              <item>
                               <widget class="QRadioButton" name="radioButton_3">
@@ -2014,6 +2014,56 @@ Elements</string>
                              </item>
                             </layout>
                            </widget>
+                          </item>
+                          <item row="6" column="0">
+                           <widget class="QLabel" name="lbl_drift_plot">
+                            <property name="text">
+                             <string>Drift to plot</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="7" column="0">
+                           <widget class="QWidget" name="wgd_drift_plot" native="true">
+                            <layout class="QHBoxLayout" name="horizontalLayout_3">
+                             <item>
+                              <widget class="QCheckBox" name="chk_drift_plot_sdr">
+                               <property name="text">
+                                <string>SDR</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <spacer name="spa_drift_plot">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>28</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                             <item>
+                              <widget class="QCheckBox" name="chk_drift_plot_rdr">
+                               <property name="text">
+                                <string>RDR</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item row="8" column="0">
+                           <widget class="QLabel" name="lbl_alpha_curves">
+                            <property name="text">
+                             <string>Alpha curves:</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="8" column="1">
+                           <widget class="QLineEdit" name="txt_alpha_curves"/>
                           </item>
                          </layout>
                         </item>
