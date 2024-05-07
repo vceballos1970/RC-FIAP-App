@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2551</width>
-    <height>1330</height>
+    <height>1334</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -1927,6 +1927,44 @@ Elements</string>
            <attribute name="title">
             <string>Nonlinear Analysis</string>
            </attribute>
+           <layout class="QGridLayout" name="gridLayout_43">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="lay_nonlinear_analysis">
+              <item>
+               <layout class="QHBoxLayout" name="lay_nonlinear_analysis_row1">
+                <item>
+                 <widget class="QGroupBox" name="gbx_nonlinear_analysis_pushover">
+                  <property name="title">
+                   <string>Pushover</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="gbx_nonlinear_analysis_css">
+                  <property name="title">
+                   <string>CSS</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="gbx_nonlinear_analysis_ida">
+                  <property name="title">
+                   <string>IDA</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QGroupBox" name="gbx_nonlinear_analysis_periods">
+                  <property name="title">
+                   <string>Periods</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
