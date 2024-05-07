@@ -1937,6 +1937,80 @@ Elements</string>
                   <property name="title">
                    <string>Pushover</string>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_44">
+                   <item row="0" column="0">
+                    <layout class="QHBoxLayout" name="lay_nonlinear_analysis_pushover">
+                     <item>
+                      <widget class="QGroupBox" name="gbx_nonlinear_analysis_pushover_column1">
+                       <property name="title">
+                        <string>_</string>
+                       </property>
+                       <layout class="QGridLayout" name="gridLayout_45">
+                        <item row="0" column="0">
+                         <layout class="QFormLayout" name="frm_nonlinear_analysis_pushover_column1">
+                          <item row="0" column="0">
+                           <widget class="QLabel" name="lbl_nonlinear_analysis_triangular">
+                            <property name="text">
+                             <string>Load pattern</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="4" column="0">
+                           <widget class="QLabel" name="lbl_nonlinear_analysis_type_analysis">
+                            <property name="text">
+                             <string>Type of analysis</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="5" column="0">
+                           <widget class="QRadioButton" name="radioButton_3">
+                            <property name="text">
+                             <string>Fast</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="5" column="1">
+                           <widget class="QRadioButton" name="radioButton_4">
+                            <property name="text">
+                             <string>Forced</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="2" column="0">
+                           <widget class="QWidget" name="wgd_load_pattern" native="true">
+                            <layout class="QHBoxLayout" name="horizontalLayout">
+                             <item>
+                              <widget class="QRadioButton" name="rbn_load_pattern_triangular">
+                               <property name="text">
+                                <string>Triangular</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="rbn_load_pattern_uniform">
+                               <property name="text">
+                                <string>Uniform</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                         </layout>
+                        </item>
+                       </layout>
+                      </widget>
+                     </item>
+                     <item>
+                      <widget class="QGroupBox" name="gbx_nonlinear_analysis_pushover_column2">
+                       <property name="title">
+                        <string>_</string>
+                       </property>
+                      </widget>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
