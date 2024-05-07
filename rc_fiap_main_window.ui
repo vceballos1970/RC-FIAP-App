@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>2</number>
+           <number>3</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -1922,6 +1922,11 @@ Elements</string>
              </layout>
             </item>
            </layout>
+          </widget>
+          <widget class="QWidget" name="tab_nonlinear_analysis">
+           <attribute name="title">
+            <string>Nonlinear Analysis</string>
+           </attribute>
           </widget>
          </widget>
         </item>
