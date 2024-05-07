@@ -1962,20 +1962,6 @@ Elements</string>
                             </property>
                            </widget>
                           </item>
-                          <item row="5" column="0">
-                           <widget class="QRadioButton" name="radioButton_3">
-                            <property name="text">
-                             <string>Fast</string>
-                            </property>
-                           </widget>
-                          </item>
-                          <item row="5" column="1">
-                           <widget class="QRadioButton" name="radioButton_4">
-                            <property name="text">
-                             <string>Forced</string>
-                            </property>
-                           </widget>
-                          </item>
                           <item row="2" column="0">
                            <widget class="QWidget" name="wgd_load_pattern" native="true">
                             <layout class="QHBoxLayout" name="horizontalLayout">
@@ -1990,6 +1976,39 @@ Elements</string>
                               <widget class="QRadioButton" name="rbn_load_pattern_uniform">
                                <property name="text">
                                 <string>Uniform</string>
+                               </property>
+                              </widget>
+                             </item>
+                            </layout>
+                           </widget>
+                          </item>
+                          <item row="5" column="0">
+                           <widget class="QWidget" name="horizontalWidget_3" native="true">
+                            <layout class="QHBoxLayout" name="horizontalLayout_2">
+                             <item>
+                              <widget class="QRadioButton" name="radioButton_3">
+                               <property name="text">
+                                <string>Fast</string>
+                               </property>
+                              </widget>
+                             </item>
+                             <item>
+                              <spacer name="spa_nonlinear_analysis_pushover">
+                               <property name="orientation">
+                                <enum>Qt::Horizontal</enum>
+                               </property>
+                               <property name="sizeHint" stdset="0">
+                                <size>
+                                 <width>27</width>
+                                 <height>20</height>
+                                </size>
+                               </property>
+                              </spacer>
+                             </item>
+                             <item>
+                              <widget class="QRadioButton" name="radioButton_4">
+                               <property name="text">
+                                <string>Forced</string>
                                </property>
                               </widget>
                              </item>
