@@ -2065,6 +2065,26 @@ Elements</string>
                           <item row="8" column="1">
                            <widget class="QLineEdit" name="txt_alpha_curves"/>
                           </item>
+                          <item row="10" column="1">
+                           <widget class="QPushButton" name="btn_run_pushover">
+                            <property name="text">
+                             <string>Run Pushover</string>
+                            </property>
+                           </widget>
+                          </item>
+                          <item row="9" column="1">
+                           <spacer name="verticalSpacer_2">
+                            <property name="orientation">
+                             <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>20</width>
+                              <height>12</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
                          </layout>
                         </item>
                        </layout>
@@ -2079,51 +2099,64 @@ Elements</string>
                         <item row="0" column="0">
                          <layout class="QFormLayout" name="formLayout_2">
                           <item row="0" column="0">
-                           <widget class="QLabel" name="label">
+                           <widget class="QLabel" name="lbl_target_story_drift_ratio">
                             <property name="text">
                              <string>Target story drift ratio:</string>
                             </property>
                            </widget>
                           </item>
                           <item row="0" column="1">
-                           <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+                           <widget class="QDoubleSpinBox" name="spx_target_story_drift_ratio"/>
                           </item>
                           <item row="1" column="0">
-                           <widget class="QLabel" name="label_2">
+                           <widget class="QLabel" name="lbl_number_steps">
                             <property name="text">
                              <string>Number of steps:</string>
                             </property>
                            </widget>
                           </item>
                           <item row="1" column="1">
-                           <widget class="QSpinBox" name="spinBox_2"/>
+                           <widget class="QSpinBox" name="spx_number_steps"/>
                           </item>
                           <item row="2" column="0">
-                           <widget class="QLabel" name="label_3">
+                           <widget class="QLabel" name="lbl_output_pushover_file">
                             <property name="text">
                              <string>Output Pushover file:</string>
                             </property>
                            </widget>
                           </item>
                           <item row="2" column="1">
-                           <widget class="QLineEdit" name="lineEdit"/>
+                           <widget class="QLineEdit" name="txt_output_pushover_file"/>
                           </item>
                           <item row="3" column="0">
-                           <widget class="QLabel" name="label_4">
+                           <spacer name="verticalSpacer">
+                            <property name="orientation">
+                             <enum>Qt::Vertical</enum>
+                            </property>
+                            <property name="sizeHint" stdset="0">
+                             <size>
+                              <width>20</width>
+                              <height>13</height>
+                             </size>
+                            </property>
+                           </spacer>
+                          </item>
+                          <item row="4" column="0">
+                           <widget class="QLabel" name="lbl_type_chart">
                             <property name="text">
-                             <string>type of chart</string>
+                             <string>Type of chart</string>
                             </property>
                            </widget>
                           </item>
-                          <item row="4" column="0">
-                           <widget class="QRadioButton" name="radioButton">
+                          <item row="5" column="0">
+                           <widget class="QRadioButton" name="rbn_php_plastic_rotation">
                             <property name="text">
                              <string>PHP plastic rotation</string>
                             </property>
                            </widget>
                           </item>
-                          <item row="5" column="0">
-                           <widget class="QRadioButton" name="radioButton_2">
+                          <item row="6" column="0">
+                           <widget class="QRadioButton" name="rbn_acceptance_criteria_asce_1741">
                             <property name="text">
                              <string>Acceptance criteria ASCE-17-41</string>
                             </property>
@@ -2144,6 +2177,76 @@ Elements</string>
                   <property name="title">
                    <string>CSS</string>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_47">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="formLayout_4">
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label">
+                       <property name="text">
+                        <string>Ground motions directory:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QLineEdit" name="lineEdit"/>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string>Ouput CSS file:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QLineEdit" name="lineEdit_2"/>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="label_3">
+                       <property name="text">
+                        <string>Intensity measure (IM):</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QComboBox" name="comboBox"/>
+                     </item>
+                     <item row="4" column="0">
+                      <widget class="QLabel" name="label_4">
+                       <property name="text">
+                        <string>Save history results:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1">
+                      <widget class="QCheckBox" name="checkBox">
+                       <property name="text">
+                        <string/>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="1">
+                      <widget class="QPushButton" name="btn_run_css">
+                       <property name="text">
+                        <string>Run CSS</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1">
+                      <spacer name="verticalSpacer_3">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>12</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
