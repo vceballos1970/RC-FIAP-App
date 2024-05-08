@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>5</number>
+           <number>6</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -2505,34 +2505,105 @@ Elements</string>
               <item>
                <layout class="QHBoxLayout" name="lay_ida_results_controls" stretch="1,1,1,1,3,20">
                 <item>
-                 <widget class="QLabel" name="label">
+                 <widget class="QLabel" name="lbl_input_ida_file">
                   <property name="text">
                    <string>Input IDA file:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineEdit"/>
+                 <widget class="QLineEdit" name="txt_input_ida_file"/>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_2">
+                 <widget class="QLabel" name="lbl_sdr_max_curves">
                   <property name="text">
                    <string>SDR max Curves:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineEdit_2"/>
+                 <widget class="QLineEdit" name="txt_sdr_max_curves"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="pushButton">
+                 <widget class="QPushButton" name="btn_ida_results_plot">
                   <property name="text">
                    <string>Plot</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <spacer name="horizontalSpacer">
+                 <spacer name="pa_ida_results">
+                  <property name="orientation">
+                   <enum>Qt::Horizontal</enum>
+                  </property>
+                  <property name="sizeHint" stdset="0">
+                   <size>
+                    <width>40</width>
+                    <height>20</height>
+                   </size>
+                  </property>
+                 </spacer>
+                </item>
+               </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_css_results">
+           <attribute name="title">
+            <string>CSS Results</string>
+           </attribute>
+           <layout class="QGridLayout" name="lay_css_results_grid">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="lay_css_results" stretch="20,1">
+              <item>
+               <layout class="QGridLayout" name="lay_css_results_plots">
+                <item row="0" column="1">
+                 <widget class="QWidget" name="plt_maxra_im_css" native="true"/>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QWidget" name="plt_sdr_im_css" native="true"/>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QWidget" name="plt_vu_vn_im_css" native="true"/>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QWidget" name="plt_fragility_curve_css_result" native="true"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="lay_ida_results_controls" stretch="1,1,1,1,3,20">
+                <item>
+                 <widget class="QLabel" name="lbl_input_ida_file">
+                  <property name="text">
+                   <string>Input IDA file:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="txt_input_ida_file"/>
+                </item>
+                <item>
+                 <widget class="QLabel" name="lbl_sdr_max_curves">
+                  <property name="text">
+                   <string>SDR max Curves:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="txt_sdr_max_curves"/>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btn_ida_results_plot">
+                  <property name="text">
+                   <string>Plot</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <spacer name="pa_ida_results">
                   <property name="orientation">
                    <enum>Qt::Horizontal</enum>
                   </property>
