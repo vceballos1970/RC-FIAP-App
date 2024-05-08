@@ -2459,13 +2459,13 @@ Elements</string>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_pushover_results">
+          <widget class="QWidget" name="tab_css_results">
            <attribute name="title">
             <string>Pushover Results</string>
            </attribute>
            <layout class="QGridLayout" name="gridLayout_51">
             <item row="0" column="0">
-             <layout class="QVBoxLayout" name="lay_pushover_results">
+             <layout class="QVBoxLayout" name="lay_pushover_results" stretch="20,1">
               <item>
                <layout class="QHBoxLayout" name="lay_pushover_results_plots">
                 <item>
