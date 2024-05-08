@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>5</number>
+           <number>6</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -2507,6 +2507,23 @@ Elements</string>
               </item>
               <item>
                <layout class="QHBoxLayout" name="lay_css_graphs_controls"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_ida_results">
+           <attribute name="title">
+            <string>IDA Results</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_53">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="lay_ida_results" stretch="20,1">
+              <item>
+               <layout class="QGridLayout" name="lay_ida_results_plots"/>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="lay_ida_results_controls"/>
               </item>
              </layout>
             </item>
