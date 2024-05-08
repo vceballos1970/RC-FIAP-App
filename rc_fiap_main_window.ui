@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>6</number>
+           <number>7</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -2685,7 +2685,55 @@ Elements</string>
                </layout>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="lay_css_graphs_controls"/>
+               <layout class="QHBoxLayout" name="lay_css_graphs_controls">
+                <item>
+                 <widget class="QLabel" name="label">
+                  <property name="text">
+                   <string>Input CSS file:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lineEdit"/>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="pushButton">
+                  <property name="text">
+                   <string>PushButton</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_2">
+                  <property name="text">
+                   <string>Hazard Level to plot:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QLineEdit" name="lineEdit_2"/>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_3">
+                  <property name="text">
+                   <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;t&lt;span style=&quot; vertical-align:sub;&quot;&gt;min &lt;/span&gt;(%):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBox_2"/>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_4">
+                  <property name="text">
+                   <string>SDR %:</string>
+                  </property>
+                 </widget>
+                </item>
+                <item>
+                 <widget class="QSpinBox" name="spinBox_3"/>
+                </item>
+               </layout>
               </item>
              </layout>
             </item>
