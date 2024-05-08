@@ -2261,6 +2261,102 @@ Elements</string>
                   <property name="title">
                    <string>IDA</string>
                   </property>
+                  <layout class="QGridLayout" name="gridLayout_48">
+                   <item row="0" column="0">
+                    <layout class="QFormLayout" name="formLayout_5">
+                     <item row="0" column="0">
+                      <widget class="QLabel" name="label">
+                       <property name="text">
+                        <string>First intensity:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="0" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox"/>
+                     </item>
+                     <item row="1" column="0">
+                      <widget class="QLabel" name="label_2">
+                       <property name="text">
+                        <string>Hunting increment step (g):</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="1" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_2"/>
+                     </item>
+                     <item row="2" column="0">
+                      <widget class="QLabel" name="label_3">
+                       <property name="text">
+                        <string>Drift capacity (%):</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="2" column="1">
+                      <widget class="QDoubleSpinBox" name="doubleSpinBox_3"/>
+                     </item>
+                     <item row="3" column="0">
+                      <widget class="QLabel" name="label_4">
+                       <property name="text">
+                        <string>Maximum number of runs:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="3" column="1">
+                      <widget class="QSpinBox" name="spinBox_2"/>
+                     </item>
+                     <item row="4" column="0">
+                      <widget class="QLabel" name="label_5">
+                       <property name="text">
+                        <string>Seismic records list file:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="4" column="1">
+                      <widget class="QLineEdit" name="lineEdit"/>
+                     </item>
+                     <item row="5" column="0">
+                      <widget class="QLabel" name="label_6">
+                       <property name="text">
+                        <string>Output IDA file:</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="5" column="1">
+                      <widget class="QLineEdit" name="lineEdit_2"/>
+                     </item>
+                     <item row="6" column="0">
+                      <widget class="QLabel" name="label_7">
+                       <property name="text">
+                        <string>Intensity measure (IM):</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="6" column="1">
+                      <widget class="QComboBox" name="comboBox"/>
+                     </item>
+                     <item row="8" column="1">
+                      <widget class="QPushButton" name="pushButton">
+                       <property name="text">
+                        <string>Run IDA</string>
+                       </property>
+                      </widget>
+                     </item>
+                     <item row="7" column="1">
+                      <spacer name="spa_ida">
+                       <property name="orientation">
+                        <enum>Qt::Vertical</enum>
+                       </property>
+                       <property name="sizeHint" stdset="0">
+                        <size>
+                         <width>20</width>
+                         <height>12</height>
+                        </size>
+                       </property>
+                      </spacer>
+                     </item>
+                    </layout>
+                   </item>
+                  </layout>
                  </widget>
                 </item>
                 <item>
