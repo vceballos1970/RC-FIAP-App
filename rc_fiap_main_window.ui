@@ -2596,48 +2596,48 @@ Elements</string>
                  <widget class="QComboBox" name="cbx_css_results_choose_fragility_curve"/>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label">
+                 <widget class="QLabel" name="lbl_css_results_limit_stage">
                   <property name="text">
                    <string>Limit stage %:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineEdit"/>
+                 <widget class="QLineEdit" name="txt_css_results_limit_stage"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_ida_results_plot2">
+                 <widget class="QPushButton" name="btn_css_results_plot">
                   <property name="text">
                    <string>Plot</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_2">
+                 <widget class="QLabel" name="lbl_css_results_hazard_level_plot">
                   <property name="text">
                    <string>Hazard Level to plot:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="lineEdit_2"/>
+                 <widget class="QLineEdit" name="txt_css_results_hazard_level_plot"/>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_3">
+                 <widget class="QLabel" name="lbl_css_results_tmin">
                   <property name="text">
                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;t&lt;span style=&quot; vertical-align:sub;&quot;&gt;min &lt;/span&gt;(%):&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLabel" name="label_4">
+                 <widget class="QLabel" name="lbl_css_results_tdr">
                   <property name="text">
                    <string>SDR %:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QSpinBox" name="spinBox_2"/>
+                 <widget class="QSpinBox" name="spx_css_results_sdr"/>
                 </item>
                 <item>
                  <spacer name="pa_ida_results2">
