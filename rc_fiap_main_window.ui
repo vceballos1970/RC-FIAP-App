@@ -2574,36 +2574,36 @@ Elements</string>
                </layout>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="lay_ida_results_controls" stretch="1,1,1,1,3,20">
+               <layout class="QHBoxLayout" name="lay_css_results_controls" stretch="1,1,1,1,3,20">
                 <item>
-                 <widget class="QLabel" name="lbl_input_ida_file">
+                 <widget class="QLabel" name="lbl_input_css_file2">
                   <property name="text">
-                   <string>Input IDA file:</string>
+                   <string>Input CSS file:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txt_input_ida_file"/>
+                 <widget class="QLineEdit" name="txt_input_css_file2"/>
                 </item>
                 <item>
-                 <widget class="QLabel" name="lbl_sdr_max_curves">
+                 <widget class="QLabel" name="lbl_choose_fability_curve2">
                   <property name="text">
-                   <string>SDR max Curves:</string>
+                   <string>Choose Fragility Curve:</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <widget class="QLineEdit" name="txt_sdr_max_curves"/>
+                 <widget class="QLineEdit" name="txt_sdr_max_curves2"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_ida_results_plot">
+                 <widget class="QPushButton" name="btn_ida_results_plot2">
                   <property name="text">
                    <string>Plot</string>
                   </property>
                  </widget>
                 </item>
                 <item>
-                 <spacer name="pa_ida_results">
+                 <spacer name="pa_ida_results2">
                   <property name="orientation">
                    <enum>Qt::Horizontal</enum>
                   </property>
