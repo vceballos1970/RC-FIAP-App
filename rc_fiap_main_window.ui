@@ -2368,7 +2368,7 @@ Elements</string>
                    <item row="0" column="0">
                     <layout class="QGridLayout" name="gridLayout_49">
                      <item row="2" column="1">
-                      <widget class="QLineEdit" name="lineEdit">
+                      <widget class="QLineEdit" name="txt_t1">
                        <property name="enabled">
                         <bool>false</bool>
                        </property>
@@ -2378,7 +2378,7 @@ Elements</string>
                       </widget>
                      </item>
                      <item row="2" column="3">
-                      <widget class="QLineEdit" name="lineEdit_2">
+                      <widget class="QLineEdit" name="txt_t2">
                        <property name="enabled">
                         <bool>false</bool>
                        </property>
@@ -2388,28 +2388,28 @@ Elements</string>
                       </widget>
                      </item>
                      <item row="2" column="0">
-                      <widget class="QLabel" name="label_2">
+                      <widget class="QLabel" name="lbl_t1">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;T&lt;span style=&quot; vertical-align:sub;&quot;&gt;1 &lt;/span&gt;:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="2">
-                      <widget class="QLabel" name="label_3">
+                      <widget class="QLabel" name="lbl_t2">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;T&lt;span style=&quot; vertical-align:sub;&quot;&gt;2 &lt;/span&gt;:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="4">
-                      <widget class="QLabel" name="label_4">
+                      <widget class="QLabel" name="lbl_t3">
                        <property name="text">
                         <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;T&lt;span style=&quot; vertical-align:sub;&quot;&gt;3 &lt;/span&gt;:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
                        </property>
                       </widget>
                      </item>
                      <item row="2" column="5">
-                      <widget class="QLineEdit" name="lineEdit_3">
+                      <widget class="QLineEdit" name="txt_t3">
                        <property name="enabled">
                         <bool>false</bool>
                        </property>
@@ -2419,14 +2419,14 @@ Elements</string>
                       </widget>
                      </item>
                      <item row="1" column="0" colspan="6">
-                      <widget class="Line" name="line">
+                      <widget class="Line" name="lin_periods">
                        <property name="orientation">
                         <enum>Qt::Horizontal</enum>
                        </property>
                       </widget>
                      </item>
                      <item row="0" column="0" colspan="6">
-                      <widget class="QLabel" name="label">
+                      <widget class="QLabel" name="lbl_periods_after_gravity_loads">
                        <property name="text">
                         <string>Periods after gravity loads</string>
                        </property>
@@ -2438,7 +2438,7 @@ Elements</string>
                     </layout>
                    </item>
                    <item row="1" column="0">
-                    <spacer name="verticalSpacer_4">
+                    <spacer name="spa_periods">
                      <property name="orientation">
                       <enum>Qt::Vertical</enum>
                      </property>
