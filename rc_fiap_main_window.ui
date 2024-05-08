@@ -2459,15 +2459,35 @@ Elements</string>
             </item>
            </layout>
           </widget>
-          <widget class="QWidget" name="tab_css_results">
+          <widget class="QWidget" name="tab_pushover_results">
            <attribute name="title">
             <string>Pushover Results</string>
            </attribute>
+           <layout class="QGridLayout" name="gridLayout_52">
+            <item row="0" column="0">
+             <layout class="QHBoxLayout" name="lay_pushover_results">
+              <item>
+               <widget class="MplWidget" name="plt_php" native="true"/>
+              </item>
+              <item>
+               <widget class="MplWidget" name="plt_alpha_curve" native="true"/>
+              </item>
+              <item>
+               <widget class="MplWidget" name="plt_push_curve" native="true"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_css_results">
+           <attribute name="title">
+            <string>CSS Results</string>
+           </attribute>
            <layout class="QGridLayout" name="gridLayout_51">
             <item row="0" column="0">
-             <layout class="QVBoxLayout" name="lay_pushover_results" stretch="20,1">
+             <layout class="QVBoxLayout" name="lay_css_results" stretch="20,1">
               <item>
-               <layout class="QHBoxLayout" name="lay_pushover_results_plots">
+               <layout class="QHBoxLayout" name="lay_css_results_plots">
                 <item>
                  <widget class="MplWidget" name="mp_hazard_css_sdr_max" native="true"/>
                 </item>
@@ -2486,7 +2506,7 @@ Elements</string>
                </layout>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="lay_pushover_results_controls"/>
+               <layout class="QHBoxLayout" name="lay_css_results_controls"/>
               </item>
              </layout>
             </item>
