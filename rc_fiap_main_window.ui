@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>6</number>
+           <number>5</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -2479,6 +2479,36 @@ Elements</string>
             </item>
            </layout>
           </widget>
+          <widget class="QWidget" name="tab_ida_results">
+           <attribute name="title">
+            <string>IDA Results</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_53">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="lay_ida_results" stretch="20,1">
+              <item>
+               <layout class="QGridLayout" name="lay_ida_results_plots">
+                <item row="0" column="1">
+                 <widget class="QWidget" name="plt_sdr_sa" native="true"/>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QWidget" name="plt_rdr_sa" native="true"/>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QWidget" name="plt_vb_w_sa" native="true"/>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QWidget" name="plt_fragility_curve" native="true"/>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="lay_ida_results_controls"/>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
           <widget class="QWidget" name="tab_css_graphs">
            <attribute name="title">
             <string>CSS Graphs</string>
@@ -2507,23 +2537,6 @@ Elements</string>
               </item>
               <item>
                <layout class="QHBoxLayout" name="lay_css_graphs_controls"/>
-              </item>
-             </layout>
-            </item>
-           </layout>
-          </widget>
-          <widget class="QWidget" name="tab_ida_results">
-           <attribute name="title">
-            <string>IDA Results</string>
-           </attribute>
-           <layout class="QGridLayout" name="gridLayout_53">
-            <item row="0" column="0">
-             <layout class="QVBoxLayout" name="lay_ida_results" stretch="20,1">
-              <item>
-               <layout class="QGridLayout" name="lay_ida_results_plots"/>
-              </item>
-              <item>
-               <layout class="QHBoxLayout" name="lay_ida_results_controls"/>
               </item>
              </layout>
             </item>
