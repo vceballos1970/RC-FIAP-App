@@ -2467,7 +2467,23 @@ Elements</string>
             <item row="0" column="0">
              <layout class="QVBoxLayout" name="lay_pushover_results">
               <item>
-               <layout class="QHBoxLayout" name="lay_pushover_results_plots"/>
+               <layout class="QHBoxLayout" name="lay_pushover_results_plots">
+                <item>
+                 <widget class="MplWidget" name="mp_hazard_css_sdr_max" native="true"/>
+                </item>
+                <item>
+                 <widget class="MplWidget" name="mpl_hazard_css_alpha_max" native="true"/>
+                </item>
+                <item>
+                 <widget class="MplWidget" name="mpl_hazard_css_accel_max" native="true"/>
+                </item>
+                <item>
+                 <widget class="MplWidget" name="mpl_hazard_css_resid_despl" native="true"/>
+                </item>
+                <item>
+                 <widget class="MplWidget" name="mpl_hazard_css_vu_vncol" native="true"/>
+                </item>
+               </layout>
               </item>
               <item>
                <layout class="QHBoxLayout" name="lay_pushover_results_controls"/>
