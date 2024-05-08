@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>3</number>
+           <number>4</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -2454,6 +2454,23 @@ Elements</string>
                  </widget>
                 </item>
                </layout>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_pushover_results">
+           <attribute name="title">
+            <string>Pushover Results</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_51">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="lay_pushover_results">
+              <item>
+               <layout class="QHBoxLayout" name="lay_pushover_results_plots"/>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="lay_pushover_results_controls"/>
               </item>
              </layout>
             </item>
