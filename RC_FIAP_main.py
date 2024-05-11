@@ -531,11 +531,10 @@ class MyForm(QDialog):
         self.ui.btn_run_css.clicked.connect(self.CSS)
         self.ui.btn_ida_results_plot.clicked.connect(self.PlotIDA)
         self.ui.btn_css_results_plot.clicked.connect(self.PlotCSS)
-        self.ui.PlotCSSMaxFloors.clicked.connect(self.PlotCSSMaxFloors)
-        self.ui.progressBarPushover.hide()
-        self.ui.progressBarBeamDesign.hide()
-        self.ui.progressBarColumnDesign.hide()
+        self.ui.btn_plot_css_max_floors.clicked.connect(self.PlotCSSMaxFloors)
+        
         self.ui.Exit.clicked.connect(self.Exit)
+        
         self.show()
 
     def Exit(self):
