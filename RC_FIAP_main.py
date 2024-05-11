@@ -524,8 +524,8 @@ class MyForm(QDialog):
         self.ui.setupUi(self)
 
         self.ui.btn_design.clicked.connect(self.Design)
-        self.ui.AcceptDesign.clicked.connect(self.AcceptDesign)
-        self.ui.CreateNLM.clicked.connect(self.CreateNLM)
+        self.ui.btn_accept_design.clicked.connect(self.AcceptDesign)
+        self.ui.btn_create_nonlinear_model.clicked.connect(self.CreateNLM)
         self.ui.Pushover.clicked.connect(self.Pushover)
         self.ui.IDA.clicked.connect(self.IDA)
         self.ui.CSS.clicked.connect(self.CSS)

@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>0</number>
+           <number>2</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -1319,6 +1319,13 @@ Elements</string>
                 </column>
                </widget>
               </item>
+              <item>
+               <widget class="QPushButton" name="btn_accept_design">
+                <property name="text">
+                 <string>Accept Design</string>
+                </property>
+               </widget>
+              </item>
              </layout>
             </item>
            </layout>
@@ -1912,16 +1919,20 @@ Elements</string>
                      <item row="0" column="1">
                       <widget class="QSpinBox" name="spx_number_elements_macro_fibers"/>
                      </item>
-                     <item row="1" column="1">
-                      <widget class="QPushButton" name="btn_create_nonlinear_model">
-                       <property name="text">
-                        <string>Create Nonlinear Model</string>
-                       </property>
-                      </widget>
-                     </item>
                     </layout>
                    </item>
                   </layout>
+                 </widget>
+                </item>
+               </layout>
+              </item>
+              <item>
+               <layout class="QHBoxLayout" name="lay_nonlinear_parameters_row4">
+                <item>
+                 <widget class="QPushButton" name="btn_create_nonlinear_model">
+                  <property name="text">
+                   <string>Create Nonlinear Model</string>
+                  </property>
                  </widget>
                 </item>
                </layout>
