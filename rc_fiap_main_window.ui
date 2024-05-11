@@ -301,7 +301,7 @@
                        </item>
                       </widget>
                      </item>
-                     <item row="1" column="1">
+                     <item row="2" column="1">
                       <widget class="QGroupBox" name="gbx_type_load_asce_7">
                        <property name="enabled">
                         <bool>true</bool>
@@ -377,7 +377,7 @@
                        </layout>
                       </widget>
                      </item>
-                     <item row="2" column="1">
+                     <item row="3" column="1">
                       <widget class="QGroupBox" name="gbx_type_load_nsr10">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -416,7 +416,7 @@
                        </layout>
                       </widget>
                      </item>
-                     <item row="3" column="1">
+                     <item row="4" column="1">
                       <widget class="QGroupBox" name="gbx_type_load_nsr98_">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -455,7 +455,7 @@
                        </layout>
                       </widget>
                      </item>
-                     <item row="5" column="1">
+                     <item row="6" column="1">
                       <widget class="QGroupBox" name="gbx_type_load_cccsr84_">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -504,7 +504,7 @@
                        </layout>
                       </widget>
                      </item>
-                     <item row="6" column="1">
+                     <item row="7" column="1">
                       <widget class="QGroupBox" name="gbx_type_load_spectra_file_selector">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
@@ -540,7 +540,7 @@
                        </layout>
                       </widget>
                      </item>
-                     <item row="4" column="1">
+                     <item row="1" column="1">
                       <widget class="QGroupBox" name="gbx_seismic_load_coefficient_percentage">
                        <property name="title">
                         <string>Seismic load coefficient, CS= Vb/W</string>
@@ -1114,13 +1114,6 @@ moment strength ratio:</string>
                        </layout>
                       </widget>
                      </item>
-                     <item row="3" column="1">
-                      <widget class="QPushButton" name="btn_design">
-                       <property name="text">
-                        <string>Design</string>
-                       </property>
-                      </widget>
-                     </item>
                     </layout>
                    </item>
                   </layout>
@@ -1129,6 +1122,13 @@ moment strength ratio:</string>
                </layout>
               </item>
              </layout>
+            </item>
+            <item row="1" column="0">
+             <widget class="QPushButton" name="btn_design">
+              <property name="text">
+               <string>Design</string>
+              </property>
+             </widget>
             </item>
            </layout>
           </widget>

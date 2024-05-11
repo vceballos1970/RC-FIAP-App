@@ -536,7 +536,13 @@ class MyForm(QMainWindow):
         self.ui.lbl_encabezado.setScaledContents(True)
         self.ui.lbl_pie_pagina.setScaledContents(True)
 
-        
+        self.ui.gbx_type_load_spectra_file_selector.show()
+        self.ui.gbx_type_load_asce_7.hide()
+        self.ui.gbx_type_load_cccsr84_.hide()
+        self.ui.gbx_type_load_nsr10.hide()
+        self.ui.gbx_type_load_nsr98_.hide()
+        self.ui.gbx_seismic_load_coefficient_percentage.hide()
+        self.ui.gbx_type_load_asce_7.hide()
         self.ui.cbx_type_load_seismic_type_load.currentIndexChanged.connect(self.cbx_type_load_seismic_type_load_changed)
         
         self.ui.mni_exit.triggered.connect(self.Exit)
@@ -544,17 +550,48 @@ class MyForm(QMainWindow):
         self.show()
 
     def cbx_type_load_seismic_type_load_changed(self, index):
-        # Obtener el valor actual del combobox
-        current_value = self.ui.cbx_type_load_seismic_type_load.itemText(index)
-
-        # Realizar acciones basadas en el valor actual
-        if current_value == 'Opción 1':
-            # Realizar acciones para la opción 1
-            pass
-        elif current_value == 'Opción 2':
-            # Realizar acciones para la opción 2
-            pass
-        # Agregar más condiciones según sea necesario
+        if index == 0:
+            self.ui.gbx_type_load_spectra_file_selector.show()
+            self.ui.gbx_type_load_asce_7.hide()
+            self.ui.gbx_type_load_cccsr84_.hide()
+            self.ui.gbx_type_load_nsr10.hide()
+            self.ui.gbx_type_load_nsr98_.hide()
+            self.ui.gbx_seismic_load_coefficient_percentage.hide()
+        elif index == 1:
+            self.ui.gbx_type_load_spectra_file_selector.hide()
+            self.ui.gbx_type_load_asce_7.show()
+            self.ui.gbx_type_load_cccsr84_.hide()
+            self.ui.gbx_type_load_nsr10.hide()
+            self.ui.gbx_type_load_nsr98_.hide()
+            self.ui.gbx_seismic_load_coefficient_percentage.hide()
+        elif index == 2:
+            self.ui.gbx_type_load_spectra_file_selector.hide()
+            self.ui.gbx_type_load_asce_7.hide()
+            self.ui.gbx_type_load_cccsr84_.show()
+            self.ui.gbx_type_load_nsr10.hide()
+            self.ui.gbx_type_load_nsr98_.hide()
+            self.ui.gbx_seismic_load_coefficient_percentage.hide()
+        elif index == 3:
+            self.ui.gbx_type_load_spectra_file_selector.hide()
+            self.ui.gbx_type_load_asce_7.hide()
+            self.ui.gbx_type_load_cccsr84_.hide()
+            self.ui.gbx_type_load_nsr10.show()
+            self.ui.gbx_type_load_nsr98_.hide()
+            self.ui.gbx_seismic_load_coefficient_percentage.hide()
+        elif index == 4:
+            self.ui.gbx_type_load_spectra_file_selector.hide()
+            self.ui.gbx_type_load_asce_7.hide()
+            self.ui.gbx_type_load_cccsr84_.hide()
+            self.ui.gbx_type_load_nsr10.hide()
+            self.ui.gbx_type_load_nsr98_.show()
+            self.ui.gbx_seismic_load_coefficient_percentage.hide()
+        elif index == 5:
+            self.ui.gbx_type_load_spectra_file_selector.hide()
+            self.ui.gbx_type_load_asce_7.hide()
+            self.ui.gbx_type_load_cccsr84_.hide()
+            self.ui.gbx_type_load_nsr10.hide()
+            self.ui.gbx_type_load_nsr98_.hide()
+            self.ui.gbx_seismic_load_coefficient_percentage.show()
 
     def Exit(self):
         self.close()
