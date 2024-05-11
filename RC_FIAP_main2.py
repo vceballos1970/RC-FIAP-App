@@ -24,8 +24,7 @@ from PyQt5.QtGui import QDoubleValidator, QIntValidator
 from PyQt5.QtCore import Qt
 
 from PyQt5.QtWidgets import QDialog, QApplication
-# from GUIFrameNonLinearACI import *
-from rc_fiap_main_window import Ui_NonLinearMainWindow
+from GUIFrameNonLinearACI import *
 # from Perimetral397 import *
 # from Perimetral398 import *
 # from Perimetral399 import *
@@ -519,11 +518,10 @@ class PlasticHingeLength:
 class MyForm(QDialog):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_NonLinearMainWindow()
+        self.ui = Ui_NonLinearFrameDialog()
         # self.setStyleSheet("QLineEdit {border: none}")
         self.ui.setupUi(self)
-
-        self.ui.btn_design.clicked.connect(self.Design)
+        self.ui.Design.clicked.connect(self.Design)
         self.ui.AcceptDesign.clicked.connect(self.AcceptDesign)
         self.ui.CreateNLM.clicked.connect(self.CreateNLM)
         self.ui.Pushover.clicked.connect(self.Pushover)
