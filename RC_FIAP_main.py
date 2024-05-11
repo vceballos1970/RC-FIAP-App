@@ -516,7 +516,7 @@ class PlasticHingeLength:
         self.phl2 = phl2
 
 
-class MyForm(QDialog):
+class MyForm(QMainWindow):
     def __init__(self):
         super().__init__()
         self.ui = Ui_NonLinearMainWindow()
@@ -533,8 +533,8 @@ class MyForm(QDialog):
         self.ui.btn_css_results_plot.clicked.connect(self.PlotCSS)
         self.ui.btn_plot_css_max_floors.clicked.connect(self.PlotCSSMaxFloors)
         
-        self.ui.Exit.clicked.connect(self.Exit)
-        
+        self.ui.mni_exit.triggered.connect(self.Exit)
+
         self.show()
 
     def Exit(self):
