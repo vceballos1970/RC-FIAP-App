@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2551</width>
-    <height>1334</height>
+    <height>1333</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -35,7 +35,7 @@
         <item>
          <widget class="QTabWidget" name="twd_principal">
           <property name="currentIndex">
-           <number>2</number>
+           <number>6</number>
           </property>
           <widget class="QWidget" name="tab_frame_data">
            <attribute name="title">
@@ -2083,13 +2083,6 @@ Elements</string>
                           <item row="8" column="1">
                            <widget class="QLineEdit" name="txt_alpha_curves"/>
                           </item>
-                          <item row="10" column="1">
-                           <widget class="QPushButton" name="btn_run_pushover">
-                            <property name="text">
-                             <string>Run Pushover</string>
-                            </property>
-                           </widget>
-                          </item>
                           <item row="9" column="1">
                            <spacer name="verticalSpacer_2">
                             <property name="orientation">
@@ -2194,6 +2187,13 @@ Elements</string>
                      </item>
                     </layout>
                    </item>
+                   <item row="1" column="0">
+                    <widget class="QPushButton" name="btn_run_pushover">
+                     <property name="text">
+                      <string>Run Pushover</string>
+                     </property>
+                    </widget>
+                   </item>
                   </layout>
                  </widget>
                 </item>
@@ -2249,13 +2249,6 @@ Elements</string>
                        </property>
                       </widget>
                      </item>
-                     <item row="6" column="1">
-                      <widget class="QPushButton" name="btn_run_css">
-                       <property name="text">
-                        <string>Run CSS</string>
-                       </property>
-                      </widget>
-                     </item>
                      <item row="5" column="1">
                       <spacer name="verticalSpacer_3">
                        <property name="orientation">
@@ -2270,6 +2263,13 @@ Elements</string>
                       </spacer>
                      </item>
                     </layout>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QPushButton" name="btn_run_css">
+                     <property name="text">
+                      <string>Run CSS</string>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>
@@ -2352,13 +2352,6 @@ Elements</string>
                      <item row="6" column="1">
                       <widget class="QComboBox" name="txt_ida_intensity_measure"/>
                      </item>
-                     <item row="8" column="1">
-                      <widget class="QPushButton" name="btn_run_idad">
-                       <property name="text">
-                        <string>Run IDA</string>
-                       </property>
-                      </widget>
-                     </item>
                      <item row="7" column="1">
                       <spacer name="spa_ida">
                        <property name="orientation">
@@ -2373,6 +2366,13 @@ Elements</string>
                       </spacer>
                      </item>
                     </layout>
+                   </item>
+                   <item row="1" column="0">
+                    <widget class="QPushButton" name="btn_run_idad">
+                     <property name="text">
+                      <string>Run IDA</string>
+                     </property>
+                    </widget>
                    </item>
                   </layout>
                  </widget>
@@ -2592,7 +2592,7 @@ Elements</string>
                </layout>
               </item>
               <item>
-               <layout class="QHBoxLayout" name="lay_css_results_controls" stretch="1,1,1,1,1,1,1,1,1,1,1,1,10">
+               <layout class="QHBoxLayout" name="lay_css_results_controls" stretch="1,1,1,1,1,1,1,1,1,1,1,4,7">
                 <item>
                  <widget class="QLabel" name="lbl_css_results_input_css_file">
                   <property name="text">
@@ -2624,13 +2624,6 @@ Elements</string>
                  <widget class="QLineEdit" name="txt_css_results_limit_stage"/>
                 </item>
                 <item>
-                 <widget class="QPushButton" name="btn_css_results_plot">
-                  <property name="text">
-                   <string>Plot</string>
-                  </property>
-                 </widget>
-                </item>
-                <item>
                  <widget class="QLabel" name="lbl_css_results_hazard_level_plot">
                   <property name="text">
                    <string>Hazard Level to plot:</string>
@@ -2656,6 +2649,13 @@ Elements</string>
                 </item>
                 <item>
                  <widget class="QSpinBox" name="spx_css_results_sdr"/>
+                </item>
+                <item>
+                 <widget class="QPushButton" name="btn_css_results_plot">
+                  <property name="text">
+                   <string>Plot</string>
+                  </property>
+                 </widget>
                 </item>
                 <item>
                  <spacer name="pa_ida_results2">
