@@ -535,10 +535,26 @@ class MyForm(QMainWindow):
 
         self.ui.lbl_encabezado.setScaledContents(True)
         self.ui.lbl_pie_pagina.setScaledContents(True)
+
+        
+        self.ui.cbx_type_load_seismic_type_load.currentIndexChanged.connect(self.cbx_type_load_seismic_type_load_changed)
         
         self.ui.mni_exit.triggered.connect(self.Exit)
 
         self.show()
+
+    def cbx_type_load_seismic_type_load_changed(self, index):
+        # Obtener el valor actual del combobox
+        current_value = self.ui.cbx_type_load_seismic_type_load.itemText(index)
+
+        # Realizar acciones basadas en el valor actual
+        if current_value == 'Opción 1':
+            # Realizar acciones para la opción 1
+            pass
+        elif current_value == 'Opción 2':
+            # Realizar acciones para la opción 2
+            pass
+        # Agregar más condiciones según sea necesario
 
     def Exit(self):
         self.close()
