@@ -532,6 +532,9 @@ class MyForm(QMainWindow):
         self.ui.btn_ida_results_plot.clicked.connect(self.PlotIDA)
         self.ui.btn_css_results_plot.clicked.connect(self.PlotCSS)
         self.ui.btn_plot_css_max_floors.clicked.connect(self.PlotCSSMaxFloors)
+
+        self.ui.lbl_encabezado.setScaledContents(True)
+        self.ui.lbl_pie_pagina.setScaledContents(True)
         
         self.ui.mni_exit.triggered.connect(self.Exit)
 
