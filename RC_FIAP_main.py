@@ -23,7 +23,7 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 from PyQt5.QtCore import Qt
 
-from Qt5 import QtCore, QtWidgets
+from PyQt5 import QtCore, QtGui, QtWidgets
 
 from PyQt5.QtWidgets import QDialog, QApplication
 # from GUIFrameNonLinearACI import *
@@ -560,7 +560,7 @@ class MyForm(QMainWindow):
             self.ui.gbx_type_load_cccsr84.hide()
             self.ui.gbx_seismic_load_coefficient_percentage.hide()
 
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.gbx_type_load_spectra_file_selector)
+            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_type_load_spectra_file_selector)
         elif index == 1:
             self.ui.gbx_type_load_spectra_file_selector.hide()
             self.ui.gbx_type_load_asce_7.show()
@@ -569,7 +569,7 @@ class MyForm(QMainWindow):
             self.ui.gbx_type_load_cccsr84.hide()
             self.ui.gbx_seismic_load_coefficient_percentage.hide()
 
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.gbx_type_load_asce_7)
+            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_type_load_asce_7)
         elif index == 2:
             self.ui.gbx_type_load_spectra_file_selector.hide()
             self.ui.gbx_type_load_asce_7.hide()
@@ -578,7 +578,7 @@ class MyForm(QMainWindow):
             self.ui.gbx_type_load_cccsr84.hide()
             self.ui.gbx_seismic_load_coefficient_percentage.hide()
 
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.gbx_type_load_nsr10)
+            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_type_load_nsr10)
         elif index == 3:
             self.ui.gbx_type_load_spectra_file_selector.hide()
             self.ui.gbx_type_load_asce_7.hide()
@@ -587,7 +587,7 @@ class MyForm(QMainWindow):
             self.ui.gbx_type_load_cccsr84.hide()
             self.ui.gbx_seismic_load_coefficient_percentage.hide()
 
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.gbx_type_load_nsr98)
+            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_type_load_nsr98)
         elif index == 4:
             self.ui.gbx_type_load_spectra_file_selector.hide()
             self.ui.gbx_type_load_asce_7.hide()
@@ -596,7 +596,7 @@ class MyForm(QMainWindow):
             self.ui.gbx_type_load_cccsr84.show()
             self.ui.gbx_seismic_load_coefficient_percentage.hide()
 
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.gbx_type_load_cccsr84)
+            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_type_load_cccsr84)
         elif index == 5:
             self.ui.gbx_type_load_spectra_file_selector.hide()
             self.ui.gbx_type_load_asce_7.hide()
@@ -605,7 +605,7 @@ class MyForm(QMainWindow):
             self.ui.gbx_type_load_cccsr84.hide()
             self.ui.gbx_seismic_load_coefficient_percentage.show()
 
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.gbx_seismic_load_coefficient_percentage)
+            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_seismic_load_coefficient_percentage)
 
     def Exit(self):
         self.close()
