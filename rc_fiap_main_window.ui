@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>2551</width>
-    <height>1333</height>
+    <height>1352</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -453,7 +453,7 @@
                       </widget>
                      </item>
                      <item row="4" column="1">
-                      <widget class="QGroupBox" name="gbx_type_load_nsr98_">
+                      <widget class="QGroupBox" name="gbx_type_load_nsr98">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                          <horstretch>0</horstretch>
@@ -492,7 +492,7 @@
                       </widget>
                      </item>
                      <item row="5" column="1">
-                      <widget class="QGroupBox" name="gbx_type_load_cccsr84_">
+                      <widget class="QGroupBox" name="gbx_type_load_cccsr84">
                        <property name="sizePolicy">
                         <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
                          <horstretch>0</horstretch>
