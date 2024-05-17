@@ -518,29 +518,6 @@ class PlasticHingeLength:
         self.phl2 = phl2
 
 
-def remove_widget_from_qformlayout(layout, row):
-    """
-    Remove a widget from a QFormLayout at a given row.
-
-    :param layout: QFormLayout
-    :param row: int
-    """
-    item_label = layout.itemAt(row, QFormLayout.LabelRole)
-    item_field = layout.itemAt(row, QFormLayout.FieldRole)
-    
-    if item_label:
-        widget_label = item_label.widget()
-        if widget_label:
-            widget_label.deleteLater()
-        layout.removeItem(item_label)
-    
-    if item_field:
-        widget_field = item_field.widget()
-        if widget_field:
-            widget_field.deleteLater()
-        layout.removeItem(item_field)
-
-
 class MyForm(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -568,6 +545,7 @@ class MyForm(QMainWindow):
         self.ui.gbx_type_load_nsr98.hide()
         self.ui.gbx_seismic_load_coefficient_percentage.hide()
         self.ui.gbx_type_load_asce_7.hide()
+
         self.ui.cbx_type_load_seismic_type_load.currentIndexChanged.connect(self.cbx_type_load_seismic_type_load_changed)
         
         self.ui.mni_exit.triggered.connect(self.Exit)
