@@ -518,6 +518,29 @@ class PlasticHingeLength:
         self.phl2 = phl2
 
 
+def remove_widget_from_qformlayout(layout, row):
+    """
+    Remove a widget from a QFormLayout at a given row.
+
+    :param layout: QFormLayout
+    :param row: int
+    """
+    item_label = layout.itemAt(row, QFormLayout.LabelRole)
+    item_field = layout.itemAt(row, QFormLayout.FieldRole)
+    
+    if item_label:
+        widget_label = item_label.widget()
+        if widget_label:
+            widget_label.deleteLater()
+        layout.removeItem(item_label)
+    
+    if item_field:
+        widget_field = item_field.widget()
+        if widget_field:
+            widget_field.deleteLater()
+        layout.removeItem(item_field)
+
+
 class MyForm(QMainWindow):
     def __init__(self):
         super().__init__()
