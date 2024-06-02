@@ -53,6 +53,8 @@ import runpy
 
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 
+from Units import Units as U
+
 # Definition of units
 m = 1.  # define basic units -- output units
 kN = 1.  # define basic units -- output units
@@ -617,9 +619,9 @@ class MyForm(QMainWindow):
             PWall2SlabD, PWall2SlabL, PColSlabD, PColSlabL, ListNodesW1, ListNodesW2, FrameDetailing, WallDetailing,\
             FN, infill_m, infill_lw
 
-        CodeDesign = self.ui.comboBoxDesignCode.currentText()
-        FrameDetailing = self.ui.comboBoxSeismicFrameDesign.currentText()
-        WallDetailing = self.ui.comboBoxSeismicWallDesign.currentText()
+        CodeDesign = self.ui.cbx_design_design_code.currentText()
+        FrameDetailing = self.ui.cbx_design_frame_seismic.currentText()
+        WallDetailing = self.ui.cbx_design_wall_seismic_detailing.currentText()
         if CodeDesign == 'ACI 318-19':
             if FrameDetailing == 'IMF':
                 exec(open("Design_ACI_318S_19_IFM.py").read())
