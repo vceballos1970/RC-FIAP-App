@@ -55,6 +55,8 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 from Units import Units as U
 
+from models import PlasticHingeLength
+
 # Definition of units
 m = 1.  # define basic units -- output units
 kN = 1.  # define basic units -- output units
@@ -514,12 +516,6 @@ class AcceptanceCriteria:
         self.CP_2 = CP_2
 
 
-class PlasticHingeLength:
-    def __init__(self, phl1, phl2):
-        self.phl1 = phl1
-        self.phl2 = phl2
-
-
 class MyForm(QMainWindow):
     def __init__(self):
         super().__init__()
@@ -551,7 +547,7 @@ class MyForm(QMainWindow):
         self.ui.cbx_type_load_seismic_type_load.currentIndexChanged.connect(self.cbx_type_load_seismic_type_load_changed)
         
         self.ui.mni_exit.triggered.connect(self.Exit)
-
+        
         self.show()
 
     def cbx_type_load_seismic_type_load_changed(self, index):
@@ -624,7 +620,9 @@ class MyForm(QMainWindow):
         WallDetailing = self.ui.cbx_design_wall_seismic_detailing.currentText()
         if CodeDesign == 'ACI 318-19':
             if FrameDetailing == 'IMF':
-                exec(open("Design_ACI_318S_19_IFM.py").read())
+                self.data_beams_table()
+                
+                # exec(open("Design_ACI_318S_19_IFM.py").read())
             elif FrameDetailing == 'SMF':
                 exec(open("Design_ACI_318S_19_SFM.py").read())
             elif FrameDetailing == 'OMF':
@@ -638,6 +636,65 @@ class MyForm(QMainWindow):
                 exec(open("Design_CCCSR_84_OFM.py").read())
         elif CodeDesign == 'Gravity Load Design':
             exec(open("Design_GLD.py").read())
+
+    def data_beams_table(self):
+        self.registros_beams = []
+        for DB in DataBeamDesign:
+            b = DB.b / U.cm
+            h = DB.h / U.cm
+            L_As_top = DB.Ast1 / (DB.b * DB.dt1) * 100
+            L_As_bot = DB.Asb1 / (DB.b * DB.db1) * 100
+            R_As_top = DB.Ast2 / (DB.b * DB.dt2) * 100
+            R_As_bot = DB.Asb2 / (DB.b * DB.db2) * 100
+            L_Leg_n = DB.ns1
+            R_Leg_n = DB.ns2
+            L_Sstirrup = DB.ss1 / U.cm
+            R_Sstirrup = DB.ss2 / U.cm
+            registro = RegistroBeams(self.ui.tbl_data_design_beams, DB.EleTag, b, h, L_As_top, L_As_bot, L_Leg_n,
+                                    L_Sstirrup, R_As_top, R_As_bot, R_Leg_n, R_Sstirrup)
+            self.registros_beams.append(registro)
+
+    def data_columns_table(self):
+        self.registros_cols = []
+        for DC in DataColDesign:
+            b = DC.b / cm
+            h = DC.h / cm
+            roCol = DC.ro
+            db = DC.db / mm
+            de = DC.de / mm
+            nbH = DC.nbH
+            nbB = DC.nbB
+            nsH = DC.nsH
+            nsB = DC.nsB
+            sst = DC.sst / cm
+            Vu_Vn = DC.Vu_Vn
+            registro = RegistroColumns(self.ui.tbl_data_design_columns, DC.EleTag, b, h, roCol, db, de, nbH, nbB, nsH, nsB,
+                                    sst, Vu_Vn)
+            self.registros_cols.append(registro)
+
+    def data_walls_table(self):
+        self.registros_walls = []
+        for DW in DataWallDesign:
+            tw = DW.b / cm
+            lw = DW.h / cm
+            ro_l = DW.ro_l
+            ro_t = DW.ro_t
+            db = DW.db / mm
+            dst = DW.dst / mm
+            sst = DW.sst / cm
+            cMaxS = DW.cMaxS / DW.h
+            sigma_c = DW.sigma_c / fcC
+            BE = DW.BE
+            registro = RegistroWalls(self.ui.tbl_data_design_walls, DW.EleTag, tw, lw, ro_l, ro_t, db, dst, sst, cMaxS,
+                                    sigma_c, BE)
+            self.registros_walls.append(registro)
+
+    def beta1(fc):
+        if fc <= 28 * MPa:
+            Beta1 = 0.85
+        else:
+            Beta1 = max([0.85 - 0.05 * (fc - 28.) / 7., 0.65])
+        return Beta1
 
     def AcceptDesign(self):
 
