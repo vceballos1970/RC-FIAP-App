@@ -55,7 +55,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 from Units import Units as U
 
-from models import AcceptanceCriteria, PlasticHingeLength, WallDesign, ColDesign, BeamDesign, ZeroLengthElement, BeamElasticElement, RegistroWalls, RegistroColumns
+from models import AcceptanceCriteria, PlasticHingeLength, WallDesign, ColDesign, BeamDesign, ZeroLengthElement, BeamElasticElement, RegistroWalls, RegistroColumns, RegistroBeams
 
 # Definition of units
 m = 1.  # define basic units -- output units
@@ -85,26 +85,6 @@ kgf = g * N
 tonf = 1000 * kgf
 cbar = False
 np.set_printoptions(precision=6)
-
-       
-# class DuctilityCurve:
-#     def __init__(self, xi, xe, yi, ye, CD_i, CD_e):
-#         self.xi = xi
-#         self.xe = xe
-#         self.yi = yi
-#         self.ye = ye
-#         self.CD_i = CD_i
-#         self.CD_e = CD_e
-
-
-class PlasticRotationAngle:
-    def __init__(self, xi, xe, yi, ye, PRA_i, PRA_e):
-        self.xi = xi
-        self.xe = xe
-        self.yi = yi
-        self.ye = ye
-        self.PRA_i = PRA_i
-        self.PRA_e = PRA_e
 
 
 class MyForm(QMainWindow):

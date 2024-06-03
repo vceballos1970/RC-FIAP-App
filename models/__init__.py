@@ -416,3 +416,23 @@ class RegistroBeams:
         stylesheet = "::section{border-style: solid;" \
                      "border-width: 1px;}"
         tbl_data_design_beams.horizontalHeader().setStyleSheet(stylesheet)
+
+
+# class DuctilityCurve:
+#     def __init__(self, xi, xe, yi, ye, CD_i, CD_e):
+#         self.xi = xi
+#         self.xe = xe
+#         self.yi = yi
+#         self.ye = ye
+#         self.CD_i = CD_i
+#         self.CD_e = CD_e
+
+
+class PlasticRotationAngle:
+    def __init__(self, xi, xe, yi, ye, PRA_i, PRA_e):
+        self.xi = xi
+        self.xe = xe
+        self.yi = yi
+        self.ye = ye
+        self.PRA_i = PRA_i
+        self.PRA_e = PRA_e
