@@ -99,3 +99,42 @@ class ColDesign:
         self.sem = sem
         self.sigma_IF = sigma_IF
         self.wIF = wIF
+
+
+class BeamDesign:
+    def __init__(self, EleTag, b, h, Ast1, dt1, Mn_n1, Asb1, db1, Mn_p1, ns1, ss1, Ast2, dt2, Mn_n2, Asb2, db2, Mn_p2,
+                 ns2, ss2, Nod_ini, Nod_end, db_t1, db_b1, db_t2, db_b2, Vpr, VU1, VU2, Mpr_n1, Mpr_p1, Mpr_n2, Mpr_p2,
+                 Vun):
+        self.EleTag = EleTag
+        self.b = b
+        self.h = h
+        self.Ast1 = Ast1
+        self.dt1 = dt1
+        self.Mn_n1 = Mn_n1
+        self.Asb1 = Asb1
+        self.db1 = db1
+        self.Mn_p1 = Mn_p1
+        self.ns1 = ns1
+        self.ss1 = ss1
+        self.Ast2 = Ast2
+        self.dt2 = dt2
+        self.Mn_n2 = Mn_n2
+        self.Asb2 = Asb2
+        self.db2 = db2
+        self.Mn_p2 = Mn_p2
+        self.ns2 = ns2
+        self.ss2 = ss2
+        self.Nod_ini = Nod_ini
+        self.Nod_end = Nod_end
+        self.db_t1 = db_t1
+        self.db_b1 = db_b1
+        self.db_t2 = db_t2
+        self.db_b2 = db_b2
+        self.Vpr = Vpr
+        self.VU1 = VU1
+        self.VU2 = VU2
+        self.Mpr_n1 = Mpr_n1
+        self.Mpr_p1 = Mpr_p1
+        self.Mpr_n2 = Mpr_n2
+        self.Mpr_p2 = Mpr_p2
+        self.Vun = Vun
