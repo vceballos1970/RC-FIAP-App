@@ -55,7 +55,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 from Units import Units as U
 
-from models import AcceptanceCriteria, PlasticHingeLength, WallDesign, ColDesign
+from models import AcceptanceCriteria, PlasticHingeLength, WallDesign, ColDesign, BeamDesign
 
 # Definition of units
 m = 1.  # define basic units -- output units
@@ -351,14 +351,6 @@ class BeamElasticElement:
         self.ElegTr = ElegTr
         self.RZi = RZi
         self.RZe = RZe
-
-
-class ZeroLengthElement:
-    def __init__(self, EleTag, Nod_ini, Nod_end):
-        self.EleTag = EleTag
-        self.Nod_ini = Nod_ini
-        self.Nod_end = Nod_end
-
         
         
 # class DuctilityCurve:

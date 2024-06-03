@@ -138,3 +138,10 @@ class BeamDesign:
         self.Mpr_n2 = Mpr_n2
         self.Mpr_p2 = Mpr_p2
         self.Vun = Vun
+
+
+class ZeroLengthElement:
+    def __init__(self, EleTag, Nod_ini, Nod_end):
+        self.EleTag = EleTag
+        self.Nod_ini = Nod_ini
+        self.Nod_end = Nod_end
