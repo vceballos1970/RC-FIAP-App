@@ -55,7 +55,7 @@ from mpl_toolkits.axes_grid1 import make_axes_locatable
 
 from Units import Units as U
 
-from models import AcceptanceCriteria, PlasticHingeLength, WallDesign, ColDesign, BeamDesign, ZeroLengthElement, BeamElasticElement, RegistroWalls, RegistroColumns, RegistroBeams
+from models import AcceptanceCriteria, PlasticHingeLength, WallDesign, ColDesign, BeamDesign, ZeroLengthElement, BeamElasticElement, RegistroWalls, RegistroColumns, RegistroBeams, PlasticRotationAngle
 
 # Definition of units
 m = 1.  # define basic units -- output units
@@ -85,6 +85,10 @@ kgf = g * N
 tonf = 1000 * kgf
 cbar = False
 np.set_printoptions(precision=6)
+
+ListEleTagCols, ListEleTagBeams = [], []
+ListEleTagW1, ListEleTagW2 = [], []
+Elements, ZeroLengths = [], []
 
 
 class MyForm(QMainWindow):
