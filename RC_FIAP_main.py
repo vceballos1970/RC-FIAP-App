@@ -337,22 +337,7 @@ class RegistroWalls:
         tbl_data_design_walls.horizontalHeader().setStyleSheet(stylesheet)
 
 
-class BeamElasticElement:
-    def __init__(self, EleTag, Nod_ini, Nod_end, AEle, EcEle, IzEle, LEle, BEle, HEle, ElegTr, RZi, RZe):
-        self.EleTag = EleTag
-        self.Nod_ini = Nod_ini
-        self.Nod_end = Nod_end
-        self.AEle = AEle
-        self.EcEle = EcEle
-        self.IzEle = IzEle
-        self.LEle = LEle
-        self.BEle = BEle
-        self.HEle = HEle
-        self.ElegTr = ElegTr
-        self.RZi = RZi
-        self.RZe = RZe
-        
-        
+       
 # class DuctilityCurve:
 #     def __init__(self, xi, xe, yi, ye, CD_i, CD_e):
 #         self.xi = xi
