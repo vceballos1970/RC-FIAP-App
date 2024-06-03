@@ -55,3 +55,47 @@ class WallDesign:
         self.nsH_BE = nsH_BE
         self.nsB_BE = nsB_BE
         self.se_BE = se_BE
+
+
+class ColDesign:
+    def __init__(self, EleTag, b, h, nbH, nbB, db, de, As, Pu_v, Mu_v, fiPn, fiMn, Mn_i, d, dist, ro, Mu_i,
+                 sst, nsB, nsH, Nod_ini, Nod_end, NUD1, NUD2, NUG1, NUG2, MUD1, MUD2, VUD1, VUD2, ColBeamStr, Vn, VI6,
+                 Vu_Vn, VnCol, sem, sigma_IF, wIF):
+        self.EleTag = EleTag
+        self.b = b
+        self.h = h
+        self.nbH = nbH
+        self.nbB = nbB
+        self.db = db
+        self.de = de
+        self.As = As
+        self.Pu_v = Pu_v
+        self.Mu_v = Mu_v
+        self.fiPn = fiPn
+        self.fiMn = fiMn
+        self.Mn_i = Mn_i
+        self.d = d
+        self.dist = dist
+        self.ro = ro
+        self.Mu_i = Mu_i
+        self.sst = sst
+        self.nsB = nsB
+        self.nsH = nsH
+        self.Nod_ini = Nod_ini
+        self.Nod_end = Nod_end
+        self.NUD1 = NUD1
+        self.NUD2 = NUD2
+        self.NUG1 = NUG1
+        self.NUG2 = NUG2
+        self.MUD1 = MUD1
+        self.MUD2 = MUD2
+        self.VUD1 = VUD1
+        self.VUD2 = VUD2
+        self.ColBeamStr = ColBeamStr
+        self.Vn = Vn
+        self.Vy = VI6
+        self.Vu_Vn = Vu_Vn
+        self.VnCol = VnCol
+        self.sem = sem
+        self.sigma_IF = sigma_IF
+        self.wIF = wIF
