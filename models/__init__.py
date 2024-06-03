@@ -245,3 +245,88 @@ class RegistroWalls:
         stylesheet = "::section{border-style: solid;" \
                      "border-width: 1px;}"
         tbl_data_design_walls.horizontalHeader().setStyleSheet(stylesheet)
+
+
+class RegistroColumns:
+    def __init__(self, tbl_data_design_columns, id_, b, h, ro, db, de, nbH, nbB, Leg_n_H, Leg_n_B, Sstirrup, Vu_Vn):
+        fila = tbl_data_design_columns.rowCount()
+        tbl_data_design_columns.insertRow(fila)
+
+        self.spx_id = QLineEdit(tbl_data_design_columns)
+        self.spx_id.setValidator(QIntValidator(0, 1000))
+        self.spx_id.setText(f'C{id_}')
+
+        self.spx_b = QLineEdit(tbl_data_design_columns)
+        self.spx_b.setValidator(QIntValidator(20, 1000))
+        self.spx_b.setText('{:d}'.format(int(b)))
+
+        self.spx_h = QLineEdit(tbl_data_design_columns)
+        self.spx_h.setValidator(QIntValidator(20, 1000))
+        self.spx_h.setText('{:d}'.format(int(h)))
+
+        self.spx_ro = QLineEdit(tbl_data_design_columns)
+        self.spx_ro.setValidator(QDoubleValidator(2., 400., 2))
+        self.spx_ro.setText('{:.2f}'.format(ro * 100))
+
+        self.spx_db = QLineEdit(tbl_data_design_columns)
+        self.spx_db.setValidator(QDoubleValidator(1., 10., 2))
+        self.spx_db.setText('{:.2f}'.format(db))
+
+        self.spx_de = QLineEdit(tbl_data_design_columns)
+        self.spx_de.setValidator(QDoubleValidator(1., 10., 2))
+        self.spx_de.setText('{:.2f}'.format(de))
+
+        self.spx_nbH = QLineEdit(tbl_data_design_columns)
+        self.spx_nbH.setValidator(QIntValidator(2, 100))
+        self.spx_nbH.setText('{:d}'.format(int(nbH)))
+
+        self.spx_nbB = QLineEdit(tbl_data_design_columns)
+        self.spx_nbB.setValidator(QIntValidator(2, 100))
+        self.spx_nbB.setText('{:d}'.format(int(nbB)))
+
+        self.spx_Leg_n_H = QLineEdit(tbl_data_design_columns)
+        self.spx_Leg_n_H.setValidator(QIntValidator(2, 100))
+        self.spx_Leg_n_H.setText('{:d}'.format(int(Leg_n_H)))
+
+        self.spx_Leg_n_B = QLineEdit(tbl_data_design_columns)
+        self.spx_Leg_n_B.setValidator(QIntValidator(2, 100))
+        self.spx_Leg_n_B.setText('{:d}'.format(int(Leg_n_B)))
+
+        self.spx_Sstirrup = QLineEdit(tbl_data_design_columns)
+        self.spx_Sstirrup.setValidator(QIntValidator(2, 100))
+        self.spx_Sstirrup.setText('{:d}'.format(int(Sstirrup)))
+
+        self.spx_Vu_Vn = QLineEdit(tbl_data_design_columns)
+        self.spx_Vu_Vn.setText('{:.2f}'.format(Vu_Vn))
+
+
+        tbl_data_design_columns.setCellWidget(fila, 0, self.spx_id)
+        tbl_data_design_columns.setCellWidget(fila, 1, self.spx_b)
+        tbl_data_design_columns.setCellWidget(fila, 2, self.spx_h)
+        tbl_data_design_columns.setCellWidget(fila, 3, self.spx_ro)
+        tbl_data_design_columns.setCellWidget(fila, 4, self.spx_db)
+        tbl_data_design_columns.setCellWidget(fila, 5, self.spx_de)
+        tbl_data_design_columns.setCellWidget(fila, 6, self.spx_nbH)
+        tbl_data_design_columns.setCellWidget(fila, 7, self.spx_nbB)
+        tbl_data_design_columns.setCellWidget(fila, 8, self.spx_Leg_n_H)
+        tbl_data_design_columns.setCellWidget(fila, 9, self.spx_Leg_n_B)
+        tbl_data_design_columns.setCellWidget(fila, 10, self.spx_Sstirrup)
+        tbl_data_design_columns.setCellWidget(fila, 11, self.spx_Vu_Vn)
+
+        tbl_data_design_columns.setColumnWidth(0, 40)
+        tbl_data_design_columns.setColumnWidth(1, 40)
+        tbl_data_design_columns.setColumnWidth(2, 40)
+        tbl_data_design_columns.setColumnWidth(3, 40)
+        tbl_data_design_columns.setColumnWidth(4, 60)
+        tbl_data_design_columns.setColumnWidth(5, 60)
+        tbl_data_design_columns.setColumnWidth(6, 40)
+        tbl_data_design_columns.setColumnWidth(7, 40)
+        tbl_data_design_columns.setColumnWidth(8, 60)
+        tbl_data_design_columns.setColumnWidth(9, 60)
+        tbl_data_design_columns.setColumnWidth(10, 60)
+        tbl_data_design_columns.setColumnWidth(11, 60)
+
+
+        stylesheet = "::section{border-style: solid;" \
+                     "border-width: 1px;}"
+        tbl_data_design_columns.horizontalHeader().setStyleSheet(stylesheet)
