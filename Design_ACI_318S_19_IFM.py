@@ -4,6 +4,7 @@ global Loc_span, Loc_heigth, ListNodes, Elements, DataBeamDesign, DataColDesign,
     ZeroLengthElement, ZeroLengths, net, num_walls, PWall1SlabD, PWall1SlabL, PWall2SlabD, PWall2SlabL, PColSlabD,\
     PColSlabL, FN, infill_m, infill_lw, ListNodesBasal1
 
+from Design import AvColumn
 
 
 # Function: Reads Beams design data from table that allows the user to modify the default design from TAB2 of GU
