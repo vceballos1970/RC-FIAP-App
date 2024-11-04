@@ -23,11 +23,8 @@ from PyQt5.QtWidgets import *
 from PyQt5.QtGui import QDoubleValidator, QIntValidator
 from PyQt5.QtCore import Qt
 
-from PyQt5 import QtCore, QtGui, QtWidgets
-
 from PyQt5.QtWidgets import QDialog, QApplication
-# from GUIFrameNonLinearACI import *
-from rc_fiap_main_window import Ui_NonLinearMainWindow
+from GUIFrameNonLinearACI import *
 # from Perimetral397 import *
 # from Perimetral398 import *
 # from Perimetral399 import *
@@ -52,10 +49,6 @@ import subprocess
 import runpy
 
 from mpl_toolkits.axes_grid1 import make_axes_locatable
-
-from Units import Units as U
-
-from models import AcceptanceCriteria, PlasticHingeLength, WallDesign, ColDesign, BeamDesign, ZeroLengthElement, BeamElasticElement, RegistroWalls, RegistroColumns, RegistroBeams, PlasticRotationAngle
 
 # Definition of units
 m = 1.  # define basic units -- output units
@@ -86,100 +79,462 @@ tonf = 1000 * kgf
 cbar = False
 np.set_printoptions(precision=6)
 
-ListEleTagCols, ListEleTagBeams = [], []
-ListEleTagW1, ListEleTagW2 = [], []
-Elements, ZeroLengths = [], []
+
+class RegistroBeams:
+    def __init__(self, tbl_data_design_beams, id_, b, h, L_As_top, L_As_bot, L_Leg_n, L_Sstirrup, R_As_top, R_As_bot,
+                 R_Leg_n, R_Sstirrup):
+        fila = tbl_data_design_beams.rowCount()
+        tbl_data_design_beams.insertRow(fila)
+
+        self.spx_id = QLineEdit(tbl_data_design_beams)  # setattr(self, 'spx_id', QLineEdit(tbl_data_design_beams))
+        self.spx_id.setValidator(QIntValidator(0, 100))
+        self.spx_id.setText(f'B{id_}')
+        # self.spx_id.setStyleSheet('border-top: none; border-right: none; border-bottom: none')
+        # self.spx_id.setFont(('Times', 10))
+
+        self.spx_b = QLineEdit(tbl_data_design_beams)
+        self.spx_b.setValidator(QIntValidator(20, 1000))
+        self.spx_b.setText('{:d}'.format(int(b)))
+        # self.spx_b.setStyleSheet('border-top: none; border-right: none; border-bottom: none')
+
+        self.spx_h = QLineEdit(tbl_data_design_beams)
+        self.spx_h.setValidator(QIntValidator(20, 1000))
+        self.spx_h.setText('{:d}'.format(int(h)))
+        # self.spx_h.setStyleSheet('border-top: none; border-right: none; border-bottom: none')
+
+        self.spx_L_As_top = QLineEdit(tbl_data_design_beams)
+        self.spx_L_As_top.setValidator(QDoubleValidator(2., 400., 2))
+        self.spx_L_As_top.setText('{:.3f}'.format(L_As_top))
+        # self.spx_L_As_top.setStyleSheet('border-top: none; border-right: none; border-bottom: none')
+
+        self.spx_L_As_bot = QLineEdit(tbl_data_design_beams)
+        self.spx_L_As_bot.setValidator(QDoubleValidator(2., 400., 2))
+        self.spx_L_As_bot.setText('{:.3f}'.format(L_As_bot))
+
+        self.spx_L_Leg_n = QLineEdit(tbl_data_design_beams)
+        self.spx_L_Leg_n.setValidator(QIntValidator(2, 10))
+        self.spx_L_Leg_n.setText('{:d}'.format(int(L_Leg_n)))
+
+        self.spx_L_Sstirrup = QLineEdit(tbl_data_design_beams)
+        self.spx_L_Sstirrup.setValidator(QIntValidator(4, 30))
+        self.spx_L_Sstirrup.setText('{:d}'.format(int(L_Sstirrup)))
+
+        self.spx_R_As_top = QLineEdit(tbl_data_design_beams)
+        self.spx_R_As_top.setValidator(QDoubleValidator(2., 400., 2))
+        self.spx_R_As_top.setText('{:.3f}'.format(R_As_top))
+
+        self.spx_R_As_bot = QLineEdit(tbl_data_design_beams)
+        self.spx_R_As_bot.setValidator(QDoubleValidator(2., 400., 2))
+        self.spx_R_As_bot.setText('{:.3f}'.format(R_As_bot))
+
+        self.spx_R_Leg_n = QLineEdit(tbl_data_design_beams)
+        self.spx_R_Leg_n.setValidator(QIntValidator(2, 10))
+        self.spx_R_Leg_n.setText('{:d}'.format(int(R_Leg_n)))
+
+        self.spx_R_Sstirrup = QLineEdit(tbl_data_design_beams)
+        self.spx_R_Sstirrup.setValidator(QIntValidator(4, 30))
+        self.spx_R_Sstirrup.setText('{:d}'.format(int(R_Sstirrup)))
+
+        tbl_data_design_beams.setCellWidget(fila, 0, self.spx_id)
+        tbl_data_design_beams.setCellWidget(fila, 1, self.spx_b)
+        tbl_data_design_beams.setCellWidget(fila, 2, self.spx_h)
+
+        tbl_data_design_beams.setCellWidget(fila, 3, self.spx_L_As_top)
+        tbl_data_design_beams.setCellWidget(fila, 4, self.spx_L_As_bot)
+        tbl_data_design_beams.setCellWidget(fila, 5, self.spx_L_Leg_n)
+        tbl_data_design_beams.setCellWidget(fila, 6, self.spx_L_Sstirrup)
+
+        tbl_data_design_beams.setCellWidget(fila, 7, self.spx_R_As_top)
+        tbl_data_design_beams.setCellWidget(fila, 8, self.spx_R_As_bot)
+        tbl_data_design_beams.setCellWidget(fila, 9, self.spx_R_Leg_n)
+        tbl_data_design_beams.setCellWidget(fila, 10, self.spx_R_Sstirrup)
+
+        tbl_data_design_beams.setColumnWidth(0, 40)
+        tbl_data_design_beams.setColumnWidth(1, 40)
+        tbl_data_design_beams.setColumnWidth(2, 40)
+        tbl_data_design_beams.setColumnWidth(3, 50)
+        tbl_data_design_beams.setColumnWidth(4, 50)
+        tbl_data_design_beams.setColumnWidth(5, 40)
+        tbl_data_design_beams.setColumnWidth(6, 50)
+        tbl_data_design_beams.setColumnWidth(7, 50)
+        tbl_data_design_beams.setColumnWidth(8, 50)
+        tbl_data_design_beams.setColumnWidth(9, 40)
+        tbl_data_design_beams.setColumnWidth(10, 50)
+
+        stylesheet = "::section{border-style: solid;" \
+                     "border-width: 1px;}"
+        tbl_data_design_beams.horizontalHeader().setStyleSheet(stylesheet)
 
 
-class MyForm(QMainWindow):
+class RegistroColumns:
+    def __init__(self, tbl_data_design_columns, id_, b, h, ro, db, de, nbH, nbB, Leg_n_H, Leg_n_B, Sstirrup, Vu_Vn):
+        fila = tbl_data_design_columns.rowCount()
+        tbl_data_design_columns.insertRow(fila)
+
+        self.spx_id = QLineEdit(tbl_data_design_columns)
+        self.spx_id.setValidator(QIntValidator(0, 1000))
+        self.spx_id.setText(f'C{id_}')
+
+        self.spx_b = QLineEdit(tbl_data_design_columns)
+        self.spx_b.setValidator(QIntValidator(20, 1000))
+        self.spx_b.setText('{:d}'.format(int(b)))
+
+        self.spx_h = QLineEdit(tbl_data_design_columns)
+        self.spx_h.setValidator(QIntValidator(20, 1000))
+        self.spx_h.setText('{:d}'.format(int(h)))
+
+        self.spx_ro = QLineEdit(tbl_data_design_columns)
+        self.spx_ro.setValidator(QDoubleValidator(2., 400., 2))
+        self.spx_ro.setText('{:.2f}'.format(ro * 100))
+
+        self.spx_db = QLineEdit(tbl_data_design_columns)
+        self.spx_db.setValidator(QDoubleValidator(1., 10., 2))
+        self.spx_db.setText('{:.2f}'.format(db))
+
+        self.spx_de = QLineEdit(tbl_data_design_columns)
+        self.spx_de.setValidator(QDoubleValidator(1., 10., 2))
+        self.spx_de.setText('{:.2f}'.format(de))
+
+        self.spx_nbH = QLineEdit(tbl_data_design_columns)
+        self.spx_nbH.setValidator(QIntValidator(2, 100))
+        self.spx_nbH.setText('{:d}'.format(int(nbH)))
+
+        self.spx_nbB = QLineEdit(tbl_data_design_columns)
+        self.spx_nbB.setValidator(QIntValidator(2, 100))
+        self.spx_nbB.setText('{:d}'.format(int(nbB)))
+
+        self.spx_Leg_n_H = QLineEdit(tbl_data_design_columns)
+        self.spx_Leg_n_H.setValidator(QIntValidator(2, 100))
+        self.spx_Leg_n_H.setText('{:d}'.format(int(Leg_n_H)))
+
+        self.spx_Leg_n_B = QLineEdit(tbl_data_design_columns)
+        self.spx_Leg_n_B.setValidator(QIntValidator(2, 100))
+        self.spx_Leg_n_B.setText('{:d}'.format(int(Leg_n_B)))
+
+        self.spx_Sstirrup = QLineEdit(tbl_data_design_columns)
+        self.spx_Sstirrup.setValidator(QIntValidator(2, 100))
+        self.spx_Sstirrup.setText('{:d}'.format(int(Sstirrup)))
+
+        self.spx_Vu_Vn = QLineEdit(tbl_data_design_columns)
+        self.spx_Vu_Vn.setText('{:.2f}'.format(Vu_Vn))
+
+
+        tbl_data_design_columns.setCellWidget(fila, 0, self.spx_id)
+        tbl_data_design_columns.setCellWidget(fila, 1, self.spx_b)
+        tbl_data_design_columns.setCellWidget(fila, 2, self.spx_h)
+        tbl_data_design_columns.setCellWidget(fila, 3, self.spx_ro)
+        tbl_data_design_columns.setCellWidget(fila, 4, self.spx_db)
+        tbl_data_design_columns.setCellWidget(fila, 5, self.spx_de)
+        tbl_data_design_columns.setCellWidget(fila, 6, self.spx_nbH)
+        tbl_data_design_columns.setCellWidget(fila, 7, self.spx_nbB)
+        tbl_data_design_columns.setCellWidget(fila, 8, self.spx_Leg_n_H)
+        tbl_data_design_columns.setCellWidget(fila, 9, self.spx_Leg_n_B)
+        tbl_data_design_columns.setCellWidget(fila, 10, self.spx_Sstirrup)
+        tbl_data_design_columns.setCellWidget(fila, 11, self.spx_Vu_Vn)
+
+        tbl_data_design_columns.setColumnWidth(0, 40)
+        tbl_data_design_columns.setColumnWidth(1, 40)
+        tbl_data_design_columns.setColumnWidth(2, 40)
+        tbl_data_design_columns.setColumnWidth(3, 40)
+        tbl_data_design_columns.setColumnWidth(4, 60)
+        tbl_data_design_columns.setColumnWidth(5, 60)
+        tbl_data_design_columns.setColumnWidth(6, 40)
+        tbl_data_design_columns.setColumnWidth(7, 40)
+        tbl_data_design_columns.setColumnWidth(8, 60)
+        tbl_data_design_columns.setColumnWidth(9, 60)
+        tbl_data_design_columns.setColumnWidth(10, 60)
+        tbl_data_design_columns.setColumnWidth(11, 60)
+
+
+        stylesheet = "::section{border-style: solid;" \
+                     "border-width: 1px;}"
+        tbl_data_design_columns.horizontalHeader().setStyleSheet(stylesheet)
+
+
+class RegistroWalls:
+    def __init__(self, tbl_data_design_walls, id_, tw, lw, ro_l, ro_t, db, de, Sst, cMaxS, sigma_c, BE):
+        fila = tbl_data_design_walls.rowCount()
+        tbl_data_design_walls.insertRow(fila)
+
+        self.spx_id = QLineEdit(tbl_data_design_walls)
+        self.spx_id.setValidator(QIntValidator(0, 1000))
+        self.spx_id.setText(f'W{id_}')
+
+        self.spx_b = QLineEdit(tbl_data_design_walls)
+        self.spx_b.setValidator(QIntValidator(15, 1000))
+        self.spx_b.setText('{:d}'.format(int(tw)))
+
+        self.spx_h = QLineEdit(tbl_data_design_walls)
+        self.spx_h.setValidator(QIntValidator(20, 2000))
+        self.spx_h.setText('{:d}'.format(int(lw)))
+
+        self.spx_ro_l = QLineEdit(tbl_data_design_walls)
+        self.spx_ro_l.setValidator(QDoubleValidator(0.1, 8., 3))
+        self.spx_ro_l.setText('{:.2f}'.format(ro_l * 100))
+
+        self.spx_ro_t = QLineEdit(tbl_data_design_walls)
+        self.spx_ro_t.setValidator(QDoubleValidator(0.1, 8., 3))
+        self.spx_ro_t.setText('{:.2f}'.format(ro_t * 100))
+
+        self.spx_db = QLineEdit(tbl_data_design_walls)
+        self.spx_db.setValidator(QDoubleValidator(1., 100., 2))
+        self.spx_db.setText('{:.2f}'.format(db))
+
+        self.spx_de = QLineEdit(tbl_data_design_walls)
+        self.spx_de.setValidator(QDoubleValidator(1., 100., 2))
+        self.spx_de.setText('{:.2f}'.format(de))
+
+        self.spx_Sst = QLineEdit(tbl_data_design_walls)
+        self.spx_Sst.setValidator(QIntValidator(2, 100))
+        self.spx_Sst.setText('{:d}'.format(int(Sst)))
+
+        self.spx_cMaxS = QLineEdit(tbl_data_design_walls)
+        # self.spx_cMaxS.setValidator(QDoubleValidator(0.1, 100))
+        self.spx_cMaxS.setAlignment(QtCore.Qt.AlignCenter)
+        self.spx_cMaxS.setText('{:1.3f}'.format(cMaxS))
+
+        self.spx_sigma_c = QLineEdit(tbl_data_design_walls)
+        # self.spx_sigma_c.setValidator(QDoubleValidator(0.01, 100))
+        # self.spx_sigma_c.setAlignment(Qt.AlignHCenter)
+        self.spx_sigma_c.setAlignment(QtCore.Qt.AlignCenter)
+        self.spx_sigma_c.setText('{:1.3f}'.format(sigma_c))
+
+        self.spx_BE = QLineEdit(tbl_data_design_walls)
+        # self.spx_id.setValidator(QIntValidator(0, 1000))
+        self.spx_BE.setText(BE)
+
+        tbl_data_design_walls.setCellWidget(fila, 0, self.spx_id)
+        tbl_data_design_walls.setCellWidget(fila, 1, self.spx_b)
+        tbl_data_design_walls.setCellWidget(fila, 2, self.spx_h)
+        tbl_data_design_walls.setCellWidget(fila, 3, self.spx_ro_l)
+        tbl_data_design_walls.setCellWidget(fila, 4, self.spx_ro_t)
+        tbl_data_design_walls.setCellWidget(fila, 5, self.spx_db)
+        tbl_data_design_walls.setCellWidget(fila, 6, self.spx_de)
+        tbl_data_design_walls.setCellWidget(fila, 7, self.spx_cMaxS)
+        tbl_data_design_walls.setCellWidget(fila, 8, self.spx_sigma_c)
+        tbl_data_design_walls.setCellWidget(fila, 9, self.spx_BE)
+
+        tbl_data_design_walls.setColumnWidth(0, 40)
+        tbl_data_design_walls.setColumnWidth(1, 40)
+        tbl_data_design_walls.setColumnWidth(2, 40)
+        tbl_data_design_walls.setColumnWidth(3, 40)
+        tbl_data_design_walls.setColumnWidth(4, 60)
+        tbl_data_design_walls.setColumnWidth(5, 60)
+        tbl_data_design_walls.setColumnWidth(6, 40)
+        tbl_data_design_walls.setColumnWidth(7, 60)
+        tbl_data_design_walls.setColumnWidth(8, 60)
+        tbl_data_design_walls.setColumnWidth(9, 60)
+
+        stylesheet = "::section{border-style: solid;" \
+                     "border-width: 1px;}"
+        tbl_data_design_walls.horizontalHeader().setStyleSheet(stylesheet)
+
+
+class BeamElasticElement:
+    def __init__(self, EleTag, Nod_ini, Nod_end, AEle, EcEle, IzEle, LEle, BEle, HEle, ElegTr, RZi, RZe):
+        self.EleTag = EleTag
+        self.Nod_ini = Nod_ini
+        self.Nod_end = Nod_end
+        self.AEle = AEle
+        self.EcEle = EcEle
+        self.IzEle = IzEle
+        self.LEle = LEle
+        self.BEle = BEle
+        self.HEle = HEle
+        self.ElegTr = ElegTr
+        self.RZi = RZi
+        self.RZe = RZe
+
+
+class ZeroLengthElement:
+    def __init__(self, EleTag, Nod_ini, Nod_end):
+        self.EleTag = EleTag
+        self.Nod_ini = Nod_ini
+        self.Nod_end = Nod_end
+
+
+class BeamDesign:
+    def __init__(self, EleTag, b, h, Ast1, dt1, Mn_n1, Asb1, db1, Mn_p1, ns1, ss1, Ast2, dt2, Mn_n2, Asb2, db2, Mn_p2,
+                 ns2, ss2, Nod_ini, Nod_end, db_t1, db_b1, db_t2, db_b2, Vpr, VU1, VU2, Mpr_n1, Mpr_p1, Mpr_n2, Mpr_p2,
+                 Vun):
+        self.EleTag = EleTag
+        self.b = b
+        self.h = h
+        self.Ast1 = Ast1
+        self.dt1 = dt1
+        self.Mn_n1 = Mn_n1
+        self.Asb1 = Asb1
+        self.db1 = db1
+        self.Mn_p1 = Mn_p1
+        self.ns1 = ns1
+        self.ss1 = ss1
+        self.Ast2 = Ast2
+        self.dt2 = dt2
+        self.Mn_n2 = Mn_n2
+        self.Asb2 = Asb2
+        self.db2 = db2
+        self.Mn_p2 = Mn_p2
+        self.ns2 = ns2
+        self.ss2 = ss2
+        self.Nod_ini = Nod_ini
+        self.Nod_end = Nod_end
+        self.db_t1 = db_t1
+        self.db_b1 = db_b1
+        self.db_t2 = db_t2
+        self.db_b2 = db_b2
+        self.Vpr = Vpr
+        self.VU1 = VU1
+        self.VU2 = VU2
+        self.Mpr_n1 = Mpr_n1
+        self.Mpr_p1 = Mpr_p1
+        self.Mpr_n2 = Mpr_n2
+        self.Mpr_p2 = Mpr_p2
+        self.Vun = Vun
+        
+        
+class ColDesign:
+    def __init__(self, EleTag, b, h, nbH, nbB, db, de, As, Pu_v, Mu_v, fiPn, fiMn, Mn_i, d, dist, ro, Mu_i,
+                 sst, nsB, nsH, Nod_ini, Nod_end, NUD1, NUD2, NUG1, NUG2, MUD1, MUD2, VUD1, VUD2, ColBeamStr, Vn, VI6,
+                 Vu_Vn, VnCol, sem, sigma_IF, wIF):
+        self.EleTag = EleTag
+        self.b = b
+        self.h = h
+        self.nbH = nbH
+        self.nbB = nbB
+        self.db = db
+        self.de = de
+        self.As = As
+        self.Pu_v = Pu_v
+        self.Mu_v = Mu_v
+        self.fiPn = fiPn
+        self.fiMn = fiMn
+        self.Mn_i = Mn_i
+        self.d = d
+        self.dist = dist
+        self.ro = ro
+        self.Mu_i = Mu_i
+        self.sst = sst
+        self.nsB = nsB
+        self.nsH = nsH
+        self.Nod_ini = Nod_ini
+        self.Nod_end = Nod_end
+        self.NUD1 = NUD1
+        self.NUD2 = NUD2
+        self.NUG1 = NUG1
+        self.NUG2 = NUG2
+        self.MUD1 = MUD1
+        self.MUD2 = MUD2
+        self.VUD1 = VUD1
+        self.VUD2 = VUD2
+        self.ColBeamStr = ColBeamStr
+        self.Vn = Vn
+        self.Vy = VI6
+        self.Vu_Vn = Vu_Vn
+        self.VnCol = VnCol
+        self.sem = sem
+        self.sigma_IF = sigma_IF
+        self.wIF = wIF
+
+
+class WallDesign:
+    def __init__(self, EleTag, b, h, nbH, nbB, db, dst, As, Pu_v, Mu_v, fiPn, fiMn, Mn_i, d, dist, ro_t, ro_l, Mu_i,
+                 sst, Nod_ini, Nod_end, NUD1, NUD2, NUG1, NUG2, MUD1, MUD2, VUD1, VUD2, Vn, cMaxS, sigma_c, BE, lbe,
+                 nsH_BE, nsB_BE, se_BE):
+        self.EleTag = EleTag
+        self.b = b
+        self.h = h
+        self.nbH = nbH
+        self.nbB = nbB
+        self.db = db
+        self.dst = dst
+        self.As = As
+        self.Pu_v = Pu_v
+        self.Mu_v = Mu_v
+        self.fiPn = fiPn
+        self.fiMn = fiMn
+        self.Mn_i = Mn_i
+        self.d = d
+        self.dist = dist
+        self.ro_t = ro_t
+        self.ro_l = ro_l
+        self.Mu_i = Mu_i
+        self.sst = sst
+        self.Nod_ini = Nod_ini
+        self.Nod_end = Nod_end
+        self.NUD1 = NUD1
+        self.NUD2 = NUD2
+        self.NUG1 = NUG1
+        self.NUG2 = NUG2
+        self.MUD1 = MUD1
+        self.MUD2 = MUD2
+        self.VUD1 = VUD1
+        self.VUD2 = VUD2
+        self.Vn = Vn
+        self.cMaxS = cMaxS
+        self.sigma_c = sigma_c
+        self.BE = BE
+        self.lbe = lbe
+        self.nsH_BE = nsH_BE
+        self.nsB_BE = nsB_BE
+        self.se_BE = se_BE
+
+
+# class DuctilityCurve:
+#     def __init__(self, xi, xe, yi, ye, CD_i, CD_e):
+#         self.xi = xi
+#         self.xe = xe
+#         self.yi = yi
+#         self.ye = ye
+#         self.CD_i = CD_i
+#         self.CD_e = CD_e
+
+
+class PlasticRotationAngle:
+    def __init__(self, xi, xe, yi, ye, PRA_i, PRA_e):
+        self.xi = xi
+        self.xe = xe
+        self.yi = yi
+        self.ye = ye
+        self.PRA_i = PRA_i
+        self.PRA_e = PRA_e
+
+
+class AcceptanceCriteria:
+    def __init__(self, IO_1, LS_1, CP_1, IO_2, LS_2, CP_2):
+        self.IO_1 = IO_1
+        self.LS_1 = LS_1
+        self.CP_1 = CP_1
+        self.IO_2 = IO_2
+        self.LS_2 = LS_2
+        self.CP_2 = CP_2
+
+
+class PlasticHingeLength:
+    def __init__(self, phl1, phl2):
+        self.phl1 = phl1
+        self.phl2 = phl2
+
+
+class MyForm(QDialog):
     def __init__(self):
         super().__init__()
-        self.ui = Ui_NonLinearMainWindow()
+        self.ui = Ui_NonLinearFrameDialog()
         # self.setStyleSheet("QLineEdit {border: none}")
         self.ui.setupUi(self)
-
-        self.ui.btn_design.clicked.connect(self.Design)
-        self.ui.btn_accept_design.clicked.connect(self.AcceptDesign)
-        self.ui.btn_create_nonlinear_model.clicked.connect(self.CreateNLM)
-        self.ui.btn_run_pushover.clicked.connect(self.Pushover)
-        self.ui.btn_run_idad.clicked.connect(self.IDA)
-        self.ui.btn_run_css.clicked.connect(self.CSS)
-        self.ui.btn_ida_results_plot.clicked.connect(self.PlotIDA)
-        self.ui.btn_css_results_plot.clicked.connect(self.PlotCSS)
-        self.ui.btn_plot_css_max_floors.clicked.connect(self.PlotCSSMaxFloors)
-
-        self.ui.lbl_encabezado.setScaledContents(True)
-        self.ui.lbl_pie_pagina.setScaledContents(True)
-
-        self.ui.gbx_type_load_spectra_file_selector.show()
-        self.ui.gbx_type_load_asce_7.hide()
-        self.ui.gbx_type_load_cccsr84.hide()
-        self.ui.gbx_type_load_nsr10.hide()
-        self.ui.gbx_type_load_nsr98.hide()
-        self.ui.gbx_seismic_load_coefficient_percentage.hide()
-        self.ui.gbx_type_load_asce_7.hide()
-
-        self.ui.cbx_type_load_seismic_type_load.currentIndexChanged.connect(self.cbx_type_load_seismic_type_load_changed)
-        
-        self.ui.mni_exit.triggered.connect(self.Exit)
-        
+        self.ui.Design.clicked.connect(self.Design)
+        self.ui.AcceptDesign.clicked.connect(self.AcceptDesign)
+        self.ui.CreateNLM.clicked.connect(self.CreateNLM)
+        self.ui.Pushover.clicked.connect(self.Pushover)
+        self.ui.IDA.clicked.connect(self.IDA)
+        self.ui.CSS.clicked.connect(self.CSS)
+        self.ui.PlotIDA.clicked.connect(self.PlotIDA)
+        self.ui.PlotCSS.clicked.connect(self.PlotCSS)
+        self.ui.PlotCSSMaxFloors.clicked.connect(self.PlotCSSMaxFloors)
+        self.ui.progressBarPushover.hide()
+        self.ui.progressBarBeamDesign.hide()
+        self.ui.progressBarColumnDesign.hide()
+        self.ui.Exit.clicked.connect(self.Exit)
         self.show()
-
-    def cbx_type_load_seismic_type_load_changed(self, index):
-        if index == 0:
-            self.ui.gbx_type_load_spectra_file_selector.show()
-            self.ui.gbx_type_load_asce_7.hide()
-            self.ui.gbx_type_load_nsr10.hide()
-            self.ui.gbx_type_load_nsr98.hide()
-            self.ui.gbx_type_load_cccsr84.hide()
-            self.ui.gbx_seismic_load_coefficient_percentage.hide()
-
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_type_load_spectra_file_selector)
-        elif index == 1:
-            self.ui.gbx_type_load_spectra_file_selector.hide()
-            self.ui.gbx_type_load_asce_7.show()
-            self.ui.gbx_type_load_nsr10.hide()
-            self.ui.gbx_type_load_nsr98.hide()
-            self.ui.gbx_type_load_cccsr84.hide()
-            self.ui.gbx_seismic_load_coefficient_percentage.hide()
-
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_type_load_asce_7)
-        elif index == 2:
-            self.ui.gbx_type_load_spectra_file_selector.hide()
-            self.ui.gbx_type_load_asce_7.hide()
-            self.ui.gbx_type_load_nsr10.show()
-            self.ui.gbx_type_load_nsr98.hide()
-            self.ui.gbx_type_load_cccsr84.hide()
-            self.ui.gbx_seismic_load_coefficient_percentage.hide()
-
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_type_load_nsr10)
-        elif index == 3:
-            self.ui.gbx_type_load_spectra_file_selector.hide()
-            self.ui.gbx_type_load_asce_7.hide()
-            self.ui.gbx_type_load_nsr10.hide()
-            self.ui.gbx_type_load_nsr98.show()
-            self.ui.gbx_type_load_cccsr84.hide()
-            self.ui.gbx_seismic_load_coefficient_percentage.hide()
-
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_type_load_nsr98)
-        elif index == 4:
-            self.ui.gbx_type_load_spectra_file_selector.hide()
-            self.ui.gbx_type_load_asce_7.hide()
-            self.ui.gbx_type_load_nsr10.hide()
-            self.ui.gbx_type_load_nsr98.hide()
-            self.ui.gbx_type_load_cccsr84.show()
-            self.ui.gbx_seismic_load_coefficient_percentage.hide()
-
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_type_load_cccsr84)
-        elif index == 5:
-            self.ui.gbx_type_load_spectra_file_selector.hide()
-            self.ui.gbx_type_load_asce_7.hide()
-            self.ui.gbx_type_load_nsr10.hide()
-            self.ui.gbx_type_load_nsr98.hide()
-            self.ui.gbx_type_load_cccsr84.hide()
-            self.ui.gbx_seismic_load_coefficient_percentage.show()
-
-            self.ui.frm_type_load.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.ui.gbx_seismic_load_coefficient_percentage)
 
     def Exit(self):
         self.close()
@@ -190,14 +545,12 @@ class MyForm(QMainWindow):
             PWall2SlabD, PWall2SlabL, PColSlabD, PColSlabL, ListNodesW1, ListNodesW2, FrameDetailing, WallDetailing,\
             FN, infill_m, infill_lw
 
-        CodeDesign = self.ui.cbx_design_design_code.currentText()
-        FrameDetailing = self.ui.cbx_design_frame_seismic.currentText()
-        WallDetailing = self.ui.cbx_design_wall_seismic_detailing.currentText()
+        CodeDesign = self.ui.comboBoxDesignCode.currentText()
+        FrameDetailing = self.ui.comboBoxSeismicFrameDesign.currentText()
+        WallDetailing = self.ui.comboBoxSeismicWallDesign.currentText()
         if CodeDesign == 'ACI 318-19':
             if FrameDetailing == 'IMF':
-                self.data_beams_table()
-                
-                # exec(open("Design_ACI_318S_19_IFM.py").read())
+                exec(open("Design_ACI_318S_19_IFM.py").read())
             elif FrameDetailing == 'SMF':
                 exec(open("Design_ACI_318S_19_SFM.py").read())
             elif FrameDetailing == 'OMF':
@@ -212,68 +565,9 @@ class MyForm(QMainWindow):
         elif CodeDesign == 'Gravity Load Design':
             exec(open("Design_GLD.py").read())
 
-    def data_beams_table(self):
-        self.registros_beams = []
-        for DB in DataBeamDesign:
-            b = DB.b / U.cm
-            h = DB.h / U.cm
-            L_As_top = DB.Ast1 / (DB.b * DB.dt1) * 100
-            L_As_bot = DB.Asb1 / (DB.b * DB.db1) * 100
-            R_As_top = DB.Ast2 / (DB.b * DB.dt2) * 100
-            R_As_bot = DB.Asb2 / (DB.b * DB.db2) * 100
-            L_Leg_n = DB.ns1
-            R_Leg_n = DB.ns2
-            L_Sstirrup = DB.ss1 / U.cm
-            R_Sstirrup = DB.ss2 / U.cm
-            registro = RegistroBeams(self.ui.tbl_data_design_beams, DB.EleTag, b, h, L_As_top, L_As_bot, L_Leg_n,
-                                    L_Sstirrup, R_As_top, R_As_bot, R_Leg_n, R_Sstirrup)
-            self.registros_beams.append(registro)
-
-    def data_columns_table(self):
-        self.registros_cols = []
-        for DC in DataColDesign:
-            b = DC.b / cm
-            h = DC.h / cm
-            roCol = DC.ro
-            db = DC.db / mm
-            de = DC.de / mm
-            nbH = DC.nbH
-            nbB = DC.nbB
-            nsH = DC.nsH
-            nsB = DC.nsB
-            sst = DC.sst / cm
-            Vu_Vn = DC.Vu_Vn
-            registro = RegistroColumns(self.ui.tbl_data_design_columns, DC.EleTag, b, h, roCol, db, de, nbH, nbB, nsH, nsB,
-                                    sst, Vu_Vn)
-            self.registros_cols.append(registro)
-
-    def data_walls_table(self):
-        self.registros_walls = []
-        for DW in DataWallDesign:
-            tw = DW.b / cm
-            lw = DW.h / cm
-            ro_l = DW.ro_l
-            ro_t = DW.ro_t
-            db = DW.db / mm
-            dst = DW.dst / mm
-            sst = DW.sst / cm
-            cMaxS = DW.cMaxS / DW.h
-            sigma_c = DW.sigma_c / fcC
-            BE = DW.BE
-            registro = RegistroWalls(self.ui.tbl_data_design_walls, DW.EleTag, tw, lw, ro_l, ro_t, db, dst, sst, cMaxS,
-                                    sigma_c, BE)
-            self.registros_walls.append(registro)
-
-    def beta1(fc):
-        if fc <= 28 * MPa:
-            Beta1 = 0.85
-        else:
-            Beta1 = max([0.85 - 0.05 * (fc - 28.) / 7., 0.65])
-        return Beta1
-
     def AcceptDesign(self):
 
-        global T1m, T2m, EleCol, EleBeam, DataBeamPhl, DataColPhl, ListNodesLC, DataColPhl, list_beams, list_cols, \
+        global T1m, T2m, EleCol, EleBeam, DataBeamPhl, DataColPhl, ListNodesLC, DataWallPhl, list_beams, list_cols, \
             ListNodes, num_nodes, PDG_Beams, PDG_Cols, net, EleWall, ListNodesW1, ListNodesW2, PDG_Walls
         # Validation of beam and column design table data
 
@@ -333,9 +627,9 @@ class MyForm(QMainWindow):
 
     # Creation of the nonlinear model
     def CreateNLM(self):
-        global T1m, T2m, EleCol, EleBeam, DataBeamPhl, DataColPhl, ListNodesLC, DataColPhl, list_beams, list_cols, \
+        global T1m, T2m, EleCol, EleBeam, DataBeamPhl, DataColPhl, ListNodesLC, DataWallPhl, list_beams, list_cols, \
             ListNodes, num_nodes, PDG_Beams, PDG_Cols, net, EleWall, ListNodesW1, ListNodesW2, PDG_Walls, nnt, WDLS,\
-            WDL, WLL, PColSlabD, PColSlabL, NIF, FNB, nnt1
+            WDL, WLL, PColSlabD, PColSlabL, NIF, FNB, nnt1, list_walls, floors_num
 
         # Function: Parameters of regularized unconfined concrete
         def con_inconf_regu():
@@ -380,11 +674,11 @@ class MyForm(QMainWindow):
             epsccu = min(Gfcc / (0.6 * fpcc * phl) - 0.8 * fpcc / Ecc + epscc0, 1.5 * epscc0)
             fccu = 0.2 * fpcc
             lambdaC = 0.10
+
             ft = 0.33 * sqrt(-fpc * MPa)
             Ets = ft / 0.002
             # print('fpcc, epscc0, fccu, epsccu, lambdaC, ft, Ets', fpcc, epscc0, fccu, epsccu, lambdaC, ft, Ets)
             return fpcc, epscc0, fccu, epsccu, lambdaC, ft, Ets
-
         def con_conf_reguW(b, h, nsB, nsH, sst):
             fpc = -fc
             bcx = h - 2. * cover - dst
@@ -623,6 +917,7 @@ class MyForm(QMainWindow):
         WDL = WDL / FN
         WLL = WLL / FN
         PColSlabD, PColSlabL = PColSlabD / FN, PColSlabL / FN
+        nnt2 = nnt
         if NIF != 0 and FNB > 0:
             FN = 1
             nnt1 = nnt
@@ -664,12 +959,12 @@ class MyForm(QMainWindow):
                     op.fix(int(node[0]), 1, 1, 1)
         if np.any(ListNodesW1):
             for node in ListNodesW1[:-1, :]:
-                nodeTag = int(node[0] + nntot)
+                nodeTag = int(node[0] + nnt2)
                 # print(nodeTag, node[1], node[2])
                 op.node(nodeTag, node[1], node[2])
         if np.any(ListNodesW2):
             for node in ListNodesW2[:-1, :]:
-                nodeTag = int(node[0] + nntot)
+                nodeTag = int(node[0] + nnt2)
                 op.node(nodeTag, node[1], node[2])
         # Non-linear spring nodes
         for node in ListNodes:
@@ -916,8 +1211,6 @@ class MyForm(QMainWindow):
                 for dist, As in zip(DC.dist, DC.As):
                     op.layer('straight', Ele.EleTag * 20 + 4, 1, As * FNB, -y1 + dist, z1BF - dp1BF, -y1 + dist, -z1BF + dp1BF)
                 MassDens = Ele.AEle * GConc / g * FNB
-                # LColT = Ele.LEle + Ele.RZi + Ele.RZe
-                # MassDens = (Ele.AEle * GConc / g) * FNB * (LColT / Ele.LEle)
                 Nod_ini = Ele.Nod_ini + nntot * 2 + nnt1
                 Nod_end = Ele.Nod_end + nntot * 3 + nnt1
                 op.beamIntegration('HingeRadau', Ele.EleTag * 2 + 1, Ele.EleTag * 10 + 5, phl, Ele.EleTag * 10 + 5, phl, Ele.EleTag * 10 + 5)
@@ -1056,12 +1349,12 @@ class MyForm(QMainWindow):
             elif self.ui.radioButtonMean.isChecked():
                 phl = np.mean([phl1, phl2, phl3])
             if ListNodesW[indW, 2] == 0:
-                phl = 0.111 * Ele.LEle
+                wip = 0.111
             else:
-                phl = 0.35 * Ele.LEle
+                wip = 0.35
             if self.ui.radioButtonMVLEM.isChecked():
                 phl = Ele.LEle
-            DataWallPhl.append(PlasticHingeLength(phl, phl))
+            DataWallPhl.append(PlasticHingeLength(phl, wip))
             if self.ui.checkBox_ReguConcrete.isChecked() == True:
                 fpc, epsc0, fcu, epscu, lambdaU, ft, Ets = con_inconf_regu()
                 # print('fpc, epsc0, fcu, epscu, lambdaU, ft, Ets', fpc/MPa, epsc0, fcu/MPa, epscu, lambdaU, ft/MPa, Ets/MPa)
@@ -1177,6 +1470,7 @@ class MyForm(QMainWindow):
                     op.beamIntegration('Radau', Ele.EleTag * 2, Ele.EleTag * 10, 3)
                 else:
                     op.beamIntegration('Legendre', Ele.EleTag * 2, Ele.EleTag * 10, 3)
+                # print('forceBeamColumn', Ele.EleTag * 20, Nod_ini, Nod_end, Ele.ElegTr, Ele.EleTag * 2, '-mass', MassDens)
                 op.element('forceBeamColumn', Ele.EleTag * 20, Nod_ini, Nod_end, Ele.ElegTr, Ele.EleTag * 2, '-mass', MassDens)
             MatTagX, MatTagY, MatTagZ = Ele.EleTag * 20 + 6, Ele.EleTag * 20 + 8, Ele.EleTag * 20 + 10
             op.uniaxialMaterial('Elastic', MatTagX, Krigid)
@@ -1322,13 +1616,19 @@ class MyForm(QMainWindow):
             for Ele in EleCol:
                 op.uniaxialMaterial('Elastic', Ele.EleTag * 20 + 15, Krigid)
                 op.element('zeroLength', Ele.EleTag * 20 + 9, Ele.Nod_end, Ele.Nod_end + nnt1, '-mat', Ele.EleTag * 20 + 15, '-dir', 1)
-        list_beams = [Ele.EleTag for Ele in EleBeam]
-        list_cols = [Ele.EleTag for Ele in EleCol]
+        list_beams = [Ele.EleTag * 20 for Ele in EleBeam]
+        # list_beams = np.int64(list_beams)
+        # list_beams = list_beams.tolist()
+        list_cols = [Ele.EleTag * 20 for Ele in EleCol]
+        # list_cols = np.int64(list_cols)
+        # list_cols = list_cols.tolist()
         list_walls = [Ele.EleTag * 20 for Ele in EleWall]
         list_walls = np.int64(list_walls)
         list_walls = list_walls.tolist()
+
         # print('list_beams =', list_beams)
         # print('list_cols =', list_cols)
+        OutputPushFile = self.ui.OutputPushFile.text()
         if not os.path.exists("Pushover"):
             os.mkdir("Pushover")
         if self.ui.radioButtonMVLEM.isChecked():
@@ -1356,8 +1656,9 @@ class MyForm(QMainWindow):
         Id_Nodes = np.int64(Id_Nodes)
         Id_Nodes = Id_Nodes.tolist()
 
-        op.recorder('Node', '-file', 'Pushover/HoriNodes.out', '-time', '-node', *Id_Nodes, '-dof', 1, 'disp')
-        op.recorder('Node', '-file', 'Pushover/VertNodes.out', '-time', '-node', *Id_Nodes, '-dof', 2, 'disp')
+
+        op.recorder('Node', '-file', 'Pushover/HoriNodes.out', '-closeOnWrite', '-time', '-node', *Id_Nodes, '-dof', 1, 'disp')
+        op.recorder('Node', '-file', 'Pushover/VertNodes.out', '-closeOnWrite', '-time', '-node', *Id_Nodes, '-dof', 2, 'disp')
         if tw1 != 0:
             Id_NodeW1 = ListNodesW1[:, 0]
             Id_NodeW1 = np.int64(Id_NodeW1)
@@ -1367,12 +1668,27 @@ class MyForm(QMainWindow):
             Id_NodeW2 = ListNodesW2[:, 0]
             Id_NodeW2 = np.int64(Id_NodeW2)
             Id_NodeW2 = Id_NodeW2.tolist()
+
+        if np.any(ListNodesW):
+            Id_NodesW = ListNodesW[:, 0]
+            Id_NodesW = np.int64(Id_NodesW)
+            Id_NodesW = Id_NodesW.tolist()
+            op.recorder('Node', '-file', 'Pushover/HoriNodesW.out', '-closeOnWrite', '-time', '-node', *Id_NodesW, '-dof', 1, 'disp')
+            op.recorder('Node', '-file', 'Pushover/VertNodesW.out', '-closeOnWrite', '-time', '-node', *Id_NodesW, '-dof', 2, 'disp')
+            Afw1, Afw2 = float(self.ui.Af1.text()), float(self.ui.Af2.text())
+            lw1, lw2 = float(self.ui.lw1.text()), float(self.ui.lw2.text())
+            np.savez('Pushover/' + OutputPushFile + '_WallData.npz', tw1=tw1, tw2=tw2, Loc_heigth=Loc_heigth, fc=fcC, fy=fy, Afw1=Afw1, Afw2=Afw2, lw1=lw1, lw2=lw2)
+            op.recorder('Element', '-file', 'Pushover/' + OutputPushFile + '_walls_forces.out', '-closeOnWrite', '-time', '-ele', *list_walls, 'globalForce')
+            op.recorder('Element', '-file', 'Pushover/' + OutputPushFile + '_walls_deformations.out', '-closeOnWrite', '-time', '-ele', *list_walls, 'section', 'deformation')
+            op.recorder('Element', '-file', 'Pushover/' + OutputPushFile + '_PhRot_Wall.out', '-time', '-closeOnWrite', '-ele', *list_walls, 'plasticDeformation')
+            op.recorder('Node', '-file', 'Pushover/' + OutputPushFile + '_HoriNodesW.out', '-time', '-node', *Id_NodesW, '-dof', 1, 'disp')
+
         if np.any(ListNodesW1):
-            op.recorder('Node', '-file', 'Pushover/HoriNodesW1.out', '-time', '-node', *Id_NodeW1, '-dof', 1, 'disp')
-            op.recorder('Node', '-file', 'Pushover/VertNodesW1.out', '-time', '-node', *Id_NodeW1, '-dof', 2, 'disp')
+            op.recorder('Node', '-file', 'Pushover/HoriNodesW1.out', '-closeOnWrite', '-time', '-node', *Id_NodeW1, '-dof', 1, 'disp')
+            op.recorder('Node', '-file', 'Pushover/VertNodesW1.out', '-closeOnWrite', '-time', '-node', *Id_NodeW1, '-dof', 2, 'disp')
         if np.any(ListNodesW2):
-            op.recorder('Node', '-file', 'Pushover/HoriNodesW2.out', '-time', '-node', *Id_NodeW2, '-dof', 1, 'disp')
-            op.recorder('Node', '-file', 'Pushover/VertNodesW2.out', '-time', '-node', *Id_NodeW2, '-dof', 2, 'disp')
+            op.recorder('Node', '-file', 'Pushover/HoriNodesW2.out', '-closeOnWrite', '-time', '-node', *Id_NodeW2, '-dof', 1, 'disp')
+            op.recorder('Node', '-file', 'Pushover/VertNodesW2.out', '-closeOnWrite', '-time', '-node', *Id_NodeW2, '-dof', 2, 'disp')
         # Create a Plain load pattern for gravity loading with a Linear TimeSeries
         op.timeSeries('Linear', 1)
         op.pattern('Plain', 1, 1)
@@ -1416,7 +1732,7 @@ class MyForm(QMainWindow):
         # op.printModel()
         Tol = 1.0e-6  # convergence tolerance for test
         op.constraints('Plain')  # how it handles boundary conditions
-        op.numberer('Plain')  # renumber dof to minimize band-width (optimization), if you want to
+        op.numberer('Plain')  # renumber dof to minimize band-width (optimization`), if you want to
         op.system('BandGeneral')  # how to store and solve the system of equations in the analysis
         op.test('NormDispIncr', Tol, 100)  # determine if convergence has been achieved at the end of an iteration step
         op.algorithm('KrylovNewton')  # use Newton solution algorithm: updates tangent stiffness at every iteration
@@ -1482,8 +1798,10 @@ class MyForm(QMainWindow):
             # print('MPart', MPart)
             CumMPart = np.cumsum(MPart)
             # print('CumMPart', CumMPart)
-            indN90 = np.where(CumMPart >= 90)[0][0]
-            # print('indN90', indN90)
+            if len(np.where(CumMPart >= 90)[0]) > 0:
+                indN90 = np.where(CumMPart >= 90)[0][0]
+            else:
+                indN90 = np.argmax(CumMPart)  # Escoge el índice del valor máximo
             # print('Mratios', Mratios[1])
             self.ui.T1.setText(str(round(T[0], 2)) + ' sec')
             self.ui.T2.setText(str(round(T[1], 2)) + ' sec')
@@ -1608,7 +1926,7 @@ class MyForm(QMainWindow):
 
     # Pushover function
     def Pushover(self):
-        global cbar, DataColPhl, num_nodes, NIF, FNB
+        global cbar, DataColPhl, num_nodes, NIF, FNB, DataWallPhl
 
         def singlePush1(dref, mu, ctrlNode, dispDir, nSteps):
             IOflag = 2
@@ -2956,7 +3274,8 @@ class MyForm(QMainWindow):
             ListNodesDrift, cIndex, ListNodesBasal, T1m, Wtotal, IM, Sa_max, RDR_max, SDR_max, nrecs, RA_max, EleCol, \
             EleBeam, DataColPhl, VnVu_max, list_beams, list_cols, DataBeamPhl, \
             maxSDRBdg, maxSDRBdgv, maxAccelBdgv, maxPhRot_Colcv, maxPhRot_Beamcv, MedPhRot_Colmv_v, MedPhRot_Beammv_v, \
-            ResiBdg, ResiBdgv, maxCountColapv, SDRBdgVColapv
+            ResiBdg, ResiBdgv, maxCountColapv, SDRBdgVColapv, list_walls, VnVuWall_max, MaxPhRot_Wallmv_v, EleWall, \
+            DataWallPhl, DataWallDesign, ListEleTagW1, ListEleTagW2, MaxCurva_Wallmv_v
         if not os.path.exists("CSS"):
             os.mkdir("CSS")
         exec(open("CSS.py").read())
@@ -2979,7 +3298,16 @@ class MyForm(QMainWindow):
         np.savetxt('CSS/' + OutputCSSFile + '_PhRot_Beam_Med.txt', MedPhRot_Beammv_v, fmt='%.6f')
         np.savetxt('CSS/' + OutputCSSFile + '_Count_Colap_V.txt', maxCountColapv, fmt='%.6f')
         np.savetxt('CSS/' + OutputCSSFile + '_SDR_Colap_V.txt', SDRBdgVColapv, fmt='%.6f')
-
+        np.savetxt('CSS/' + OutputCSSFile + '_VnVuWall_max.txt', VnVuWall_max, fmt='%.6f')
+        MaxPhRot_Wallm1v_v = MaxPhRot_Wallmv_v[:, 0].reshape(len(MaxPhRot_Wallmv_v[:, 0])//floors_num, floors_num)
+        MaxCurva_Wallm1v_v = MaxCurva_Wallmv_v[:, 0].reshape(len(MaxCurva_Wallmv_v[:, 0])//floors_num, floors_num)
+        # print('MaxPhRot_Wallm1v_v', MaxPhRot_Wallm1v_v)
+        MaxPhRot_Wallm2v_v = MaxPhRot_Wallmv_v[:, 2].reshape(len(MaxPhRot_Wallmv_v[:, 2])//floors_num, floors_num)
+        MaxCurva_Wallm2v_v = MaxCurva_Wallmv_v[:, 2].reshape(len(MaxCurva_Wallmv_v[:, 2])//floors_num, floors_num)
+        np.savetxt('CSS/' + OutputCSSFile + '_MaxPhRot_Wall1mv_v.txt', MaxPhRot_Wallm1v_v, fmt='%.6f')
+        np.savetxt('CSS/' + OutputCSSFile + '_MaxPhRot_Wall2mv_v.txt', MaxPhRot_Wallm2v_v, fmt='%.6f')
+        np.savetxt('CSS/' + OutputCSSFile + '_MaxCurva_Wall1mv_v.txt', MaxCurva_Wallm1v_v, fmt='%.6f')
+        np.savetxt('CSS/' + OutputCSSFile + '_MaxCurva_Wall2mv_v.txt', MaxCurva_Wallm2v_v, fmt='%.6f')
 
     def PlotIDA(self):
         exec(open("FragilityFunction.py").read())

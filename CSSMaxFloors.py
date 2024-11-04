@@ -2,7 +2,7 @@ import numpy as np  # load the numpy module, calling it np
 import matplotlib.pyplot as plt
 # colors = np.array(["green", "green", "orange", "red", "magenta", "blue", "gold", "purple", "cyan", "brown",
 #                    "lime", "gray", "olive"])
-colors = plt.cm.jet(np.linspace(0, 1, 8))
+colors = plt.cm.jet(np.linspace(0, 1, 10))
 InputCSSFile = self.ui.InputCSSFile_2.text()
 t_min_lim = float(self.ui.t_min_2.text())
 SDR_lim = float(self.ui.SDR_limit_2.text())

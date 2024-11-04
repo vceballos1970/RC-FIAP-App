@@ -1,5 +1,6 @@
 def runNRHA_CSS(Dt, Tmax, Loc_heigth, Loc_span, ListNodesDrift, ListNodesBasal, EleCol, EleBeam, LC, DataColPhl,
-                DataColDesign, ListNodesLC, EQname, HL_directory, ListNodes, DataBeamPhl, DataBeamDesing, accelg, T1m):
+                DataColDesign, ListNodesLC, EQname, HL_directory, ListNodes, DataBeamPhl, DataBeamDesing, accelg, T1m,
+                EleWall, DataWallPhl, DataWallDesign, ListEleTagW1, ListEleTagW2):
     # --------------------------------------------------
     # Description of Parameters
     # --------------------------------------------------
@@ -51,9 +52,14 @@ def runNRHA_CSS(Dt, Tmax, Loc_heigth, Loc_span, ListNodesDrift, ListNodesBasal, 
     maxDriftPiso_v = []
     maxRA_v = []
     maxRPD_v = []
+    maxWallRA_v = []
+    maxWallRPD_v = []
     maxVu_Vn_v = []
-    # PhRot_Col_v = np.zeros(floors_num)
+    maxWallVu_Vn_v = []
+    #PhRot_Col_v = np.zeros(floors_num)
     PhRot_Colm_v = np.zeros((1, floors_num, 2*axes_num))
+    PhRot_Wallm_v = np.zeros((1, floors_num, 4))
+    Curva_Wallm_v = np.zeros((1, floors_num, 4))
     PhRot_Colc_v = np.zeros(floors_num)
     CountColapV_v = np.zeros(floors_num)
     PhRot_Beam_v = np.zeros(floors_num)
@@ -233,6 +239,62 @@ def runNRHA_CSS(Dt, Tmax, Loc_heigth, Loc_span, ListNodesDrift, ListNodesBasal, 
         PhRot_Colc_v = np.vstack((PhRot_Colc_v, PhRot_Colc))
         CountColapV_v = np.vstack((CountColapV_v, CountColapV))
         PhRot_Colm_v = np.concatenate((PhRot_Colm_v, [PhRot_Colm]), axis=0)
+
+        #Maximum rotations and shear ratios in walls
+        maxRA = 0.0  # Max Rotation Angle
+        maxRPD = 0.0
+        PhRot_Wallm = np.zeros((floors_num, 4))
+        Curva_Wallm = np.zeros((floors_num, 4))
+        nfloor = 1
+        for (Ele, DWPhl, DW) in zip(EleWall, DataWallPhl, DataWallDesign):
+            PD = op.eleResponse(Ele.EleTag * 20, 'plasticDeformation')
+            DeforsS1 = np.array(op.eleResponse(Ele.EleTag * 20, 'section', 1, 'deformation'))
+            DeforsS3 = np.array(op.eleResponse(Ele.EleTag * 20, 'section', 3, 'deformation'))
+            fi_S1, fi_S3 = abs(DeforsS1[1]), abs(DeforsS3[1])
+            # print('PD', PD)
+            PD1 = abs(PD[1])
+            PD2 = abs(PD[2])
+            wip = DWPhl.phl2*DW.h/htot
+            Lp = DWPhl.phl1
+            SF = wip*htot**2*(2-wip)/(Lp*(2*htot-Lp)) #scale factor for the rotation
+            SF = 1.0
+            PD1 = PD1*SF
+            PD2 = PD2*SF
+            RPD = max(PD1, PD2)
+
+            # if RA >= maxRA:
+            #     maxRA = RA
+            if RPD >= maxRPD:
+                maxRPD = RPD
+            ForcesS1 = np.array(op.eleResponse(Ele.EleTag*20, 'force'))
+            # print('ForcesS1', ForcesS1)
+            Vu = abs(ForcesS1[0])
+            # print('Vu', Vu)
+            Vu_Vn = Vu/DW.Vn
+            if Vu_Vn >= maxVu_Vn:
+                maxVu_Vn = Vu_Vn
+            if Ele.EleTag in ListEleTagW1:
+                nwall = 1
+            elif Ele.EleTag in ListEleTagW2:
+                nwall = 2
+            if PD1 > PhRot_Wallm[nfloor-1, 2*nwall-2]:
+                PhRot_Wallm[nfloor-1, 2*nwall-2] = PD1
+            if PD2 > PhRot_Wallm[nfloor-1, 2*nwall-1]:
+                PhRot_Wallm[nfloor-1, 2*nwall-1] = PD2
+            if fi_S1 > Curva_Wallm[nfloor-1, 2*nwall-2]:
+                Curva_Wallm[nfloor-1, 2*nwall-2] = fi_S1
+            if fi_S3 > Curva_Wallm[nfloor-1, 2*nwall-1]:
+                Curva_Wallm[nfloor-1, 2*nwall-1] = fi_S3
+            nfloor += 1
+            if nfloor > floors_num:
+                nfloor = 1
+
+        maxWallRPD_v = np.append(maxWallRPD_v, maxRPD)
+        maxWallVu_Vn_v = np.append(maxWallVu_Vn_v, maxVu_Vn)
+        PhRot_Wallm_v = np.concatenate((PhRot_Wallm_v, [PhRot_Wallm]), axis=0)
+        Curva_Wallm_v = np.concatenate((Curva_Wallm_v, [Curva_Wallm]), axis=0)
+
+        #Maximum rotations and shear ratios in beams
         maxRA = 0.0  # Max Rotation Angle
         # PhRot_Beam = np.zeros(floors_num)
         PhRot_Beamc = np.zeros(floors_num)
@@ -290,8 +352,10 @@ def runNRHA_CSS(Dt, Tmax, Loc_heigth, Loc_span, ListNodesDrift, ListNodesBasal, 
     maxVBasal = np.abs(VBasal_v).max()
     # maxRABdg = np.abs(maxRA_v).max()
     maxVuVnBdg = np.abs(maxVu_Vn_v).max()
-    # maxPhRot_Col = np.max(PhRot_Col_v, axis=0)
-    # maxPhRot_Beam = np.max(PhRot_Beam_v, axis=0)
+    # maxRAWall = np.abs(maxRA_v).max()
+    maxVuVnWall = np.abs(maxWallVu_Vn_v).max()
+    #maxPhRot_Col = np.max(PhRot_Col_v, axis=0)
+    #maxPhRot_Beam = np.max(PhRot_Beam_v, axis=0)
     maxPhRot_Colc = np.max(PhRot_Colc_v, axis=0)
     maxCountColapV = np.max(CountColapV_v / axes_num, axis=0)
     SDRBdgVColap = maxSDR_v[np.argmax(CountColapV_v / axes_num > 0.5, axis=0), range(floors_num)]
@@ -300,7 +364,11 @@ def runNRHA_CSS(Dt, Tmax, Loc_heigth, Loc_span, ListNodesDrift, ListNodesBasal, 
     maxSDRBdg = np.max(maxSDR_v, axis=0)
     maxAccelBdg = np.max(maxAccel_v, axis=0)
     MaxPhRot_Colm_v = np.max(PhRot_Colm_v, axis=0)
+    MaxPhRot_Wallm_v = np.max(PhRot_Wallm_v, axis=0)
+    MaxCurva_Wallm_v = np.max(Curva_Wallm_v, axis=0)
+    # print('MaxPhRot_Wallm_v', MaxPhRot_Wallm_v)
     MedPhRot_Colm_v = np.median(MaxPhRot_Colm_v, axis=1)
+
     # prueba = np.max(MaxPhRot_Colm_v, axis=1)
     # print('max1 =', prueba)
     # print('med =', MedPhRot_Colm_v)
@@ -329,5 +397,5 @@ def runNRHA_CSS(Dt, Tmax, Loc_heigth, Loc_span, ListNodesDrift, ListNodesBasal, 
     # Test = "".join(map(str, Test))
 
     return maxDriftTecho, maxDriftPisoBdg, maxVBasal, maxVuVnBdg, Test, controlTime, Tmax, Tend,\
-           maxSDRBdg, maxAccelBdg, maxPhRot_Colc, maxCountColapV, maxPhRot_Beamc, res_drift,\
-           MedPhRot_Colm_v, MedPhRot_Beamm_v, ResiBdg, SDRBdgVColap
+        maxSDRBdg, maxAccelBdg, maxPhRot_Colc, maxCountColapV, maxPhRot_Beamc, res_drift,\
+        MedPhRot_Colm_v, MedPhRot_Beamm_v, ResiBdg, SDRBdgVColap, maxVuVnWall, MaxPhRot_Wallm_v, MaxCurva_Wallm_v

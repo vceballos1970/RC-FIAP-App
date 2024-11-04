@@ -2,12 +2,13 @@ global Loc_span, Loc_heigth, ListNodes, Elements, DataBeamDesign, DataColDesign,
     cIndex, ListNodesBasal, T1m, Wtotal, IM, Sa_max, RDR_max, SDR_max, nrecs, RA_max, EleCol, EleBeam, DataColPhl,\
     VnVu_max, HL_directory, list_beams, list_cols, DataBeamPhl, maxSDRBdg, maxSDRBdgv,\
     maxAccelBdgv, maxPhRot_Colcv, maxPhRot_Beamcv, MedPhRot_Colmv_v, MedPhRot_Beammv_v, HL_v, ResiBdg, ResiBdgv, \
-    maxCountColapv, SDRBdgVColapv
+    maxCountColapv, SDRBdgVColapv, VnVuWall_max, MaxPhRot_Wallmv_v, EleWall, DataWallPhl, DataWallDesign, ListEleTagW1,\
+    ListEleTagW2, MaxCurva_Wallmv_v
 
 from datetime import datetime
 from ReadRecord import ReadRecord
 from getSaT import getSaT
-from runNRHA_CSS2 import runNRHA_CSS
+from runNRHA_CSS1 import runNRHA_CSS
 from Exci_pattern import Exci_pattern
 
 
@@ -48,7 +49,7 @@ rangDriftNode = np.int_(np.append(0, ListNodesDrift[:, 0]+1))
 print('^^^^^^^^ STARTING CSS ^^^^^^^^')
 ind = 1
 floors_num = len(Loc_heigth) - 1
-Sa_max, RDR_max, SDR_max, IM, RA_max, VnVu_max = [], [], [], [], [], []
+Sa_max, RDR_max, SDR_max, IM, RA_max, VnVu_max, VnVuWall_max = [], [], [], [], [], [], []
 Full_eqnms_list, Full_sf_list = [], []
 EQnamev, Testv, HL_v, EQname_v, controlTimev, Tmaxv, Tendv, res_driftv = [], [], [], [], [], [], [], []
 # maxPhRot_Colv = np.zeros(floors_num)
@@ -62,7 +63,8 @@ maxCountColapv = np.zeros(floors_num)
 MedPhRot_Colmv_v = np.zeros(floors_num)
 MedPhRot_Beammv_v = np.zeros(floors_num)
 SDRBdgVColapv = np.zeros(floors_num)
-
+MaxPhRot_Wallmv_v = np.zeros((floors_num, 4))
+MaxCurva_Wallmv_v = np.zeros((floors_num, 4))
 while os.path.exists(HL_directory + '/Hazard_Level_' + str(ind)):
     data_dir = HL_directory + '/Hazard_Level_' + str(ind) + '/Data'
     if not os.path.exists(data_dir):
@@ -119,64 +121,70 @@ for (EQname, sf) in zip(Full_eqnms_list, Full_sf_list):
 
     if self.ui.checkBoxSaveCSS.isChecked() == True:
         data_dir = EQname.replace('gmotions', 'Data')
-        op.recorder('Element', '-file', data_dir + '_DefoSec_Beams.out', '-closeOnWrite',
-                    '-time', '-eleRange', int(slist_beams[0]), int(slist_beams[-1]), 'section', 'deformation')
-        op.recorder('Element', '-file', data_dir + '_ForceSec_Beams.out', '-closeOnWrite',
-                    '-time', '-eleRange', int(slist_beams[0]), int(slist_beams[-1]), 'section', 'force')
-        op.recorder('Element', '-file', data_dir + '_DefoSec_Cols.out', '-closeOnWrite',
-                    '-time', '-eleRange', int(slist_cols[0]), int(slist_cols[-1]), 'section', 'deformation')
-        op.recorder('Element', '-file', data_dir + '_ForceSec_Cols.out', '-closeOnWrite',
-                    '-time', '-eleRange', int(slist_cols[0]), int(slist_cols[-1]), 'section', 'force')
-        op.recorder('Node', '-file', data_dir + '_HoriNodes.out', '-closeOnWrite',
-                    '-time', '-nodeRange', int(sListNodes[0]), int(sListNodes[-1]), '-dof', 1, 'disp')
-        op.recorder('Node', '-file', data_dir + '_VertNodes.out', '-closeOnWrite',
-                    '-time', '-nodeRange', int(sListNodes[0]), int(sListNodes[-1]), '-dof', 2, 'disp')
-
+        # op.recorder('Element', '-file', data_dir + '_DefoSec_Beams.out', '-closeOnWrite',
+        #             '-time', '-eleRange', int(slist_beams[0]), int(slist_beams[-1]), 'section', 'deformation')
+        # op.recorder('Element', '-file', data_dir + '_ForceSec_Beams.out', '-closeOnWrite',
+        #             '-time', '-eleRange', int(slist_beams[0]), int(slist_beams[-1]), 'section', 'force')
+        # op.recorder('Element', '-file', data_dir + '_DefoSec_Cols.out', '-closeOnWrite',
+        #             '-time', '-eleRange', int(slist_cols[0]), int(slist_cols[-1]), 'section', 'deformation')
+        # op.recorder('Element', '-file', data_dir + '_ForceSec_Cols.out', '-closeOnWrite',
+        #             '-time', '-eleRange', int(slist_cols[0]), int(slist_cols[-1]), 'section', 'force')
+        # op.recorder('Node', '-file', data_dir + '_HoriNodes.out', '-closeOnWrite',
+        #             '-time', '-nodeRange', int(sListNodes[0]), int(sListNodes[-1]), '-dof', 1, 'disp')
+        # op.recorder('Node', '-file', data_dir + '_VertNodes.out', '-closeOnWrite',
+        #             '-time', '-nodeRange', int(sListNodes[0]), int(sListNodes[-1]), '-dof', 2, 'disp')
+        op.recorder('Node', '-file', data_dir + '_HoriNodeRoof.out', '-closeOnWrite',
+                    '-time', '-node', int(sListNodes[-1]), '-dof', 1, 'disp')
+        op.recorder('Element', '-file', data_dir + '_PhRot_Wall.out', '-closeOnWrite',
+                    '-time',  '-ele', *list_walls, 'plasticDeformation')
+        op.recorder('Element', '-file', data_dir + '_DefoSec_Wall.out', '-closeOnWrite',
+                    '-time',  '-ele', *list_walls, 'section', 'deformation')
 
     mDT, mDPB, maxVB, maxVnVu, Test, controlTime, Tmax, Tend, maxSDRBdg, maxAccelBdg, maxPhRot_Colc, maxCountColapV,\
-        maxPhRot_Beamc, res_drift, MedPhRot_Colm_v, MedPhRot_Beamm_v, ResiBdg, SDRBdgVColap \
+        maxPhRot_Beamc, res_drift, MedPhRot_Colm_v, MedPhRot_Beamm_v, ResiBdg, SDRBdgVColap,  maxVuVnWall,\
+        MaxPhRot_Wallm_v, MaxCurva_Wallm_v\
         = runNRHA_CSS(dt, dur, Loc_heigth, Loc_span, ListNodesDrift, ListNodesBasal, EleCol, EleBeam, LC, DataColPhl,
                       DataColDesign, ListNodesLC, EQname, HL_directory, ListNodes, DataBeamPhl, DataBeamDesign, accelg,
-                      T1m)
+                      T1m, EleWall, DataWallPhl, DataWallDesign, ListEleTagW1, ListEleTagW2)
 
-    if self.ui.checkBoxSaveCSS.isChecked() == True:
-        DefoSec_Beams = np.loadtxt(data_dir + '_DefoSec_Beams.out')
-        DefoSec_Beams = np.array(DefoSec_Beams)
-        DefoSec01_Beams = DefoSec_Beams[:, rangBeams01]
-        DefoSec06_Beams = DefoSec_Beams[:, rangBeams06]
-        np.savetxt(data_dir + '_DefoSec01_Beams.out', DefoSec01_Beams)
-        np.savetxt(data_dir + '_DefoSec06_Beams.out', DefoSec06_Beams)
-
-        ForceSec_Beams = np.loadtxt(data_dir + '_ForceSec_Beams.out')
-        ForceSec_Beams = np.array(ForceSec_Beams)
-        ForceSec01_Beams = ForceSec_Beams[:, rangBeams01]
-        ForceSec06_Beams = ForceSec_Beams[:, rangBeams06]
-        np.savetxt(data_dir + '_ForceSec01_Beams.out', ForceSec01_Beams)
-        np.savetxt(data_dir + '_ForceSec06_Beams.out', ForceSec06_Beams)
-
-        DefoSec_Cols = np.loadtxt(data_dir + '_DefoSec_Cols.out')
-        DefoSec_Cols = np.array(DefoSec_Cols)
-        DefoSec01_Cols = DefoSec_Cols[:, rangCols01]
-        DefoSec06_Cols = DefoSec_Cols[:, rangCols06]
-        np.savetxt(data_dir + '_DefoSec01_Cols.out', DefoSec01_Cols)
-        np.savetxt(data_dir + '_DefoSec06_Cols.out', DefoSec06_Cols)
-
-        ForceSec_Cols = np.loadtxt(data_dir + '_ForceSec_Cols.out')
-        ForceSec_Cols = np.array(ForceSec_Cols)
-        ForceSec01_Cols = ForceSec_Cols[:, rangCols01]
-        ForceSec06_Cols = ForceSec_Cols[:, rangCols06]
-        np.savetxt(data_dir + '_ForceSec01_Cols.out', ForceSec01_Cols)
-        np.savetxt(data_dir + '_ForceSec06_Cols.out', ForceSec06_Cols)
-
-        HoriNodes = np.loadtxt(data_dir + '_HoriNodes.out')
-        HoriNodes = np.array(HoriNodes)
-        HoriNodes = HoriNodes[:, rangDriftNode]
-        np.savetxt(data_dir + '_HoriNodes.out', HoriNodes)
-
-        VertNodes = np.loadtxt(data_dir + '_VertNodes.out')
-        VertNodes = np.array(VertNodes)
-        VertNodes = VertNodes[:, rangDriftNode]
-        np.savetxt(data_dir + '_VertNodes.out', VertNodes)
+    # if self.ui.checkBoxSaveCSS.isChecked() == True:
+        # DefoSec_Beams = np.loadtxt(data_dir + '_DefoSec_Beams.out')
+        # DefoSec_Beams = np.array(DefoSec_Beams)
+        # DefoSec01_Beams = DefoSec_Beams[:, rangBeams01]
+        # DefoSec06_Beams = DefoSec_Beams[:, rangBeams06]
+        # np.savetxt(data_dir + '_DefoSec01_Beams.out', DefoSec01_Beams)
+        # np.savetxt(data_dir + '_DefoSec06_Beams.out', DefoSec06_Beams)
+        #
+        # ForceSec_Beams = np.loadtxt(data_dir + '_ForceSec_Beams.out')
+        # ForceSec_Beams = np.array(ForceSec_Beams)
+        # ForceSec01_Beams = ForceSec_Beams[:, rangBeams01]
+        # ForceSec06_Beams = ForceSec_Beams[:, rangBeams06]
+        # np.savetxt(data_dir + '_ForceSec01_Beams.out', ForceSec01_Beams)
+        # np.savetxt(data_dir + '_ForceSec06_Beams.out', ForceSec06_Beams)
+        #
+        # DefoSec_Cols = np.loadtxt(data_dir + '_DefoSec_Cols.out')
+        # DefoSec_Cols = np.array(DefoSec_Cols)
+        # DefoSec01_Cols = DefoSec_Cols[:, rangCols01]
+        # DefoSec06_Cols = DefoSec_Cols[:, rangCols06]
+        # np.savetxt(data_dir + '_DefoSec01_Cols.out', DefoSec01_Cols)
+        # np.savetxt(data_dir + '_DefoSec06_Cols.out', DefoSec06_Cols)
+        #
+        # ForceSec_Cols = np.loadtxt(data_dir + '_ForceSec_Cols.out')
+        # ForceSec_Cols = np.array(ForceSec_Cols)
+        # ForceSec01_Cols = ForceSec_Cols[:, rangCols01]
+        # ForceSec06_Cols = ForceSec_Cols[:, rangCols06]
+        # np.savetxt(data_dir + '_ForceSec01_Cols.out', ForceSec01_Cols)
+        # np.savetxt(data_dir + '_ForceSec06_Cols.out', ForceSec06_Cols)
+        #
+        # HoriNodes = np.loadtxt(data_dir + '_HoriNodes.out')
+        # HoriNodes = np.array(HoriNodes)
+        # HoriNodes = HoriNodes[:, rangDriftNode]
+        # np.savetxt(data_dir + '_HoriNodes.out', HoriNodes)
+        #
+        # VertNodes = np.loadtxt(data_dir + '_VertNodes.out')
+        # VertNodes = np.array(VertNodes)
+        # VertNodes = VertNodes[:, rangDriftNode]
+        # np.savetxt(data_dir + '_VertNodes.out', VertNodes)
 
     Sa_max = np.append(Sa_max, maxVB / Wtotal)
     RDR_max = np.append(RDR_max, mDT)
@@ -200,6 +208,12 @@ for (EQname, sf) in zip(Full_eqnms_list, Full_sf_list):
     maxAccelBdgv = np.vstack((maxAccelBdgv, maxAccelBdg))
     maxCountColapv = np.vstack((maxCountColapv, maxCountColapV))
     SDRBdgVColapv = np.vstack((SDRBdgVColapv, SDRBdgVColap))
+
+    VnVuWall_max = np.append(VnVuWall_max, maxVuVnWall)
+    MaxPhRot_Wallmv_v = np.vstack((MaxPhRot_Wallmv_v, MaxPhRot_Wallm_v))
+    MaxCurva_Wallmv_v = np.vstack((MaxCurva_Wallmv_v, MaxCurva_Wallm_v))
+
+
     op.wipe
 
 # maxPhRot_Colv = np.delete(maxPhRot_Colv, 0, axis=0)
@@ -208,6 +222,9 @@ maxPhRot_Colcv = np.delete(maxPhRot_Colcv, 0, axis=0)
 maxPhRot_Beamcv = np.delete(maxPhRot_Beamcv, 0, axis=0)
 MedPhRot_Colmv_v = np.delete(MedPhRot_Colmv_v, 0, axis=0)
 MedPhRot_Beammv_v = np.delete(MedPhRot_Beammv_v, 0, axis=0)
+print('MaxPhRot_Wallmv_v', MaxPhRot_Wallmv_v)
+MaxPhRot_Wallmv_v = np.delete(MaxPhRot_Wallmv_v, np.arange(floors_num), axis=0)
+print('MaxPhRot_Wallmv_v', MaxPhRot_Wallmv_v)
 maxSDRBdgv = np.delete(maxSDRBdgv, 0, axis=0)
 ResiBdgv = np.delete(ResiBdgv, 0, axis=0)
 maxAccelBdgv = np.delete(maxAccelBdgv, 0, axis=0)

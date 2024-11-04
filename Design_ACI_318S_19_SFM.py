@@ -135,9 +135,6 @@ def AvBeam(Vu, db, d, EleTag, fys, dst, Ast, BBeam, nb, Vc):
 
 # Colmuns P-M design
 def AsColumn(b, h, EleTag, cover, dst, fy, Beta1C, Pu_v, Mu_v, Sum_Mn_B, FactorColBeamStr, ncolsn, Nu_min):
-    if EleTag == 2:
-        Pu_Mu = np.vstack((Mu_v, Pu_v))
-        PDiag, MDiag = np.zeros(22), np.zeros(22)
     ro_min = 0.01
     ro_max = 0.06
     npts = 20
@@ -157,84 +154,78 @@ def AsColumn(b, h, EleTag, cover, dst, fy, Beta1C, Pu_v, Mu_v, Sum_Mn_B, FactorC
             Ab = pi * db ** 2. / 4.
             dp = cover + dst + 0.5 * db
             d = h - dp
-            # for nbH in nbH_v:
-            #     for nbB in nbB_v:
-            # for (nbH, nbB) in zip(nbH_v, nbB_v):
-            nbT = 2. * (nbB + nbH - 2.)  # numero total de barras
-            Ast = nbT * Ab
-            ro = Ast / b / h
-            As = np.hstack([nbB * Ab, np.ones(nbH - 2) * 2 * Ab, nbB * Ab])
-            dist = np.linspace(dp, h - dp, nbH)
-            if ro >= ro_min:
-                Pn_max = 0.80 * (0.85 * fcC * (b * h - Ast) + fy * Ast)
-                Tn_max = -fy * Ast
-                c = np.linspace(1.1 * h / npts, 1.1 * h, npts)
-                a = Beta1C * c
-                Pconc = 0.85 * fcC * a * b
-                Mconc = Pconc * (h - a) / 2.
-                et = ecu * (d - c) / c
-                fiv = np.copy(et)
-                fiv = np.where(fiv >= 0.005, 0.9, fiv)
-                fiv = np.where(fiv <= 0.002, 0.65, fiv)
-                fiv = np.where((fiv > 0.002) & (fiv < 0.005), (0.65 + 0.25 * (fiv - 0.002) / 0.003),
-                               fiv)
-                c = c[:, np.newaxis]
-                es = ecu * (c - dist) / c
-                fs = Es * es
-                fs = np.where(fs > fy, fy, fs)
-                fs = np.where(fs < -fy, -fy, fs)
-                Pacer = np.sum(fs * As, axis=1)
-                Macer = np.sum(fs * As * (h / 2. - dist), axis=1)
-                Pn = np.hstack(
-                    [Tn_max, np.where(Pconc + Pacer > Pn_max, Pn_max, Pconc + Pacer), Pn_max])
-                Mn = np.hstack([0, Mconc + Macer, 0])
-                fiv = np.hstack([0.9, fiv, 0.65])
-                fiPn = fiv * Pn
-                fiMn = fiv * Mn
-                if EleTag == 2:
-                    PDiag = np.vstack((PDiag, fiPn))
-                    MDiag = np.vstack((MDiag, fiMn))
-                Pn_max_pr = 0.80 * (0.85 * fcC * (b * h - Ast) + 1.25*fy * Ast)
-                Tn_max_pr = -1.25*fy * Ast
-                fspr = Es * es
-                fspr = np.where(fspr > 1.25*fy, 1.25*fy, fspr)
-                fspr = np.where(fspr < -1.25*fy, -1.25*fy, fspr)
-                Pacer_pr = np.sum(fspr * As, axis=1)
-                Macer_pr = np.sum(fspr * As * (h / 2. - dist), axis=1)
-                Ppr = np.hstack(
-                    [Tn_max_pr, np.where(Pconc + Pacer_pr > Pn_max_pr, Pn_max_pr, Pconc + Pacer_pr), Pn_max_pr])
-                Mpr = np.hstack([0, Mconc + Macer_pr, 0])
-                if np.all((Pu_v >= min(fiPn)) & (Pu_v <= max(fiPn))):
-                    Mu_i = np.interp(Pu_v, fiPn, fiMn)
-                    Mn_i = np.interp(Pu_v, Pn, Mn)
-                    Mpr_i = np.interp(Pu_v, Ppr, Mpr)
-                    Mns = np.interp(Nu_min, Pn, Mn)
-                    Col_to_beam_str_ratio = ncolsn * Mns / Sum_Mn_B
-                    if ncolsn == 1:
-                        if np.all(Mu_i >= Mu_v) == True:
-                            verif = True
-                            break
-                    else:
-                        if np.all(Mu_i >= Mu_v) == True and Col_to_beam_str_ratio >= FactorColBeamStr:
-                            verif = True
-                            break
-                # if verif == True:
-                #     break
-            # if verif == True:
-            #     break
+            for nbH in nbH_v:
+                for nbB in nbB_v:
+                    nbT = 2. * (nbB + nbH - 2.)  # numero total de barras
+                    Ast = nbT * Ab
+                    ro = Ast / b / h
+                    As = np.hstack([nbB * Ab, np.ones(nbH - 2) * 2 * Ab, nbB * Ab])
+                    dist = np.linspace(dp, h - dp, nbH)
+                    if ro >= ro_min:
+                        Pn_max = 0.80 * (0.85 * fcC * (b * h - Ast) + fy * Ast)
+                        Tn_max = -fy * Ast
+                        c = np.linspace(1.1 * h / npts, 1.1 * h, npts)
+                        a = Beta1C * c
+                        Pconc = 0.85 * fcC * a * b
+                        Mconc = Pconc * (h - a) / 2.
+                        et = ecu * (d - c) / c
+                        fiv = np.copy(et)
+                        fiv = np.where(fiv >= 0.005, 0.9, fiv)
+                        fiv = np.where(fiv <= 0.002, 0.65, fiv)
+                        fiv = np.where((fiv > 0.002) & (fiv < 0.005), (0.65 + 0.25 * (fiv - 0.002) / 0.003),
+                                       fiv)
+                        c = c[:, np.newaxis]
+                        es = ecu * (c - dist) / c
+                        fs = Es * es
+                        fs = np.where(fs > fy, fy, fs)
+                        fs = np.where(fs < -fy, -fy, fs)
+                        Pacer = np.sum(fs * As, axis=1)
+                        Macer = np.sum(fs * As * (h / 2. - dist), axis=1)
+                        Pn = np.hstack(
+                            [Tn_max, np.where(Pconc + Pacer > Pn_max, Pn_max, Pconc + Pacer), Pn_max])
+                        Mn = np.hstack([0, Mconc + Macer, 0])
+                        fiv = np.hstack([0.9, fiv, 0.65])
+                        fiPn = fiv * Pn
+                        fiMn = fiv * Mn
+
+                        Pn_max_pr = 0.80 * (0.85 * fcC * (b * h - Ast) + 1.25*fy * Ast)
+                        Tn_max_pr = -1.25*fy * Ast
+                        fspr = Es * es
+                        fspr = np.where(fspr > 1.25*fy, 1.25*fy, fspr)
+                        fspr = np.where(fspr < -1.25*fy, -1.25*fy, fspr)
+                        Pacer_pr = np.sum(fspr * As, axis=1)
+                        Macer_pr = np.sum(fspr * As * (h / 2. - dist), axis=1)
+                        Ppr = np.hstack(
+                            [Tn_max_pr, np.where(Pconc + Pacer_pr > Pn_max_pr, Pn_max_pr, Pconc + Pacer_pr), Pn_max_pr])
+                        Mpr = np.hstack([0, Mconc + Macer_pr, 0])
+                        if np.all((Pu_v >= min(fiPn)) & (Pu_v <= max(fiPn))):
+                            Mu_i = np.interp(Pu_v, fiPn, fiMn)
+                            Mn_i = np.interp(Pu_v, Pn, Mn)
+                            Mpr_i = np.interp(Pu_v, Ppr, Mpr)
+                            Mns = np.interp(Nu_min, Pn, Mn)
+                            Col_to_beam_str_ratio = ncolsn * Mns / Sum_Mn_B
+                            if ncolsn == 1:
+                                if np.all(Mu_i >= Mu_v) == True:
+                                    verif = True
+                                    break
+                            else:
+                                if np.all(Mu_i >= Mu_v) == True and Col_to_beam_str_ratio >= FactorColBeamStr:
+                                    verif = True
+                                    break
+
+                if verif == True:
+                    break
+            if verif == True:
+                break
         if ndb == db_v[-1] and ro > ro_max:
             print('column ' + str(EleTag) + 'needs to be resized by reinforcement ratio')
             break
-    if EleTag == 2:
-        np.savetxt('Spectra/fiPn.txt', PDiag, fmt='%.6f')
-        np.savetxt('Spectra/fiMn.txt', MDiag, fmt='%.6f')
-        np.savetxt('Spectra/PuMu.txt', Pu_Mu, fmt='%.6f')
     return nbH, nbB, db, As, fiPn, fiMn, Mn_i, Mpr_i, d, dist, ro, Mu_i, Col_to_beam_str_ratio
 
 # Walls P-M design
 def AsWall(b, h, EleTag, cover, fy, Beta1C, Pu_v, Mu_v, Nu_min, PS, ro_min):
     # ro_min = 0.0015
-    ro_max = 0.01
+    ro_max = 0.08
     dst = 3 / 8 * inch
     sl = np.arange(0.45, 0.05, -0.05)
     npts = 20
@@ -303,7 +294,7 @@ def AsWall(b, h, EleTag, cover, fy, Beta1C, Pu_v, Mu_v, Nu_min, PS, ro_min):
             if verif == True:
                 break
         if ndb == db_v[-1] and ro > ro_max:
-            print('wall ' + str(EleTag) + 'needs to be detailed as Column')
+            print('wall ' + str(EleTag) + 'needs to be resized by reinforcement ratio')
             break
     return nbH, nbB, db, As, fiPn, fiMn, Mn_i, d, dist, ro, Mu_i, cMaxS
 
@@ -327,7 +318,7 @@ def AvColumn(EleTag, Vu, b, h, nbH, nbB, dst, Vc, db, fys, Nu_min, Vc1):
                 Ash_B = neB * Ast
                 hx = (h - 2 * dp) / neH
                 so = max(100 * mm, min(100 * mm + (350 * mm - hx) / 3, 150 * mm))
-                se_1 = min(6. * db, b / 4., h / 4., so)  # minimum spacing c.18.7.5.3 ACI318-19
+                se_1 = min(6. * db, b / 4., h / 4., so)  # minimum spacing c.18.7.5.3 ACI-19
                 if Nu_min <= 0.3*b*h*fcC:
                     se_2 = min(Ash_H / bc1 / (0.3 * (Ag / (bc1 * bc2) - 1) * fcC / fys),
                                Ash_B / bc2 / (0.3 * (Ag / (bc1 * bc2) - 1) * fcC / fys),
@@ -398,7 +389,7 @@ def AvWall(EleTag, Vu, b, h, nbH, nbB, dst, Ast, Nu_min, db, fys, ro, cover):
     if Vn > 0.66 * sqrt(fcC * MPa) * Ag:
         print('Wall ' + str(EleTag) + 'needs to be resized by shear limit')
     if se < 60. * mm:
-        print('Minimum spacing of stirrups is not met in wall ' + str(EleTag))
+        print('Minimum spacing of stirrups is not met in column ' + str(EleTag))
     return se, Vn, nbH, ro_t, ro_l
 
 # Compression block parameters beta as function f'c
@@ -520,7 +511,7 @@ ListNodesDrift = ListNodes[np.where(ListNodes[:, 1] == 0.)]
 ListNodesBasal = ListNodes[np.where(ListNodes[:, 2] == 0.)]
 ListNodesBasal1 = ListNodesBasal
 nnt = num_nodes_tot
-# print('nnt', nnt)
+print('nnt', nnt)
 if tw1 != 0:
     for node in ListNodesW1[:-1, :]:
         # print(int(node[0] + nnt))
@@ -633,7 +624,7 @@ if tw1 != 0:
         LWall = ListNodesW1[Nod_end, 2] - ListNodesW1[Nod_ini, 2] - RZi - RZe
         MassDens = AWall1 * GConc / g
         Nod_iniW, Nod_endW = int(ListNodesW1[Nod_ini, 0] + nnt), int(ListNodesW1[Nod_end, 0])
-        # print(Nod_iniW, Nod_endW)
+        print(Nod_iniW, Nod_endW)
         Elements.append(BeamElasticElement(EleTag, Nod_iniW, Nod_endW, AWall1, EcC, IzWall1, LWall, tw1, lw1, gTr,
                                            RZi, RZe))
         op.element('elasticBeamColumn', EleTag, Nod_iniW, Nod_endW, AWall1, EcC, IzWall1, gTr, '-mass', MassDens,
@@ -1319,11 +1310,13 @@ for (Ele, EleForceD, EleForceDL, EleForceDLE) in zip(Elements, ElemnsForceD, Ele
         Mn_is = Mn_i[[1, 2, 3, 4, 6, 7, 8, 9]]
         Mn_max = np.max(Mn_is)  # Maximum moment of all seismic combo
         VI1, VI2, VI3, VI4, VI5 = Combo_ACI(VID, VIL, VIE)
+
         VI6 = 2.0 * Mn_max / Ele.LEle
         VI7 = 1.2 * VID + 1.0 * VIL + Omo * VIE
         VI8 = 1.2 * VID + 1.0 * VIL - Omo * VIE
         VI9 = 0.9 * VID + Omo * VIE
         VI10 = 0.9 * VID - Omo * VIE
+
         VUa = max([VI1, VI2, VI3, VI4, VI5])
         VUb = VI6
         VUc = max([VI7, VI8, VI9, VI10])
@@ -1446,7 +1439,7 @@ for Ele in Elements:
                     horizontalalignment='center')
             if xe == Loc_span[-1] and tw1 == 0 and tw2 == 0:
                 Delta_x = xed - xid
-                ax.text(xed + .05 * Delta_x, yed, r'$\Delta = {:.2f} %$'.format(drift_p[ind] * 100),
+                ax.text(xed + .05 * Delta_x, yed, r'$\Delta$ = {:.2f} %'.format(drift_p[ind] * 100),
                         style='italic', fontsize=8)
                 ind += 1
             if xe == Loc_span[-1]:
@@ -1481,7 +1474,7 @@ for Ele in Elements:
         ax.add_patch(Polygon(np.c_[lat, long], facecolor='red', alpha=0.5))
         if tw2 == 0:
             Delta_x, ind = xed - xid, ind_ini
-            ax.text(xed + lw1 + .1 * lw1, yed, r'$\Delta = {:.2f} %$'.format(drift_p[ind] * 100), style='italic',
+            ax.text(xed + lw1 + .1 * lw1, yed, r'$\Delta$ = {:.2f} %'.format(drift_p[ind] * 100), style='italic',
                     fontsize=8)
         fpos = 0.1
         # print('xdF', xdF)
@@ -1504,7 +1497,7 @@ for Ele in Elements:
         long = np.array([yid, yid, yed, yed, yid])
         ax.add_patch(Polygon(np.c_[lat, long], facecolor='red', alpha=0.5))
         Delta_x, ind = xed - xid, ind_ini
-        ax.text(xed + lw2 + .1 * lw2, yed, r'$\Delta = {:.2f} %$'.format(drift_p[ind] * 100), style='italic',
+        ax.text(xed + lw2 + .1 * lw2, yed, r'$\Delta$ = {:.2f} %'.format(drift_p[ind] * 100), style='italic',
                 fontsize=8)
         ind += 1
 

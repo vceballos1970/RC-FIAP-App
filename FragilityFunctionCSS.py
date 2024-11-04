@@ -62,7 +62,7 @@ def fn_sse_pc(IMo, num_gms, num_collapse):
 
 # colors = np.array(["green", "orange", "red", "pink", "black", "yellow", "purple", "beige", "brown", "gray", "cyan",
 #                    "magenta"])
-colors = plt.cm.jet(np.linspace(0, 1, 8))
+colors = plt.cm.jet(np.linspace(0, 1, 11))
 
 InputCSSFile = self.ui.InputCSSFile.text()
 CSS_SDRCurves = self.ui.CSS_LimitStage.text()
@@ -99,9 +99,6 @@ RDR_max = RDR_max[ind]
 # RA_max = RA_max[ind]
 VuVn_max = VuVn_max[ind]
 t_min, maxDriftPisoBdg = t_min[ind], maxDriftPisoBdg[ind]
-t_min1 = t_min
-ncolors1 = ncolors
-print('ncolors1', ncolors1)
 # print('SDR_lim', SDR_lim,'t_min_lim', t_min_lim )
 ind = np.where(((t_min < t_min_lim / 100) & (maxDriftPisoBdg >= SDR_lim)) | (t_min >= t_min_lim / 100))
 # print('ind', ind)
@@ -135,15 +132,14 @@ nSDR = CSS_SDRCurves.size
 for HL in HL_Plot:
     ind = np.where(ncolors == HL)
     ax1.scatter(SDR_max[ind] * 100, IM[ind], facecolors='none', edgecolors=colors[HL], label=r'$%1.0f$' % HL)
-    # ax2.scatter(SDR_max[ind] * 100, Sa_max[ind], facecolors='none', edgecolors=colors[HL], label=r'$%1.0f$' % HL)
     ax2.scatter(Sa_max[ind], IM[ind], facecolors='none', edgecolors=colors[HL], label=r'$%1.0f$' % HL)
     ax3.scatter(VuVn_max[ind], IM[ind], facecolors='none', edgecolors=colors[HL], label=r'$%1.0f$' % HL)
 
 ax1.set_ylabel(r'$S_a(T_1)$ [g]')
 ax1.set_xlabel(r'$SDR_{max}$ [%]')
 ax1.set_title(r'Maximum story drift ratio vs spectral acceleration $S_a$')
-ax1.set_xlim([0, 3])
-ax1.set_ylim([0, 2])
+ax1.set_xlim([0, 10])
+ax1.set_ylim([0, 5])
 ax1.grid(True)
 # ax1.legend(loc='lower right', fontsize=8, fancybox=True, shadow=True, title="Hazard levels")
 
@@ -173,9 +169,9 @@ self.ui.SDR_IM_CSS.canvas.show()
 # ax2.grid(True)
 ax2.set_ylabel(r'$S_a(T_1)$ [g]')
 ax2.set_xlabel(r'$Vbasal_{max}$ [g]')
-ax2.set_title(r'Maximun basal shear vs  spectral acceleration $S_a$')
-ax2.set_xlim([0, 3])
-ax2.set_ylim([0, 2])
+ax2.set_title(r'Maximun basal shear vs spectral acceleration $S_a$')
+ax2.set_xlim([0, 2])
+ax2.set_ylim([0, 5])
 ax2.grid(True)
 
 self.ui.MaxRA_IM_CSS.canvas.draw()
@@ -269,39 +265,3 @@ ax4.legend(loc='lower right', fontsize=8, fancybox=True, shadow=True, ncol=1)
 ax4.grid(True)
 self.ui.FragilityCurveCSS.canvas.draw()
 self.ui.FragilityCurveCSS.canvas.show()
-
-# fig5 = self.ui.FragilityCurveCSS.canvas.axes
-# fig5.clear()
-# ax5 = fig5.add_subplot(111)
-Levels = []
-MEL = np.zeros([len(HL_Plot), 2])
-PEL = np.zeros([len(HL_Plot), 2])
-for HL in HL_Plot:
-    ind = np.where(ncolors1 == HL)
-    print('ind', ind)
-    Levels.append('Level ' + str(HL) + ' (' + str(len(ncolors1[ind])) + ')')
-    ind1 = np.where((ncolors1 == HL) & (t_min1 >= 1.))
-    ind2 = np.where((ncolors1 == HL) & (t_min1 < 1.))
-    MEL[HL - 1, 0] = len(ncolors1[ind1])
-    MEL[HL - 1, 1] = len(ncolors1[ind2])
-
-print('Levels', Levels)
-print('MEL', MEL)
-barWidth = 0.85
-PEL[:, 0] = MEL[:, 0] / np.sum(MEL, axis=1)
-PEL[:, 1] = MEL[:, 1] / np.sum(MEL, axis=1)
-PEL = np.round_(PEL*100, decimals=1)
-print('PEL', PEL)
-SMALL_SIZE = 6
-plt.rc('font', size=SMALL_SIZE)
-plt.rc('axes', titlesize=SMALL_SIZE)
-for i in range(len(Levels)):
-    plt.text(i, MEL[i, 0]//2, str(int(MEL[i, 0])) + ' (' + str(PEL[i, 0]) + '%)', ha='center')
-    plt.text(i, MEL[i, 0] + MEL[i, 1]//2, str(int(MEL[i, 1])) + ' (' + str(PEL[i, 1]) + '%)', ha='center')
-plt.bar(Levels, MEL[:, 0], color='#b5ffb9', edgecolor='white', width=barWidth, label="running")
-plt.bar(Levels, MEL[:, 1], bottom=MEL[:, 0], color='#f9bc86', edgecolor='white', width=barWidth, label="not running")
-plt.legend(loc='upper left', bbox_to_anchor=(1, 1), ncol=1)
-# Show graphic
-plt.savefig('figure1.png', bbox_inches="tight", orientation='landscape')
-# plt.show()
-

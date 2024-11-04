@@ -1399,7 +1399,7 @@ for Ele in Elements:
                     horizontalalignment='center')
             if xe == Loc_span[-1] and tw1 == 0 and tw2 == 0:
                 Delta_x = xed - xid
-                ax.text(xed + .05 * Delta_x, yed, r'$\Delta = {:.2f} %$'.format(drift_p[ind] * 100),
+                ax.text(xed + .05 * Delta_x, yed, r'$\Delta$ = {:.2f} %'.format(drift_p[ind] * 100),
                         style='italic', fontsize=8)
                 ind += 1
             if xe == Loc_span[-1]:

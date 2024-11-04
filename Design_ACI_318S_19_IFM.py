@@ -4,7 +4,6 @@ global Loc_span, Loc_heigth, ListNodes, Elements, DataBeamDesign, DataColDesign,
     ZeroLengthElement, ZeroLengths, net, num_walls, PWall1SlabD, PWall1SlabL, PWall2SlabD, PWall2SlabL, PColSlabD,\
     PColSlabL, FN, infill_m, infill_lw, ListNodesBasal1
 
-from Design import AvColumn
 
 
 # Function: Reads Beams design data from table that allows the user to modify the default design from TAB2 of GU
@@ -1404,7 +1403,7 @@ for Ele in Elements:
                     horizontalalignment='center')
             if xe == Loc_span[-1] and tw1 == 0 and tw2 == 0:
                 Delta_x = xed - xid
-                ax.text(xed + .05 * Delta_x, yed, r'$\Delta = {:.2f} %$'.format(drift_p[ind] * 100),
+                ax.text(xed + .05 * Delta_x, yed, r'$\Delta$ = {:.2f} %'.format(drift_p[ind] * 100),
                         style='italic', fontsize=8)
                 ind += 1
             if xe == Loc_span[-1]:
@@ -1439,7 +1438,7 @@ for Ele in Elements:
         ax.add_patch(Polygon(np.c_[lat, long], facecolor='red', alpha=0.5))
         if tw2 == 0:
             Delta_x, ind = xed - xid, ind_ini
-            ax.text(xed + lw1 + .1 * lw1, yed, r'$\Delta = {:.2f} %$'.format(drift_p[ind] * 100), style='italic',
+            ax.text(xed + lw1 + .1 * lw1, yed, r'$\Delta$ = {:.2f} %'.format(drift_p[ind] * 100), style='italic',
                     fontsize=8)
         fpos = 0.1
         # print('xdF', xdF)
@@ -1462,7 +1461,7 @@ for Ele in Elements:
         long = np.array([yid, yid, yed, yed, yid])
         ax.add_patch(Polygon(np.c_[lat, long], facecolor='red', alpha=0.5))
         Delta_x, ind = xed - xid, ind_ini
-        ax.text(xed + lw2 + .1 * lw2, yed, r'$\Delta = {:.2f} %$'.format(drift_p[ind] * 100), style='italic',
+        ax.text(xed + lw2 + .1 * lw2, yed, r'$\Delta$ = {:.2f} %'.format(drift_p[ind] * 100), style='italic',
                 fontsize=8)
         ind += 1
 
